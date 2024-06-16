@@ -1,0 +1,226 @@
+grammar org.palladiosimulator.xtext.montiarcandcore.MontiArcAndCore with org.eclipse.xtext.common.Terminals
+
+generate montiArcAndCore "http://www.palladiosimulator.org/xtext/montiarcandcore/MontiArcAndCore"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+MontiArcAndCore:
+	classdiagram=ClassDiagramCompilationUnit
+	montiarcdsl=MACompilationUnit;
+	
+ImportStatements:
+	'import' importUri=MCQUALIFIEDNAME star?=DOTSTAR? ";" 
+;
+
+
+Package:
+	'package' name=(MCQUALIFIEDNAME | ID)';'
+;
+
+Type:
+	MCPrimitiveType | MCArrayType | MCObjectType | MCCollectionType
+;
+
+
+
+MCPrimitiveType:
+     type = ( 'boolean' | 'byte' | 'short' | 'int' 
+                  | 'long' | 'char' |'float' | 'double' )
+;
+
+MCObjectType:
+	type = ( 'Boolean' | 'Byte' | 'Integer' 
+                  | 'Long' | 'Char' |'Double' | 'String' )
+;
+
+MCVoidType:
+	type = 'void'
+;
+
+MCCollectionType:
+	collection = ('Set' | 'List' | 'Map' | 'Optional') '<' innerType=Type '>'
+;
+
+MCArrayType:
+	MCPrimitiveType'['']'
+;
+
+Expression:
+	NameExpression | LiteralExpression | BinaryExpression
+;
+
+LiteralExpression:
+	NumberLiteral | StringLiteral
+;
+
+NumberLiteral:
+  literal=INT
+;
+
+StringLiteral:
+	literal=STRING
+; 
+
+NameExpression:
+	name=ID | qualifiedname=MCQUALIFIEDNAME
+;
+
+BinaryExpression:
+	literal1 = (LiteralExpression|NameExpression) op=Operator literal2= (LiteralExpression|NameExpression)
+;
+
+enum Operator:
+	GT='>'| LT='<' | EQ='==' | BA='&&' | PLUS='+' | MINUS='-' | DIV='/' | MULT='*'
+;
+
+Arguments:
+	'(' arguments+=Argument (',' arguments+=Argument)* ')'
+;
+
+Argument: 
+	name?=ID expression=Expression
+;
+
+terminal MCQUALIFIEDNAME returns ecore::EString:
+	ID ('.' ID)+
+;
+
+terminal DOTSTAR:
+	'.*'
+;
+
+ClassDiagramCompilationUnit:
+	package=Package importStatements+=ImportStatements*
+	diagram=ClassDiagram;
+
+// ClassDiagram Head
+ClassDiagram:
+	"classdiagram" name=ID
+	"{" cdElements+=CDDefinition* "}"
+;
+
+CDDefinition:
+	CDClass | CDEnum;
+
+// Class Diagram Body Elements
+CDClass:
+	(public?='public')? 'class' name=ID ('extends' extends=ID)? ('implements' implements+=ID (','implements+=ID)*)?'{'
+		members+=Member
+	'}'
+;
+
+CDEnum:
+	(public?='public')? 'enum' name=ID '{'
+		values+=ID
+	'}'
+;
+
+
+Member:
+	type=(Type|CDDefinition) name=ID ';'	
+;
+
+MACompilationUnit:
+	package=Package importStatements+=ImportStatements*
+	component=Component;
+
+// Component Head
+Component:
+	"component" name=ID //signature=Signature
+	"{" arcElements+=ArcElement* "}"
+;
+
+Signature:
+	{Signature} parameters?=Parameters? ("extends" type?=Type)?;
+
+Parameters:
+	parameters+=Parameter ("," parameters+=Parameter)*;
+	
+ComponentType:
+	type = ([Component])
+;
+
+Parameter:
+	type=Type name=ID ("=" expression?=Expression)?;
+
+ArcElement:
+	Component | SubComponent | Connector | Port | Variable | Automaton;
+
+// Component Body Elements
+SubComponent:
+	"component" type=Type arguments?=Arguments? instances=Names ";";
+
+Connector:
+	source=(ID|MCQUALIFIEDNAME) "->" target=(ID|MCQUALIFIEDNAME) ";";
+
+Ports:
+	"port" ports+=Port ("," ports+=Port)* ";";
+
+Port:
+	"port" (condition=Condition)?(in?="in" | out?="out") (type=Type|dataType=([CDDefinition])) name=(ID|MCQUALIFIEDNAME) ";"
+;
+
+Condition:
+	'<<''condition' '=' condition=STRING '>>'
+;
+
+Names:
+	names+=(ID|MCQUALIFIEDNAME) ("," names+=(ID|MCQUALIFIEDNAME))*;
+
+Variable:
+	type=([Component]) name=(ID|MCQUALIFIEDNAME) ";"
+;
+
+// Embedded Behavior Elements
+//Variable:
+//	type=(Type|ComponentType) names?=Names? ('('parameters+=Expression(','parameters+=Expression)*')')?";";
+
+Automaton:
+	{Automaton} (sync?=SYNC)? "automaton" name?=ID? "{" (states+=State |
+	transitions+=Transition)* "}";
+
+State:
+	SCState | InvState
+;
+
+SCState:
+	(modifier+=SCModifier)* (ante=SCSAnte)? "state" name=ID ";";
+
+InvState:
+	(modifier+=SCModifier)* "state" name=ID '[' expression=Expression ']'";";
+
+
+SCSAnte:
+	{SCSAnte} (block=Block)
+;
+
+enum SCModifier:
+	INITIAL='initial' | FINAL='final'	
+;
+
+
+Transition:
+	source=[State] ("->" target=[State])?
+	("[" expression=Expression "]")?("/" reaction=Block)?";";
+
+Block:
+	{Block} '{' blocks+=BlockStatement* '}';
+	
+BlockStatement:
+	SimpleInit | SimpleExpression
+;
+
+SimpleExpression:
+	expression=Expression ';'
+;
+
+SimpleInit:
+	name=ID "=" expressions+=Expression';'
+;
+	
+	
+terminal SYNC:
+	"<<sync>>"
+;
+
+	

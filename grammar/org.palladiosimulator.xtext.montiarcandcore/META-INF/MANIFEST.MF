@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.palladiosimulator.xtext.montiarcandcore
+Bundle-ManifestVersion: 2
+Bundle-Name: org.palladiosimulator.xtext.montiarcandcore
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.palladiosimulator.xtext.montiarcandcore; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.34.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.palladiosimulator.xtext.montiarcandcore.parser.antlr,
+ org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.impl,
+ org.palladiosimulator.xtext.montiarcandcore.scoping,
+ org.palladiosimulator.xtext.montiarcandcore.generator,
+ org.palladiosimulator.xtext.montiarcandcore.parser.antlr.internal,
+ org.palladiosimulator.xtext.montiarcandcore.services,
+ org.palladiosimulator.xtext.montiarcandcore.serializer,
+ org.palladiosimulator.xtext.montiarcandcore.validation,
+ org.palladiosimulator.xtext.montiarcandcore,
+ org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore,
+ org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.util,
+ org.palladiosimulator.xtext.montiarcandcore.formatting2
+Import-Package: org.apache.log4j

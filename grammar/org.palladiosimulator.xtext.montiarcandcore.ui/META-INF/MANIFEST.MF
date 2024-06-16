@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.palladiosimulator.xtext.montiarcandcore.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.palladiosimulator.xtext.montiarcandcore.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.palladiosimulator.xtext.montiarcandcore.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.palladiosimulator.xtext.montiarcandcore,
+ org.palladiosimulator.xtext.montiarcandcore.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.palladiosimulator.xtext.montiarcandcore.ui.contentassist,
+ org.palladiosimulator.xtext.montiarcandcore.ui.internal,
+ org.palladiosimulator.xtext.montiarcandcore.ui.quickfix
+Bundle-Activator: org.palladiosimulator.xtext.montiarcandcore.ui.internal.MontiarcandcoreActivator

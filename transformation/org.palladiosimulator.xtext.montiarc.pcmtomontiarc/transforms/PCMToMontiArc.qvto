@@ -1,0 +1,590 @@
+modeltype PCM uses 'http://palladiosimulator.org/PalladioComponentModel/5.2';
+modeltype PCM_ALLOC uses 'http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2';
+modeltype PCM_REP uses 'http://palladiosimulator.org/PalladioComponentModel/Repository/5.2';
+modeltype PCM_SEFF uses 'http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2';
+modeltype PCM_SYS uses 'http://palladiosimulator.org/PalladioComponentModel/System/5.2';
+modeltype PCM_RES_ENV uses 'http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2';
+modeltype PCM_RES_TYPE uses 'http://palladiosimulator.org/PalladioComponentModel/ResourceType/5.2';
+modeltype PCM_USAGE uses 'http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2';
+modeltype PCM_FEATURE_CONF uses 'http://sdq.ipd.uka.de/FeatureConfig/2.0';
+modeltype PCM_FEATURE_MOD uses 'http://sdq.ipd.uka.de/FeatureModel/2.0';
+modeltype PCM_CORE uses 'http://palladiosimulator.org/PalladioComponentModel/Core/5.2';
+modeltype PCM_COMP uses 'http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2';
+modeltype PCM_ENTITY uses 'http://palladiosimulator.org/PalladioComponentModel/Core/Entity/5.2';
+modeltype PCM_PARAM uses 'http://palladiosimulator.org/PalladioComponentModel/Parameter/5.2';
+
+modeltype CONSTRAINTS uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype MontiArcAndCore uses "http://www.palladiosimulator.org/xtext/montiarcandcore/MontiArcAndCore";
+
+transformation PCMToMontiArc(in system : PCM_SYS, in repository : PCM_REP, in constraints : CONSTRAINTS, out montiArcAndCore : MontiArcAndCore);
+
+main() {
+	map generateMontiArcAndCore();
+}
+
+mapping generateMontiArcAndCore() : MontiArcAndCore::MontiArcAndCore {
+	classdiagram := repository.rootObjects()[Repository]->map repositoryToClassDiagramCompilationUnit() -> any(true);
+	montiarcdsl := system.rootObjects()[System]->map sytemToMACompilationUnit() -> any(true);
+}
+
+mapping System::sytemToMACompilationUnit() : MACompilationUnit {
+	package := getMontiArcPackage().map packageNameToPackage();
+	component := self.map systemToComponent();
+	component.arcElements += self.assemblyContexts__ComposedStructure -> map assemblyContextToComponent();
+	importStatements += self.generateImportStatements();
+	self.assemblyContexts__ComposedStructure -> generateImportStatements(importStatements) -> forEach(importStatement) {
+		importStatements += importStatement;
+	};
+	component.arcElements += component.arcElements[Component] -> map componentToVariable();
+	var eAnnotations := constraints.rootObjects()[EPackage].eAnnotations;
+	eAnnotations -> forEach (eAnnotation) {
+		if (eAnnotation._references -> first().oclIsTypeOf(AssemblyConnector)) {
+			eAnnotation.applyAssemblyConnectorConstraints();
+		} else if (eAnnotation._references -> first().oclIsTypeOf(ProvidedDelegationConnector)) {
+			eAnnotation.applyProvidedDelegationConnectorConstraints();
+		} else {
+			// TODO	
+		};
+	};
+	self.connectors__ComposedStructure[AssemblyConnector] -> forEach (assemblyConnector) {
+		result.component.arcElements += assemblyConnector.map assemblyConnectorToConnector();
+	};
+	self.connectors__ComposedStructure[ProvidedDelegationConnector] -> forEach (assemblyConnector) {
+		result.component.arcElements += assemblyConnector.map providedDelegationConnectorToConnector(true);
+		result.component.arcElements += assemblyConnector.map providedDelegationConnectorToConnector(false);
+	};
+}
+
+query EAnnotation::applyAssemblyConnectorConstraints() {
+	var assemblyConnector := self._references -> first().oclAsType(AssemblyConnector).getAssemblyConnector();
+	var sourceIn := self.details -> any(x | x.key = "Source:In").value;
+	var sourceOut := self.details -> any(x | x.key = "Source:Out").value;
+	var targetIn := self.details -> any(x | x.key = "Target:In").value;
+	var targetOut := self.details -> any(x | x.key = "Target:Out").value;
+	var portTargetIn := assemblyConnector.providedRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
+	var portTargetOut := assemblyConnector.providedRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
+	var portSourceIn := assemblyConnector.requiredRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
+	var portSourceOut := assemblyConnector.requiredRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
+	if (sourceIn <> null) {
+		portSourceIn.condition := sourceIn.map stringToCondition();
+	};
+	if (sourceOut <> null) {
+		portSourceOut.condition := sourceOut.map stringToCondition();
+	};
+	if (targetIn <> null) {
+		portTargetIn.condition := targetIn.map stringToCondition();
+	};
+	if (targetOut <> null) {
+		portTargetOut.condition := targetOut.map stringToCondition();
+	};
+}
+
+query EAnnotation::applyProvidedDelegationConnectorConstraints() {
+	var providedDelegationConnector := self._references -> first().oclAsType(ProvidedDelegationConnector).getProvidedDelegationConnector();
+	var sourceIn := self.details -> any(x | x.key = "Source:In").value;
+	var sourceOut := self.details -> any(x | x.key = "Source:Out").value;
+	var targetIn := self.details -> any(x | x.key = "Target:In").value;
+	var targetOut := self.details -> any(x | x.key = "Target:Out").value;
+	var portTargetIn := providedDelegationConnector.innerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
+	var portTargetOut := providedDelegationConnector.innerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
+	var portSourceIn := providedDelegationConnector.outerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
+	var portSourceOut := providedDelegationConnector.outerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
+	if (sourceIn <> null) {
+		portSourceIn.condition := sourceIn.map stringToCondition();
+	};
+	if (sourceOut <> null) {
+		portSourceOut.condition := sourceOut.map stringToCondition();
+	};
+	if (targetIn <> null) {
+		portTargetIn.condition := targetIn.map stringToCondition();
+	};
+	if (targetOut <> null) {
+		portTargetOut.condition := targetOut.map stringToCondition();
+	};
+}
+
+mapping String::stringToCondition() : Condition {
+	condition := self;
+}
+
+mapping System::systemToComponent() : Component {
+	name := getMontiArcName();
+	self.providedRoles_InterfaceProvidingEntity[OperationProvidedRole] -> map operationProvidedRoleToPort() -> forEach(port) {
+		arcElements += port;
+	};
+	self.requiredRoles_InterfaceRequiringEntity[OperationRequiredRole] -> map operationRequiredRoleToPort() -> forEach(port) {
+		arcElements += port;
+	};
+}
+
+
+
+mapping Component::componentToVariable() : Variable {
+	type := self;
+	name := self.name.firstToLower();
+}
+
+mapping AssemblyConnector::assemblyConnectorToConnector() : MontiArcAndCore::Connector {
+	var providedPort := self.providedRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(true);
+	var providedComponent := self.providingAssemblyContext_AssemblyConnector.resolve(Component) -> first().resolve(Variable) -> first();
+	var requiredPort := self.requiredRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(true);
+	var requiredComponent := self.requiringAssemblyContext_AssemblyConnector.resolve(Component) -> first().resolve(Variable) -> first();
+	source := requiredComponent.name + "." + requiredPort.name;
+	target := providedComponent.name + "." + providedPort.name;
+}
+
+mapping ProvidedDelegationConnector::providedDelegationConnectorToConnector(directionIn : Boolean) : MontiArcAndCore::Connector {
+	if (directionIn) {
+		var innerProvidedPort := self.innerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
+		var innerProvidedComponent := self.assemblyContext_ProvidedDelegationConnector.resolve(Component) -> first().resolve(Variable) -> first();
+		var outerProvidedPort := self.outerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
+		source := outerProvidedPort.name;
+		target := innerProvidedComponent.name + "." + innerProvidedPort.name;
+	} else {
+		var innerProvidedPort := self.innerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
+		var innerProvidedComponent := self.assemblyContext_ProvidedDelegationConnector.resolve(Component) -> first().resolve(Variable) -> first();
+		var outerProvidedPort := self.outerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
+		source := innerProvidedComponent.name + "." + innerProvidedPort.name;
+		target := outerProvidedPort.name;
+	};
+	
+}
+
+mapping RequiredDelegationConnector::requiredDelegationConnectorToConnector() : MontiArcAndCore::Connector {
+	source;
+	target;
+}
+
+mapping AssemblyContext::assemblyContextToComponent() : Component {
+	name := self.entityName;
+	self.encapsulatedComponent__AssemblyContext.providedRoles_InterfaceProvidingEntity[OperationProvidedRole] -> any(true) -> map operationProvidedRoleToPort() -> forEach(port) {
+		arcElements += port;
+	};
+	self.encapsulatedComponent__AssemblyContext.requiredRoles_InterfaceRequiringEntity[OperationRequiredRole] -> any(true) -> map operationRequiredRoleToPort() -> forEach(port) {
+		arcElements += port;
+	};
+}
+
+query DataType::isReturning() : Boolean {
+	if (self.oclIsTypeOf(PrimitiveDataType)) {
+		return true;
+	};
+	if (self.oclIsTypeOf(CompositeDataType)) {
+		return true;
+	};
+	if (self.oclIsTypeOf(CollectionDataType)) {
+		return true;
+	};
+	return false;
+}
+
+mapping OperationProvidedRole::operationProvidedRoleToPort() : Set(Port) {
+	init {
+		var interface : OperationInterface := self.providedInterface__OperationProvidedRole;
+		var signatures : Set(OperationSignature) := interface.signatures__OperationInterface;
+		var dir : String := "in";
+		var ports : Set(Port);
+		
+		signatures->forEach(signature) {
+			ports += signature.generateInPortFromParameter();
+			if (signature.returnType__OperationSignature.isReturning()) {
+				ports += signature.generateOutPortFromReturn();
+			};
+			result += ports;
+		};
+	}
+}
+
+mapping OperationRequiredRole::operationRequiredRoleToPort() : Set(Port) {
+	init {
+		var interface : OperationInterface := self.requiredInterface__OperationRequiredRole;
+		var signatures : Set(OperationSignature) := interface.signatures__OperationInterface;
+		var dir : String := "out";
+		var ports : Set(Port);
+		
+		signatures->forEach(signature) {
+			ports += signature.generateOutPortFromParameter();
+			// TODO only PrimitiveDataTypes supported for now as return type
+			if (signature.returnType__OperationSignature.isReturning()) {
+				ports += signature.generateInPortFromReturn();
+			};
+			result += ports;
+		};
+	}
+}
+
+constructor Port::Port(directionIn : Boolean, primitiveType : Type, operationSignature : OperationSignature) {
+	_in := directionIn;
+	_out := not directionIn;
+	type := primitiveType;
+	name := operationSignature.getReturnName(type);
+	
+}
+
+constructor Port::Port(directionIn : Boolean, dataTypeCDClass : CDClass, operationSignature : OperationSignature) {
+	_in := directionIn;
+	_out := not directionIn;
+	dataType := dataTypeCDClass;
+	name := operationSignature.getReturnName(dataTypeCDClass);
+}
+
+
+query OperationSignature::getReturnName(dataType : CDClass) : String {
+	var eAnnotations := constraints.rootObjects()[EPackage].eAnnotations;
+	eAnnotations -> forEach (eAnnotation) {
+		if (eAnnotation._references -> first().oclIsTypeOf(OperationSignature)) {
+			// TODO
+		};
+	};
+	return dataType.name.oclAsType(String).firstToLower();
+}
+
+query OperationSignature::getReturnName(primitiveType : Type) : String {
+	var eAnnotations := constraints.rootObjects()[EPackage].eAnnotations;
+	eAnnotations -> forEach (eAnnotation) {
+		if (eAnnotation._references -> first().oclIsTypeOf(OperationSignature)) {
+			if (eAnnotation._references -> first().oclAsType(OperationSignature).id = self.id) {
+				return eAnnotation.details -> any(x | x.key = "return").value;
+			}
+		};
+	};
+	return primitiveType.oclAsType(MCPrimitiveType).type.firstToLower();
+}
+
+query String::firstToLower() : String {
+	return self.at(1).toLower() + self.substring(2, self.size());
+}
+
+query OperationSignature::generateInPortFromParameter() : Port {
+	if (self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass)->exists(true)) {
+		return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass) -> first(), self);
+	} 
+	else {
+		// TODO add support for strings, currently they are not supported
+		return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+	};
+}
+
+query OperationSignature::generateInPortFromParameters() : Port {
+	// TODO implement
+}
+
+query OperationSignature::generateInPortFromReturn() : Port {
+	if (self.returnType__OperationSignature.resolve(CDClass)->exists(true)) {
+		return new Port(true, self.returnType__OperationSignature.resolve(CDClass) -> first(), self);
+	} 
+	else {
+		// TODO add support for strings, currently they are not supported
+		return new Port(true, self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+	};
+}
+
+query OperationSignature::generateOutPortFromParameter() : Port {
+	if (self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass)->exists(true)) {
+		return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass) -> first(), self);
+	} 
+	else {
+		// TODO add support for strings, currently they are not supported
+		return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+	};
+}
+
+query OperationSignature::generateOutPortFromParameters() : Port {
+	// TODO implement
+}
+
+query OperationSignature::generateOutPortFromReturn() : Port {
+	if (self.returnType__OperationSignature.resolve(CDClass)->exists(true)) {
+		return new Port(false, self.returnType__OperationSignature.resolve(CDClass) -> first(), self);
+	} 
+	else {
+		// TODO add support for strings, currently they are not supported
+		return new Port(false, self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+	};
+}
+
+constructor ImportStatements::ImportStatements(uri : String) {
+	importUri := uri;
+}
+
+query System::generateImportStatements() : Set(ImportStatements) {
+	var importStatements : Set(ImportStatements);
+	self.providedRoles_InterfaceProvidingEntity[OperationProvidedRole] -> forEach(providedRole) {
+		var interface : OperationInterface := providedRole.providedInterface__OperationProvidedRole;
+		var signatures : Set(OperationSignature) := interface.signatures__OperationInterface;
+		signatures -> forEach(signature) {
+			signature.parameters__OperationSignature -> forEach(parameter) {
+				if (parameter.dataType__Parameter.resolve(CDClass) -> exists(true)) {
+					importStatements += new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + parameter.dataType__Parameter.resolve(CDClass) -> first().name);
+				};
+			};
+			if (signature.returnType__OperationSignature.resolve(CDClass) -> exists(true)) {
+				importStatements += new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + signature.returnType__OperationSignature.resolve(CDClass) -> first().name);
+			};
+		}
+	};
+	self.requiredRoles_InterfaceRequiringEntity[OperationRequiredRole] -> forEach(providedRole) {
+		var interface : OperationInterface := providedRole.requiredInterface__OperationRequiredRole;
+		var signatures : Set(OperationSignature) := interface.signatures__OperationInterface;
+		signatures -> forEach(signature) {
+			signature.parameters__OperationSignature -> forEach(parameter) {
+				if (parameter.dataType__Parameter.resolve(CDClass) -> exists(true)) {
+					importStatements += new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + parameter.dataType__Parameter.resolve(CDClass) -> first().name);
+				};
+			};
+			if (signature.returnType__OperationSignature.resolve(CDClass) -> exists(true)) {
+				importStatements += new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + signature.returnType__OperationSignature.resolve(CDClass) -> first().name);
+			};
+		}
+	};
+	return importStatements;
+}
+
+query AssemblyContext::generateImportStatements(inout importStatements : Set(ImportStatements)) : Set(ImportStatements) {
+	self.encapsulatedComponent__AssemblyContext.providedRoles_InterfaceProvidingEntity[OperationProvidedRole] -> forEach(providedRole) {
+		var interface : OperationInterface := providedRole.providedInterface__OperationProvidedRole;
+		var signatures : Set(OperationSignature) := interface.signatures__OperationInterface;
+		signatures -> forEach(signature) {
+			signature.parameters__OperationSignature -> forEach(parameter) {
+				if (parameter.dataType__Parameter.resolve(CDClass) -> exists(true)) {
+					importStatements := addImportStatementIfNotPresent(importStatements, new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + parameter.dataType__Parameter.resolve(CDClass) -> first().name));
+				};
+			};
+			if (signature.returnType__OperationSignature.resolve(CDClass) -> exists(true)) {
+				importStatements := addImportStatementIfNotPresent(importStatements, new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + signature.returnType__OperationSignature.resolve(CDClass) -> first().name));
+			};
+		}
+	};
+	self.encapsulatedComponent__AssemblyContext.resourceRequiredRoles__ResourceInterfaceRequiringEntity[OperationRequiredRole] -> forEach(providedRole) {
+		var interface : OperationInterface := providedRole.requiredInterface__OperationRequiredRole;
+		var signatures : Set(OperationSignature) := interface.signatures__OperationInterface;
+		signatures -> forEach(signature) {
+			signature.parameters__OperationSignature -> forEach(parameter) {
+				if (parameter.dataType__Parameter.resolve(CDClass) -> exists(true)) {
+					importStatements := addImportStatementIfNotPresent(importStatements, new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + parameter.dataType__Parameter.resolve(CDClass) -> first().name));
+				};
+			};
+			if (signature.returnType__OperationSignature.resolve(CDClass) -> exists(true)) {
+				importStatements := addImportStatementIfNotPresent(importStatements, new ImportStatements(getClassDiagramPackage() + "." + getClassDiagramName() + "." + signature.returnType__OperationSignature.resolve(CDClass) -> first().name));
+			};
+		}
+	};
+	return importStatements;
+}
+
+query addImportStatementIfNotPresent(inout importStatements : Set(ImportStatements), in importStatement : ImportStatements) : Set(ImportStatements) {
+	importStatements -> forEach(newImportStatement) {
+		if (newImportStatement.importUri = importStatement.importUri) {
+			return importStatements;
+		};
+	};
+	importStatements += importStatement;
+	return importStatements;
+}
+
+// Start Type Workaround
+// This is necessary, because MC requires new MCPrimitiveTypes for every usage, while the PCM only has one element per PrimitiveDataType
+
+constructor MCPrimitiveType::MCPrimitiveType(typeStr : String) {
+	type := typeStr;
+}
+
+query PrimitiveDataType::dataTypeToPrimitveType() : MCPrimitiveType {
+	switch {
+		case (self.type = PrimitiveTypeEnum::BOOL) {return new MCPrimitiveType("boolean");};
+		case (self.type = PrimitiveTypeEnum::BYTE) {return new MCPrimitiveType("byte");};
+		case (self.type = PrimitiveTypeEnum::CHAR) {return new MCPrimitiveType("char");};
+		case (self.type = PrimitiveTypeEnum::DOUBLE) {return new MCPrimitiveType("double");};
+		case (self.type = PrimitiveTypeEnum::INT) {return new MCPrimitiveType("int");};
+		case (self.type = PrimitiveTypeEnum::LONG) {return new MCPrimitiveType("long");};
+	};
+	return return new MCPrimitiveType("");
+}
+
+constructor MCObjectType::MCObjectType(typeStr : String) {
+	type := typeStr;
+}
+
+query PrimitiveDataType::dataTypeToObjectType() : MCObjectType {
+	switch {
+		case (self.type = PrimitiveTypeEnum::STRING) {return new MCObjectType("String");};
+	};
+	return return new MCObjectType("");
+}
+
+// End Type Workaround
+
+query OperationSignature::getParameterMessageType() : Type {
+	if (self.resolve(Type)->exists(true)) {
+		return self.resolve(Type)->first();
+	};
+	if (self.parameters__OperationSignature->size() = 1) {
+		return self.parameters__OperationSignature->first().dataType__Parameter.resolve(Type)->first();
+	};
+}
+
+query OperationSignature::getReturnMessageType() : Type {
+	return self.returnType__OperationSignature.resolve(Type)->first();
+}
+
+query Type::getType() : String {
+	if (self.oclIsTypeOf(MCPrimitiveType)) {
+		return self.oclAsType(MCPrimitiveType).type;
+	} else if (self.oclIsTypeOf(MCObjectType)) {
+		return self.oclAsType(MCObjectType).type;
+	} else {
+		
+	}
+}
+
+query getClassDiagramPackage() : String {
+	return "cd2pojo." + system.rootObjects()[System]->any(true).entityName.toLower();
+}
+
+query getClassDiagramName() : String {
+	return system.rootObjects()[System]->any(true).entityName;
+}
+
+query getMontiArcPackage() : String {
+	return system.rootObjects()[System]->any(true).entityName.toLower();
+}
+
+query getMontiArcName() : String {
+	return system.rootObjects()[System]->any(true).entityName;
+}
+
+mapping Repository::repositoryToClassDiagramCompilationUnit() : ClassDiagramCompilationUnit {
+	package := getClassDiagramPackage().map packageNameToPackage();
+	diagram := getClassDiagramName().map diagramNameToDiagram();
+	diagram.cdElements += self.dataTypes__Repository[CollectionDataType]->map collectionDataTypeToCDClass();
+	diagram.cdElements += self.dataTypes__Repository[CompositeDataType]->map compositeDataTypeToCDClass();
+	diagram.cdElements += self.interfaces__Repository[OperationInterface]->map interfacesToCDClass();
+}
+
+mapping String::packageNameToPackage() : Package {
+	name := self;
+}
+
+mapping String::diagramNameToDiagram() : ClassDiagram {
+	name := self;
+}
+
+mapping OperationInterface::interfacesToCDClass() {
+	self.signatures__OperationInterface->
+	reject(s : OperationSignature | s.parameters__OperationSignature->size() = 0)->
+	reject(s : OperationSignature | false)->
+	map operationSignatureToCDCLass(self);
+}
+
+mapping OperationSignature::operationSignatureToCDCLass(interface : OperationInterface) : CDClass when {
+	self.parameters__OperationSignature->size() <> 1 and self.parameters__OperationSignature->reject(p : Parameter | p.dataType__Parameter.resolve(Type)->exists(true))->exists(true)
+} {
+	members += self.parameters__OperationSignature->map parameterToMember();
+	name := interface.entityName + "." + self.entityName + "_Parameter";
+	public := true;
+}
+
+mapping Parameter::parameterToMember() : Member {
+	name := self.parameterName;
+	type := self.dataType__Parameter;
+}
+
+mapping CollectionDataType::collectionDataTypeToCDClass() : CDClass {
+	name := self.entityName;
+	members += self.innerType_CollectionDataType[PrimitiveDataType]->map innerTypeToMember(self.entityName);
+}
+
+mapping CompositeDataType::compositeDataTypeToCDClass() : CDClass {
+	name := self.entityName;
+	public := true;
+	members += self.innerDeclaration_CompositeDataType->map innerDeclarationToMember();
+}
+
+mapping InnerDeclaration::innerDeclarationToMember() : Member {
+	name := self.entityName;
+	if (self.datatype_InnerDeclaration.oclIsTypeOf(PrimitiveDataType)) {
+		var dataType : PrimitiveDataType := self.datatype_InnerDeclaration.oclAsType(PrimitiveDataType);
+		if (dataType.type = PrimitiveTypeEnum::STRING) {
+			type := dataType.map stringToString().oclAsType(EObject);
+		} else {
+			type := dataType.dataTypeToPrimitveType().oclAsType(EObject);
+		};
+	};
+	if (self.datatype_InnerDeclaration.oclIsTypeOf(CompositeDataType)) {
+		// TODO
+	};
+	
+}
+
+mapping DataType::innerTypeToMember(n : String) : Member {
+	name := n;
+	type := self;
+}
+
+mapping PrimitiveDataType::stringToString() : MCObjectType {
+	type := "String";
+}
+
+helper String::oppositeDirection() : String {
+	if (self = "in") {
+		return "out";
+	};
+	return "in";
+}
+
+query AssemblyContext::getAssemblyContext() : AssemblyContext {
+	system.rootObjects()[System].assemblyContexts__ComposedStructure->forEach(ac){
+		if (self.id = ac.id) {
+			return ac;
+		};
+	};
+}
+
+query AssemblyConnector::getAssemblyConnector() : AssemblyConnector {
+	system.rootObjects()[System].connectors__ComposedStructure[AssemblyConnector]->forEach(ac){
+		if (self.id = ac.id) {
+			return ac;
+		};
+	};
+}
+
+query ProvidedDelegationConnector::getProvidedDelegationConnector() : ProvidedDelegationConnector {
+	system.rootObjects()[System].connectors__ComposedStructure[ProvidedDelegationConnector]->forEach(pdc){
+		if (self.id = pdc.id) {
+			return pdc;
+		};
+	};
+}
+
+query Role::getRole() : Role {
+	repository.rootObjects()[Repository].components__Repository->forEach(c){
+		c.providedRoles_InterfaceProvidingEntity->forEach(r){
+			if (self.id = r.id) {
+				return r;
+			};
+		};
+		c.requiredRoles_InterfaceRequiringEntity->forEach(r){
+			if (self.id = r.id) {
+				return r;
+			};
+		};
+	};
+}
+
+query OperationSignature::getOperation() : OperationSignature {
+	repository.rootObjects()[Repository].interfaces__Repository[OperationInterface]->forEach(i){
+		i.signatures__OperationInterface->forEach(o){
+			if (self.id = o.id) {
+				return o;
+			};
+		}
+	};
+}
+
+helper String::cleanString() : String {
+	var res := self;
+	res := res.replaceAll(" ", "");
+	res := res.replaceAll("\\.", "");
+	return res;
+}
