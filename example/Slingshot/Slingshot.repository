@@ -24,24 +24,41 @@
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_5uF5ABWoEe-DGZvw9jQajw" entityName="SystemSimulation">
-    <signatures__OperationInterface id="_jZpKEBWpEe-DGZvw9jQajw" entityName="simulateSystemCall">
+    <signatures__OperationInterface id="_jZpKEBWpEe-DGZvw9jQajw" entityName="simulateSystemCall" returnType__OperationSignature="_HPpQHdKDEe-FZs42ElTBhQ">
       <parameters__OperationSignature dataType__Parameter="_K_WlcBWpEe-DGZvw9jQajw" parameterName="systemCall"/>
     </signatures__OperationInterface>
   </interfaces__Repository>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_6D_QgBWoEe-DGZvw9jQajw" entityName="ResourceSimulation">
-    <signatures__OperationInterface id="_nLH3oBWpEe-DGZvw9jQajw" entityName="simulateResourceDemand">
+    <signatures__OperationInterface id="_nLH3oBWpEe-DGZvw9jQajw" entityName="simulateResourceDemand" returnType__OperationSignature="_8UHWrdKCEe-FZs42ElTBhQ">
       <parameters__OperationSignature dataType__Parameter="_LJbHcBWpEe-DGZvw9jQajw" parameterName="resourceDemand"/>
     </signatures__OperationInterface>
   </interfaces__Repository>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_E95ZUBWpEe-DGZvw9jQajw" entityName="UsageSimulation">
-    <signatures__OperationInterface id="_Gan2ABWpEe-DGZvw9jQajw" entityName="simulateUsageScenario">
+    <signatures__OperationInterface id="_Gan2ABWpEe-DGZvw9jQajw" entityName="simulateUsageScenario" returnType__OperationSignature="_J6tQfdM5Ee-o-JNvJrKOug">
       <parameters__OperationSignature dataType__Parameter="_I2RZEBWpEe-DGZvw9jQajw" parameterName="usageScenario"/>
-      <returnType__OperationSignature xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
     </signatures__OperationInterface>
   </interfaces__Repository>
   <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_I2RZEBWpEe-DGZvw9jQajw" entityName="UsageScenario">
     <innerDeclaration_CompositeDataType entityName="numberOfUsers">
       <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_HPpQHdKDEe-FZs42ElTBhQ" entityName="SystemSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_J6tQfdM5Ee-o-JNvJrKOug" entityName="UsageSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="responseTime">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_8UHWrdKCEe-FZs42ElTBhQ" entityName="ResourceSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
     </innerDeclaration_CompositeDataType>
   </dataTypes__Repository>
   <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_K_WlcBWpEe-DGZvw9jQajw" entityName="SystemCall">

@@ -3403,7 +3403,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCDClass"
-    // InternalMontiArcAndCore.g:1273:1: ruleCDClass returns [EObject current=null] : ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) ) otherlv_11= '}' ) ;
+    // InternalMontiArcAndCore.g:1273:1: ruleCDClass returns [EObject current=null] : ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) )* otherlv_11= '}' ) ;
     public final EObject ruleCDClass() throws RecognitionException {
         EObject current = null;
 
@@ -3425,11 +3425,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcAndCore.g:1279:2: ( ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) ) otherlv_11= '}' ) )
-            // InternalMontiArcAndCore.g:1280:2: ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) ) otherlv_11= '}' )
+            // InternalMontiArcAndCore.g:1279:2: ( ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) )* otherlv_11= '}' ) )
+            // InternalMontiArcAndCore.g:1280:2: ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) )* otherlv_11= '}' )
             {
-            // InternalMontiArcAndCore.g:1280:2: ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) ) otherlv_11= '}' )
-            // InternalMontiArcAndCore.g:1281:3: ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) ) otherlv_11= '}'
+            // InternalMontiArcAndCore.g:1280:2: ( ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) )* otherlv_11= '}' )
+            // InternalMontiArcAndCore.g:1281:3: ( (lv_public_0_0= 'public' ) )? otherlv_1= 'class' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'extends' ( (lv_extends_4_0= RULE_ID ) ) )? (otherlv_5= 'implements' ( (lv_implements_6_0= RULE_ID ) ) (otherlv_7= ',' ( (lv_implements_8_0= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_members_10_0= ruleMember ) )* otherlv_11= '}'
             {
             // InternalMontiArcAndCore.g:1281:3: ( (lv_public_0_0= 'public' ) )?
             int alt16=2;
@@ -3646,36 +3646,54 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getCDClassAccess().getLeftCurlyBracketKeyword_5());
             		
-            // InternalMontiArcAndCore.g:1393:3: ( (lv_members_10_0= ruleMember ) )
-            // InternalMontiArcAndCore.g:1394:4: (lv_members_10_0= ruleMember )
-            {
-            // InternalMontiArcAndCore.g:1394:4: (lv_members_10_0= ruleMember )
-            // InternalMontiArcAndCore.g:1395:5: lv_members_10_0= ruleMember
-            {
+            // InternalMontiArcAndCore.g:1393:3: ( (lv_members_10_0= ruleMember ) )*
+            loop20:
+            do {
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-            					newCompositeNode(grammarAccess.getCDClassAccess().getMembersMemberParserRuleCall_6_0());
-            				
-            pushFollow(FOLLOW_25);
-            lv_members_10_0=ruleMember();
-
-            state._fsp--;
+                if ( ((LA20_0>=17 && LA20_0<=35)||(LA20_0>=46 && LA20_0<=47)||LA20_0==50) ) {
+                    alt20=1;
+                }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCDClassRule());
-            					}
-            					add(
-            						current,
-            						"members",
-            						lv_members_10_0,
-            						"org.palladiosimulator.xtext.montiarcandcore.MontiArcAndCore.Member");
-            					afterParserOrEnumRuleCall();
-            				
+                switch (alt20) {
+            	case 1 :
+            	    // InternalMontiArcAndCore.g:1394:4: (lv_members_10_0= ruleMember )
+            	    {
+            	    // InternalMontiArcAndCore.g:1394:4: (lv_members_10_0= ruleMember )
+            	    // InternalMontiArcAndCore.g:1395:5: lv_members_10_0= ruleMember
+            	    {
 
-            }
+            	    					newCompositeNode(grammarAccess.getCDClassAccess().getMembersMemberParserRuleCall_6_0());
+            	    				
+            	    pushFollow(FOLLOW_24);
+            	    lv_members_10_0=ruleMember();
+
+            	    state._fsp--;
 
 
-            }
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getCDClassRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"members",
+            	    						lv_members_10_0,
+            	    						"org.palladiosimulator.xtext.montiarcandcore.MontiArcAndCore.Member");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop20;
+                }
+            } while (true);
 
             otherlv_11=(Token)match(input,45,FOLLOW_2); 
 
@@ -3762,20 +3780,20 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:1435:3: ( (lv_public_0_0= 'public' ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_values_4_0= RULE_ID ) ) otherlv_5= '}'
             {
             // InternalMontiArcAndCore.g:1435:3: ( (lv_public_0_0= 'public' ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA20_0==46) ) {
-                alt20=1;
+            if ( (LA21_0==46) ) {
+                alt21=1;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
                     // InternalMontiArcAndCore.g:1436:4: (lv_public_0_0= 'public' )
                     {
                     // InternalMontiArcAndCore.g:1436:4: (lv_public_0_0= 'public' )
                     // InternalMontiArcAndCore.g:1437:5: lv_public_0_0= 'public'
                     {
-                    lv_public_0_0=(Token)match(input,46,FOLLOW_26); 
+                    lv_public_0_0=(Token)match(input,46,FOLLOW_25); 
 
                     					newLeafNode(lv_public_0_0, grammarAccess.getCDEnumAccess().getPublicPublicKeyword_0_0());
                     				
@@ -3834,7 +3852,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:1476:4: (lv_values_4_0= RULE_ID )
             // InternalMontiArcAndCore.g:1477:5: lv_values_4_0= RULE_ID
             {
-            lv_values_4_0=(Token)match(input,RULE_ID,FOLLOW_25); 
+            lv_values_4_0=(Token)match(input,RULE_ID,FOLLOW_26); 
 
             					newLeafNode(lv_values_4_0, grammarAccess.getCDEnumAccess().getValuesIDTerminalRuleCall_4_0());
             				
@@ -3945,22 +3963,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:1518:5: (lv_type_0_1= ruleType | lv_type_0_2= ruleCDDefinition )
             {
             // InternalMontiArcAndCore.g:1518:5: (lv_type_0_1= ruleType | lv_type_0_2= ruleCDDefinition )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( ((LA21_0>=17 && LA21_0<=35)) ) {
-                alt21=1;
+            if ( ((LA22_0>=17 && LA22_0<=35)) ) {
+                alt22=1;
             }
-            else if ( ((LA21_0>=46 && LA21_0<=47)||LA21_0==50) ) {
-                alt21=2;
+            else if ( ((LA22_0>=46 && LA22_0<=47)||LA22_0==50) ) {
+                alt22=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // InternalMontiArcAndCore.g:1519:6: lv_type_0_1= ruleType
                     {
@@ -4162,17 +4180,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:1613:3: ( (lv_importStatements_1_0= ruleImportStatements ) )*
-            loop22:
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA22_0==14) ) {
-                    alt22=1;
+                if ( (LA23_0==14) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:1614:4: (lv_importStatements_1_0= ruleImportStatements )
             	    {
@@ -4206,7 +4224,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -4356,17 +4374,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_2, grammarAccess.getComponentAccess().getLeftCurlyBracketKeyword_2());
             		
             // InternalMontiArcAndCore.g:1696:3: ( (lv_arcElements_3_0= ruleArcElement ) )*
-            loop23:
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA23_0==RULE_MCQUALIFIEDNAME||LA23_0==RULE_ID||LA23_0==RULE_SYNC||LA23_0==51||LA23_0==54||LA23_0==60) ) {
-                    alt23=1;
+                if ( (LA24_0==RULE_MCQUALIFIEDNAME||LA24_0==RULE_ID||LA24_0==RULE_SYNC||LA24_0==51||LA24_0==54||LA24_0==60) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:1697:4: (lv_arcElements_3_0= ruleArcElement )
             	    {
@@ -4400,7 +4418,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -4519,17 +4537,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:1757:3: (otherlv_1= ',' ( (lv_parameters_2_0= ruleParameter ) ) )*
-            loop24:
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==41) ) {
-                    alt24=1;
+                if ( (LA25_0==41) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:1758:4: otherlv_1= ',' ( (lv_parameters_2_0= ruleParameter ) )
             	    {
@@ -4573,7 +4591,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -4715,13 +4733,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:1838:3: (otherlv_2= '=' ( (lv_expression_3_0= ruleExpression ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==52) ) {
-                alt25=1;
+            if ( (LA26_0==52) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
                     // InternalMontiArcAndCore.g:1839:4: otherlv_2= '=' ( (lv_expression_3_0= ruleExpression ) )
                     {
@@ -4850,21 +4868,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:1881:2: (this_Component_0= ruleComponent | this_SubComponent_1= ruleSubComponent | this_Connector_2= ruleConnector | this_Port_3= rulePort | this_Variable_4= ruleVariable | this_Automaton_5= ruleAutomaton )
             {
             // InternalMontiArcAndCore.g:1881:2: (this_Component_0= ruleComponent | this_SubComponent_1= ruleSubComponent | this_Connector_2= ruleConnector | this_Port_3= rulePort | this_Variable_4= ruleVariable | this_Automaton_5= ruleAutomaton )
-            int alt26=6;
+            int alt27=6;
             switch ( input.LA(1) ) {
             case 51:
                 {
-                int LA26_1 = input.LA(2);
+                int LA27_1 = input.LA(2);
 
-                if ( ((LA26_1>=17 && LA26_1<=35)) ) {
-                    alt26=2;
+                if ( (LA27_1==RULE_ID) ) {
+                    alt27=1;
                 }
-                else if ( (LA26_1==RULE_ID) ) {
-                    alt26=1;
+                else if ( ((LA27_1>=17 && LA27_1<=35)) ) {
+                    alt27=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 26, 1, input);
+                        new NoViableAltException("", 27, 1, input);
 
                     throw nvae;
                 }
@@ -4872,17 +4890,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
                 break;
             case RULE_ID:
                 {
-                int LA26_2 = input.LA(2);
+                int LA27_2 = input.LA(2);
 
-                if ( (LA26_2==RULE_MCQUALIFIEDNAME||LA26_2==RULE_ID) ) {
-                    alt26=5;
+                if ( (LA27_2==53) ) {
+                    alt27=3;
                 }
-                else if ( (LA26_2==53) ) {
-                    alt26=3;
+                else if ( (LA27_2==RULE_MCQUALIFIEDNAME||LA27_2==RULE_ID) ) {
+                    alt27=5;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 26, 2, input);
+                        new NoViableAltException("", 27, 2, input);
 
                     throw nvae;
                 }
@@ -4890,28 +4908,28 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
                 break;
             case RULE_MCQUALIFIEDNAME:
                 {
-                alt26=3;
+                alt27=3;
                 }
                 break;
             case 54:
                 {
-                alt26=4;
+                alt27=4;
                 }
                 break;
             case RULE_SYNC:
             case 60:
                 {
-                alt26=6;
+                alt27=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
                     // InternalMontiArcAndCore.g:1882:3: this_Component_0= ruleComponent
                     {
@@ -5138,13 +5156,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:1977:3: ( (lv_arguments_2_0= ruleArguments ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA27_0==40) ) {
-                alt27=1;
+            if ( (LA28_0==40) ) {
+                alt28=1;
             }
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
                     // InternalMontiArcAndCore.g:1978:4: (lv_arguments_2_0= ruleArguments )
                     {
@@ -5301,22 +5319,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2040:5: (lv_source_0_1= RULE_ID | lv_source_0_2= RULE_MCQUALIFIEDNAME )
             {
             // InternalMontiArcAndCore.g:2040:5: (lv_source_0_1= RULE_ID | lv_source_0_2= RULE_MCQUALIFIEDNAME )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA28_0==RULE_ID) ) {
-                alt28=1;
+            if ( (LA29_0==RULE_ID) ) {
+                alt29=1;
             }
-            else if ( (LA28_0==RULE_MCQUALIFIEDNAME) ) {
-                alt28=2;
+            else if ( (LA29_0==RULE_MCQUALIFIEDNAME) ) {
+                alt29=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2041:6: lv_source_0_1= RULE_ID
                     {
@@ -5377,22 +5395,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2079:5: (lv_target_2_1= RULE_ID | lv_target_2_2= RULE_MCQUALIFIEDNAME )
             {
             // InternalMontiArcAndCore.g:2079:5: (lv_target_2_1= RULE_ID | lv_target_2_2= RULE_MCQUALIFIEDNAME )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==RULE_ID) ) {
-                alt29=1;
+            if ( (LA30_0==RULE_ID) ) {
+                alt30=1;
             }
-            else if ( (LA29_0==RULE_MCQUALIFIEDNAME) ) {
-                alt29=2;
+            else if ( (LA30_0==RULE_MCQUALIFIEDNAME) ) {
+                alt30=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2080:6: lv_target_2_1= RULE_ID
                     {
@@ -5536,13 +5554,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_0, grammarAccess.getPortAccess().getPortKeyword_0());
             		
             // InternalMontiArcAndCore.g:2139:3: ( (lv_condition_1_0= ruleCondition ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==57) ) {
-                alt30=1;
+            if ( (LA31_0==57) ) {
+                alt31=1;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2140:4: (lv_condition_1_0= ruleCondition )
                     {
@@ -5578,22 +5596,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2158:3: ( ( (lv_in_2_0= 'in' ) ) | ( (lv_out_3_0= 'out' ) ) )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA31_0==55) ) {
-                alt31=1;
+            if ( (LA32_0==55) ) {
+                alt32=1;
             }
-            else if ( (LA31_0==56) ) {
-                alt31=2;
+            else if ( (LA32_0==56) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2159:4: ( (lv_in_2_0= 'in' ) )
                     {
@@ -5654,22 +5672,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2189:3: ( ( (lv_type_4_0= ruleType ) ) | ( (otherlv_5= RULE_ID ) ) )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( ((LA32_0>=17 && LA32_0<=35)) ) {
-                alt32=1;
+            if ( ((LA33_0>=17 && LA33_0<=35)) ) {
+                alt33=1;
             }
-            else if ( (LA32_0==RULE_ID) ) {
-                alt32=2;
+            else if ( (LA33_0==RULE_ID) ) {
+                alt33=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2190:4: ( (lv_type_4_0= ruleType ) )
                     {
@@ -5744,22 +5762,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2226:5: (lv_name_6_1= RULE_ID | lv_name_6_2= RULE_MCQUALIFIEDNAME )
             {
             // InternalMontiArcAndCore.g:2226:5: (lv_name_6_1= RULE_ID | lv_name_6_2= RULE_MCQUALIFIEDNAME )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==RULE_ID) ) {
-                alt33=1;
+            if ( (LA34_0==RULE_ID) ) {
+                alt34=1;
             }
-            else if ( (LA33_0==RULE_MCQUALIFIEDNAME) ) {
-                alt33=2;
+            else if ( (LA34_0==RULE_MCQUALIFIEDNAME) ) {
+                alt34=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2227:6: lv_name_6_1= RULE_ID
                     {
@@ -6020,22 +6038,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2337:5: (lv_names_0_1= RULE_ID | lv_names_0_2= RULE_MCQUALIFIEDNAME )
             {
             // InternalMontiArcAndCore.g:2337:5: (lv_names_0_1= RULE_ID | lv_names_0_2= RULE_MCQUALIFIEDNAME )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA34_0==RULE_ID) ) {
-                alt34=1;
+            if ( (LA35_0==RULE_ID) ) {
+                alt35=1;
             }
-            else if ( (LA34_0==RULE_MCQUALIFIEDNAME) ) {
-                alt34=2;
+            else if ( (LA35_0==RULE_MCQUALIFIEDNAME) ) {
+                alt35=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt35) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2338:6: lv_names_0_1= RULE_ID
                     {
@@ -6086,17 +6104,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2370:3: (otherlv_1= ',' ( ( (lv_names_2_1= RULE_ID | lv_names_2_2= RULE_MCQUALIFIEDNAME ) ) ) )*
-            loop36:
+            loop37:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( (LA36_0==41) ) {
-                    alt36=1;
+                if ( (LA37_0==41) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt37) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:2371:4: otherlv_1= ',' ( ( (lv_names_2_1= RULE_ID | lv_names_2_2= RULE_MCQUALIFIEDNAME ) ) )
             	    {
@@ -6111,22 +6129,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    // InternalMontiArcAndCore.g:2377:6: (lv_names_2_1= RULE_ID | lv_names_2_2= RULE_MCQUALIFIEDNAME )
             	    {
             	    // InternalMontiArcAndCore.g:2377:6: (lv_names_2_1= RULE_ID | lv_names_2_2= RULE_MCQUALIFIEDNAME )
-            	    int alt35=2;
-            	    int LA35_0 = input.LA(1);
+            	    int alt36=2;
+            	    int LA36_0 = input.LA(1);
 
-            	    if ( (LA35_0==RULE_ID) ) {
-            	        alt35=1;
+            	    if ( (LA36_0==RULE_ID) ) {
+            	        alt36=1;
             	    }
-            	    else if ( (LA35_0==RULE_MCQUALIFIEDNAME) ) {
-            	        alt35=2;
+            	    else if ( (LA36_0==RULE_MCQUALIFIEDNAME) ) {
+            	        alt36=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 35, 0, input);
+            	            new NoViableAltException("", 36, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt35) {
+            	    switch (alt36) {
             	        case 1 :
             	            // InternalMontiArcAndCore.g:2378:7: lv_names_2_1= RULE_ID
             	            {
@@ -6181,7 +6199,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop37;
                 }
             } while (true);
 
@@ -6291,22 +6309,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2445:5: (lv_name_1_1= RULE_ID | lv_name_1_2= RULE_MCQUALIFIEDNAME )
             {
             // InternalMontiArcAndCore.g:2445:5: (lv_name_1_1= RULE_ID | lv_name_1_2= RULE_MCQUALIFIEDNAME )
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==RULE_ID) ) {
-                alt37=1;
+            if ( (LA38_0==RULE_ID) ) {
+                alt38=1;
             }
-            else if ( (LA37_0==RULE_MCQUALIFIEDNAME) ) {
-                alt37=2;
+            else if ( (LA38_0==RULE_MCQUALIFIEDNAME) ) {
+                alt38=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2446:6: lv_name_1_1= RULE_ID
                     {
@@ -6455,13 +6473,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2508:3: ( (lv_sync_1_0= RULE_SYNC ) )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA38_0==RULE_SYNC) ) {
-                alt38=1;
+            if ( (LA39_0==RULE_SYNC) ) {
+                alt39=1;
             }
-            switch (alt38) {
+            switch (alt39) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2509:4: (lv_sync_1_0= RULE_SYNC )
                     {
@@ -6496,13 +6514,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_2, grammarAccess.getAutomatonAccess().getAutomatonKeyword_2());
             		
             // InternalMontiArcAndCore.g:2530:3: ( (lv_name_3_0= RULE_ID ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==RULE_ID) ) {
-                alt39=1;
+            if ( (LA40_0==RULE_ID) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2531:4: (lv_name_3_0= RULE_ID )
                     {
@@ -6537,20 +6555,20 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_4, grammarAccess.getAutomatonAccess().getLeftCurlyBracketKeyword_4());
             		
             // InternalMontiArcAndCore.g:2552:3: ( ( (lv_states_5_0= ruleState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )*
-            loop40:
+            loop41:
             do {
-                int alt40=3;
-                int LA40_0 = input.LA(1);
+                int alt41=3;
+                int LA41_0 = input.LA(1);
 
-                if ( (LA40_0==44||LA40_0==61||(LA40_0>=68 && LA40_0<=69)) ) {
-                    alt40=1;
+                if ( (LA41_0==44||LA41_0==61||(LA41_0>=68 && LA41_0<=69)) ) {
+                    alt41=1;
                 }
-                else if ( (LA40_0==RULE_ID) ) {
-                    alt40=2;
+                else if ( (LA41_0==RULE_ID) ) {
+                    alt41=2;
                 }
 
 
-                switch (alt40) {
+                switch (alt41) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:2553:4: ( (lv_states_5_0= ruleState ) )
             	    {
@@ -6627,7 +6645,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop41;
                 }
             } while (true);
 
@@ -6711,9 +6729,9 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2615:2: (this_SCState_0= ruleSCState | this_InvState_1= ruleInvState )
             {
             // InternalMontiArcAndCore.g:2615:2: (this_SCState_0= ruleSCState | this_InvState_1= ruleInvState )
-            int alt41=2;
-            alt41 = dfa41.predict(input);
-            switch (alt41) {
+            int alt42=2;
+            alt42 = dfa42.predict(input);
+            switch (alt42) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2616:3: this_SCState_0= ruleSCState
                     {
@@ -6832,17 +6850,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2652:3: ( (lv_modifier_0_0= ruleSCModifier ) )* ( (lv_ante_1_0= ruleSCSAnte ) )? otherlv_2= 'state' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ';'
             {
             // InternalMontiArcAndCore.g:2652:3: ( (lv_modifier_0_0= ruleSCModifier ) )*
-            loop42:
+            loop43:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt43=2;
+                int LA43_0 = input.LA(1);
 
-                if ( ((LA42_0>=68 && LA42_0<=69)) ) {
-                    alt42=1;
+                if ( ((LA43_0>=68 && LA43_0<=69)) ) {
+                    alt43=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt43) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:2653:4: (lv_modifier_0_0= ruleSCModifier )
             	    {
@@ -6876,18 +6894,18 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop43;
                 }
             } while (true);
 
             // InternalMontiArcAndCore.g:2671:3: ( (lv_ante_1_0= ruleSCSAnte ) )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==44) ) {
-                alt43=1;
+            if ( (LA44_0==44) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2672:4: (lv_ante_1_0= ruleSCSAnte )
                     {
@@ -7040,17 +7058,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:2735:3: ( (lv_modifier_0_0= ruleSCModifier ) )* otherlv_1= 'state' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' otherlv_6= ';'
             {
             // InternalMontiArcAndCore.g:2735:3: ( (lv_modifier_0_0= ruleSCModifier ) )*
-            loop44:
+            loop45:
             do {
-                int alt44=2;
-                int LA44_0 = input.LA(1);
+                int alt45=2;
+                int LA45_0 = input.LA(1);
 
-                if ( ((LA44_0>=68 && LA44_0<=69)) ) {
-                    alt44=1;
+                if ( ((LA45_0>=68 && LA45_0<=69)) ) {
+                    alt45=1;
                 }
 
 
-                switch (alt44) {
+                switch (alt45) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:2736:4: (lv_modifier_0_0= ruleSCModifier )
             	    {
@@ -7084,7 +7102,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop45;
                 }
             } while (true);
 
@@ -7386,13 +7404,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2884:3: (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==53) ) {
-                alt45=1;
+            if ( (LA46_0==53) ) {
+                alt46=1;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2885:4: otherlv_1= '->' ( (otherlv_2= RULE_ID ) )
                     {
@@ -7428,13 +7446,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2903:3: (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA46_0==38) ) {
-                alt46=1;
+            if ( (LA47_0==38) ) {
+                alt47=1;
             }
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2904:4: otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']'
                     {
@@ -7484,13 +7502,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             }
 
             // InternalMontiArcAndCore.g:2932:3: (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA47_0==62) ) {
-                alt47=1;
+            if ( (LA48_0==62) ) {
+                alt48=1;
             }
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
                     // InternalMontiArcAndCore.g:2933:4: otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) )
                     {
@@ -7633,17 +7651,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_1, grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1());
             		
             // InternalMontiArcAndCore.g:2991:3: ( (lv_blocks_2_0= ruleBlockStatement ) )*
-            loop48:
+            loop49:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( (LA48_0==RULE_MCQUALIFIEDNAME||(LA48_0>=RULE_ID && LA48_0<=RULE_STRING)) ) {
-                    alt48=1;
+                if ( (LA49_0==RULE_MCQUALIFIEDNAME||(LA49_0>=RULE_ID && LA49_0<=RULE_STRING)) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt49) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:2992:4: (lv_blocks_2_0= ruleBlockStatement )
             	    {
@@ -7677,7 +7695,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop49;
                 }
             } while (true);
 
@@ -7761,35 +7779,35 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:3032:2: (this_SimpleInit_0= ruleSimpleInit | this_SimpleExpression_1= ruleSimpleExpression )
             {
             // InternalMontiArcAndCore.g:3032:2: (this_SimpleInit_0= ruleSimpleInit | this_SimpleExpression_1= ruleSimpleExpression )
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA49_0==RULE_ID) ) {
-                int LA49_1 = input.LA(2);
+            if ( (LA50_0==RULE_ID) ) {
+                int LA50_1 = input.LA(2);
 
-                if ( (LA49_1==52) ) {
-                    alt49=1;
+                if ( (LA50_1==52) ) {
+                    alt50=1;
                 }
-                else if ( (LA49_1==15||(LA49_1>=36 && LA49_1<=37)||(LA49_1>=62 && LA49_1<=67)) ) {
-                    alt49=2;
+                else if ( (LA50_1==15||(LA50_1>=36 && LA50_1<=37)||(LA50_1>=62 && LA50_1<=67)) ) {
+                    alt50=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 49, 1, input);
+                        new NoViableAltException("", 50, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA49_0==RULE_MCQUALIFIEDNAME||(LA49_0>=RULE_INT && LA49_0<=RULE_STRING)) ) {
-                alt49=2;
+            else if ( (LA50_0==RULE_MCQUALIFIEDNAME||(LA50_0>=RULE_INT && LA50_0<=RULE_STRING)) ) {
+                alt50=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
                     // InternalMontiArcAndCore.g:3033:3: this_SimpleInit_0= ruleSimpleInit
                     {
@@ -8126,56 +8144,56 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:3167:2: ( (enumLiteral_0= '>' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '&&' ) | (enumLiteral_4= '+' ) | (enumLiteral_5= '-' ) | (enumLiteral_6= '/' ) | (enumLiteral_7= '*' ) )
             {
             // InternalMontiArcAndCore.g:3167:2: ( (enumLiteral_0= '>' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '&&' ) | (enumLiteral_4= '+' ) | (enumLiteral_5= '-' ) | (enumLiteral_6= '/' ) | (enumLiteral_7= '*' ) )
-            int alt50=8;
+            int alt51=8;
             switch ( input.LA(1) ) {
             case 37:
                 {
-                alt50=1;
+                alt51=1;
                 }
                 break;
             case 36:
                 {
-                alt50=2;
+                alt51=2;
                 }
                 break;
             case 63:
                 {
-                alt50=3;
+                alt51=3;
                 }
                 break;
             case 64:
                 {
-                alt50=4;
+                alt51=4;
                 }
                 break;
             case 65:
                 {
-                alt50=5;
+                alt51=5;
                 }
                 break;
             case 66:
                 {
-                alt50=6;
+                alt51=6;
                 }
                 break;
             case 62:
                 {
-                alt50=7;
+                alt51=7;
                 }
                 break;
             case 67:
                 {
-                alt50=8;
+                alt51=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
                     // InternalMontiArcAndCore.g:3168:3: (enumLiteral_0= '>' )
                     {
@@ -8350,22 +8368,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
             // InternalMontiArcAndCore.g:3242:2: ( (enumLiteral_0= 'initial' ) | (enumLiteral_1= 'final' ) )
             {
             // InternalMontiArcAndCore.g:3242:2: ( (enumLiteral_0= 'initial' ) | (enumLiteral_1= 'final' ) )
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==68) ) {
-                alt51=1;
+            if ( (LA52_0==68) ) {
+                alt52=1;
             }
-            else if ( (LA51_0==69) ) {
-                alt51=2;
+            else if ( (LA52_0==69) ) {
+                alt52=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
                     // InternalMontiArcAndCore.g:3243:3: (enumLiteral_0= 'initial' )
                     {
@@ -8425,7 +8443,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
 
 
     protected DFA3 dfa3 = new DFA3(this);
-    protected DFA41 dfa41 = new DFA41(this);
+    protected DFA42 dfa42 = new DFA42(this);
     static final String dfa_1s = "\15\uffff";
     static final String dfa_2s = "\1\uffff\10\14\4\uffff";
     static final String dfa_3s = "\1\21\10\4\4\uffff";
@@ -8495,11 +8513,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
     static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
     static final short[][] dfa_13 = unpackEncodedStringArray(dfa_13s);
 
-    class DFA41 extends DFA {
+    class DFA42 extends DFA {
 
-        public DFA41(BaseRecognizer recognizer) {
+        public DFA42(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 41;
+            this.decisionNumber = 42;
             this.eot = dfa_8;
             this.eof = dfa_8;
             this.min = dfa_9;
@@ -8537,9 +8555,9 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0003100000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0002100000000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000120000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0004C00FFFFE0000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0004E00FFFFE0000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000200000000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0008000000004000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x1048200000004250L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000020000000002L});

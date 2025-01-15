@@ -4260,11 +4260,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
                 {
                 int LA6_4 = input.LA(2);
 
-                if ( (LA6_4==EOF||LA6_4==44||LA6_4==47||(LA6_4>=49 && LA6_4<=50)) ) {
-                    alt6=2;
-                }
-                else if ( ((LA6_4>=33 && LA6_4<=40)) ) {
+                if ( ((LA6_4>=33 && LA6_4<=40)) ) {
                     alt6=3;
+                }
+                else if ( (LA6_4==EOF||LA6_4==44||LA6_4==47||(LA6_4>=49 && LA6_4<=50)) ) {
+                    alt6=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -4698,11 +4698,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
                 {
                 int LA11_1 = input.LA(2);
 
-                if ( (LA11_1==57) ) {
-                    alt11=2;
-                }
-                else if ( (LA11_1==54) ) {
+                if ( (LA11_1==54) ) {
                     alt11=1;
+                }
+                else if ( (LA11_1==57) ) {
+                    alt11=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -4878,11 +4878,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
                 {
                 int LA13_1 = input.LA(2);
 
-                if ( (LA13_1==RULE_ID) ) {
-                    alt13=1;
-                }
-                else if ( ((LA13_1>=14 && LA13_1<=32)) ) {
+                if ( ((LA13_1>=14 && LA13_1<=32)) ) {
                     alt13=2;
+                }
+                else if ( (LA13_1==RULE_ID) ) {
+                    alt13=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -5844,11 +5844,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             if ( (LA24_0==RULE_ID) ) {
                 int LA24_1 = input.LA(2);
 
-                if ( ((LA24_1>=33 && LA24_1<=40)||LA24_1==44) ) {
-                    alt24=2;
-                }
-                else if ( (LA24_1==59) ) {
+                if ( (LA24_1==59) ) {
                     alt24=1;
+                }
+                else if ( ((LA24_1>=33 && LA24_1<=40)||LA24_1==44) ) {
+                    alt24=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -9620,7 +9620,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:2972:1: ( rule__CDClass__Group__6__Impl rule__CDClass__Group__7 )
             // InternalMontiArcAndCore.g:2973:2: rule__CDClass__Group__6__Impl rule__CDClass__Group__7
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__CDClass__Group__6__Impl();
 
             state._fsp--;
@@ -9649,29 +9649,47 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__Group__6__Impl"
-    // InternalMontiArcAndCore.g:2980:1: rule__CDClass__Group__6__Impl : ( ( rule__CDClass__MembersAssignment_6 ) ) ;
+    // InternalMontiArcAndCore.g:2980:1: rule__CDClass__Group__6__Impl : ( ( rule__CDClass__MembersAssignment_6 )* ) ;
     public final void rule__CDClass__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:2984:1: ( ( ( rule__CDClass__MembersAssignment_6 ) ) )
-            // InternalMontiArcAndCore.g:2985:1: ( ( rule__CDClass__MembersAssignment_6 ) )
+            // InternalMontiArcAndCore.g:2984:1: ( ( ( rule__CDClass__MembersAssignment_6 )* ) )
+            // InternalMontiArcAndCore.g:2985:1: ( ( rule__CDClass__MembersAssignment_6 )* )
             {
-            // InternalMontiArcAndCore.g:2985:1: ( ( rule__CDClass__MembersAssignment_6 ) )
-            // InternalMontiArcAndCore.g:2986:2: ( rule__CDClass__MembersAssignment_6 )
+            // InternalMontiArcAndCore.g:2985:1: ( ( rule__CDClass__MembersAssignment_6 )* )
+            // InternalMontiArcAndCore.g:2986:2: ( rule__CDClass__MembersAssignment_6 )*
             {
              before(grammarAccess.getCDClassAccess().getMembersAssignment_6()); 
-            // InternalMontiArcAndCore.g:2987:2: ( rule__CDClass__MembersAssignment_6 )
-            // InternalMontiArcAndCore.g:2987:3: rule__CDClass__MembersAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__CDClass__MembersAssignment_6();
+            // InternalMontiArcAndCore.g:2987:2: ( rule__CDClass__MembersAssignment_6 )*
+            loop34:
+            do {
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-            state._fsp--;
+                if ( ((LA34_0>=14 && LA34_0<=32)||LA34_0==54||LA34_0==57||LA34_0==67) ) {
+                    alt34=1;
+                }
 
 
-            }
+                switch (alt34) {
+            	case 1 :
+            	    // InternalMontiArcAndCore.g:2987:3: rule__CDClass__MembersAssignment_6
+            	    {
+            	    pushFollow(FOLLOW_26);
+            	    rule__CDClass__MembersAssignment_6();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop34;
+                }
+            } while (true);
 
              after(grammarAccess.getCDClassAccess().getMembersAssignment_6()); 
 
@@ -10128,17 +10146,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getCDClassAccess().getGroup_4_2()); 
             // InternalMontiArcAndCore.g:3148:2: ( rule__CDClass__Group_4_2__0 )*
-            loop34:
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA34_0==50) ) {
-                    alt34=1;
+                if ( (LA35_0==50) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:3148:3: rule__CDClass__Group_4_2__0
             	    {
@@ -10152,7 +10170,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop35;
                 }
             } while (true);
 
@@ -10386,13 +10404,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getCDEnumAccess().getPublicAssignment_0()); 
             // InternalMontiArcAndCore.g:3230:2: ( rule__CDEnum__PublicAssignment_0 )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA35_0==67) ) {
-                alt35=1;
+            if ( (LA36_0==67) ) {
+                alt36=1;
             }
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
                     // InternalMontiArcAndCore.g:3230:3: rule__CDEnum__PublicAssignment_0
                     {
@@ -10674,7 +10692,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3323:1: ( rule__CDEnum__Group__4__Impl rule__CDEnum__Group__5 )
             // InternalMontiArcAndCore.g:3324:2: rule__CDEnum__Group__4__Impl rule__CDEnum__Group__5
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_29);
             rule__CDEnum__Group__4__Impl();
 
             state._fsp--;
@@ -11069,7 +11087,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3458:1: ( rule__MACompilationUnit__Group__0__Impl rule__MACompilationUnit__Group__1 )
             // InternalMontiArcAndCore.g:3459:2: rule__MACompilationUnit__Group__0__Impl rule__MACompilationUnit__Group__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rule__MACompilationUnit__Group__0__Impl();
 
             state._fsp--;
@@ -11154,7 +11172,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3485:1: ( rule__MACompilationUnit__Group__1__Impl rule__MACompilationUnit__Group__2 )
             // InternalMontiArcAndCore.g:3486:2: rule__MACompilationUnit__Group__1__Impl rule__MACompilationUnit__Group__2
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rule__MACompilationUnit__Group__1__Impl();
 
             state._fsp--;
@@ -11197,17 +11215,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getMACompilationUnitAccess().getImportStatementsAssignment_1()); 
             // InternalMontiArcAndCore.g:3500:2: ( rule__MACompilationUnit__ImportStatementsAssignment_1 )*
-            loop36:
+            loop37:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( (LA36_0==43) ) {
-                    alt36=1;
+                if ( (LA37_0==43) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt37) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:3500:3: rule__MACompilationUnit__ImportStatementsAssignment_1
             	    {
@@ -11221,7 +11239,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop37;
                 }
             } while (true);
 
@@ -11497,7 +11515,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3593:1: ( rule__Component__Group__2__Impl rule__Component__Group__3 )
             // InternalMontiArcAndCore.g:3594:2: rule__Component__Group__2__Impl rule__Component__Group__3
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_31);
             rule__Component__Group__2__Impl();
 
             state._fsp--;
@@ -11572,7 +11590,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3620:1: ( rule__Component__Group__3__Impl rule__Component__Group__4 )
             // InternalMontiArcAndCore.g:3621:2: rule__Component__Group__3__Impl rule__Component__Group__4
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_31);
             rule__Component__Group__3__Impl();
 
             state._fsp--;
@@ -11615,21 +11633,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getComponentAccess().getArcElementsAssignment_3()); 
             // InternalMontiArcAndCore.g:3635:2: ( rule__Component__ArcElementsAssignment_3 )*
-            loop37:
+            loop38:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt38=2;
+                int LA38_0 = input.LA(1);
 
-                if ( ((LA37_0>=RULE_MCQUALIFIEDNAME && LA37_0<=RULE_ID)||LA37_0==RULE_SYNC||LA37_0==58||LA37_0==61||LA37_0==65) ) {
-                    alt37=1;
+                if ( ((LA38_0>=RULE_MCQUALIFIEDNAME && LA38_0<=RULE_ID)||LA38_0==RULE_SYNC||LA38_0==58||LA38_0==61||LA38_0==65) ) {
+                    alt38=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt38) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:3635:3: rule__Component__ArcElementsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_31);
+            	    pushFollow(FOLLOW_32);
             	    rule__Component__ArcElementsAssignment_3();
 
             	    state._fsp--;
@@ -11639,7 +11657,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop38;
                 }
             } while (true);
 
@@ -11868,17 +11886,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getParametersAccess().getGroup_1()); 
             // InternalMontiArcAndCore.g:3715:2: ( rule__Parameters__Group_1__0 )*
-            loop38:
+            loop39:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA38_0==50) ) {
-                    alt38=1;
+                if ( (LA39_0==50) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt39) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:3715:3: rule__Parameters__Group_1__0
             	    {
@@ -11892,7 +11910,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop39;
                 }
             } while (true);
 
@@ -12168,7 +12186,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3809:1: ( rule__Parameter__Group__1__Impl rule__Parameter__Group__2 )
             // InternalMontiArcAndCore.g:3810:2: rule__Parameter__Group__1__Impl rule__Parameter__Group__2
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_33);
             rule__Parameter__Group__1__Impl();
 
             state._fsp--;
@@ -12291,13 +12309,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getParameterAccess().getGroup_2()); 
             // InternalMontiArcAndCore.g:3850:2: ( rule__Parameter__Group_2__0 )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==59) ) {
-                alt39=1;
+            if ( (LA40_0==59) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
                     // InternalMontiArcAndCore.g:3850:3: rule__Parameter__Group_2__0
                     {
@@ -12574,7 +12592,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3944:1: ( rule__SubComponent__Group__1__Impl rule__SubComponent__Group__2 )
             // InternalMontiArcAndCore.g:3945:2: rule__SubComponent__Group__1__Impl rule__SubComponent__Group__2
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__SubComponent__Group__1__Impl();
 
             state._fsp--;
@@ -12659,7 +12677,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:3971:1: ( rule__SubComponent__Group__2__Impl rule__SubComponent__Group__3 )
             // InternalMontiArcAndCore.g:3972:2: rule__SubComponent__Group__2__Impl rule__SubComponent__Group__3
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__SubComponent__Group__2__Impl();
 
             state._fsp--;
@@ -12702,13 +12720,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getSubComponentAccess().getArgumentsAssignment_2()); 
             // InternalMontiArcAndCore.g:3986:2: ( rule__SubComponent__ArgumentsAssignment_2 )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==48) ) {
-                alt40=1;
+            if ( (LA41_0==48) ) {
+                alt41=1;
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
                     // InternalMontiArcAndCore.g:3986:3: rule__SubComponent__ArgumentsAssignment_2
                     {
@@ -12910,7 +12928,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4052:1: ( rule__Connector__Group__0__Impl rule__Connector__Group__1 )
             // InternalMontiArcAndCore.g:4053:2: rule__Connector__Group__0__Impl rule__Connector__Group__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__Connector__Group__0__Impl();
 
             state._fsp--;
@@ -13225,7 +13243,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4160:1: ( rule__Port__Group__0__Impl rule__Port__Group__1 )
             // InternalMontiArcAndCore.g:4161:2: rule__Port__Group__0__Impl rule__Port__Group__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_36);
             rule__Port__Group__0__Impl();
 
             state._fsp--;
@@ -13300,7 +13318,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4187:1: ( rule__Port__Group__1__Impl rule__Port__Group__2 )
             // InternalMontiArcAndCore.g:4188:2: rule__Port__Group__1__Impl rule__Port__Group__2
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_36);
             rule__Port__Group__1__Impl();
 
             state._fsp--;
@@ -13343,13 +13361,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getPortAccess().getConditionAssignment_1()); 
             // InternalMontiArcAndCore.g:4202:2: ( rule__Port__ConditionAssignment_1 )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA41_0==62) ) {
-                alt41=1;
+            if ( (LA42_0==62) ) {
+                alt42=1;
             }
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
                     // InternalMontiArcAndCore.g:4202:3: rule__Port__ConditionAssignment_1
                     {
@@ -13396,7 +13414,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4214:1: ( rule__Port__Group__2__Impl rule__Port__Group__3 )
             // InternalMontiArcAndCore.g:4215:2: rule__Port__Group__2__Impl rule__Port__Group__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_37);
             rule__Port__Group__2__Impl();
 
             state._fsp--;
@@ -13721,7 +13739,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4322:1: ( rule__Condition__Group__0__Impl rule__Condition__Group__1 )
             // InternalMontiArcAndCore.g:4323:2: rule__Condition__Group__0__Impl rule__Condition__Group__1
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             rule__Condition__Group__0__Impl();
 
             state._fsp--;
@@ -13796,7 +13814,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4349:1: ( rule__Condition__Group__1__Impl rule__Condition__Group__2 )
             // InternalMontiArcAndCore.g:4350:2: rule__Condition__Group__1__Impl rule__Condition__Group__2
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_33);
             rule__Condition__Group__1__Impl();
 
             state._fsp--;
@@ -13871,7 +13889,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4376:1: ( rule__Condition__Group__2__Impl rule__Condition__Group__3 )
             // InternalMontiArcAndCore.g:4377:2: rule__Condition__Group__2__Impl rule__Condition__Group__3
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_39);
             rule__Condition__Group__2__Impl();
 
             state._fsp--;
@@ -13946,7 +13964,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4403:1: ( rule__Condition__Group__3__Impl rule__Condition__Group__4 )
             // InternalMontiArcAndCore.g:4404:2: rule__Condition__Group__3__Impl rule__Condition__Group__4
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_40);
             rule__Condition__Group__3__Impl();
 
             state._fsp--;
@@ -14224,17 +14242,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getNamesAccess().getGroup_1()); 
             // InternalMontiArcAndCore.g:4498:2: ( rule__Names__Group_1__0 )*
-            loop42:
+            loop43:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt43=2;
+                int LA43_0 = input.LA(1);
 
-                if ( (LA42_0==50) ) {
-                    alt42=1;
+                if ( (LA43_0==50) ) {
+                    alt43=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt43) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:4498:3: rule__Names__Group_1__0
             	    {
@@ -14248,7 +14266,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop43;
                 }
             } while (true);
 
@@ -14679,7 +14697,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4646:1: ( rule__Automaton__Group__0__Impl rule__Automaton__Group__1 )
             // InternalMontiArcAndCore.g:4647:2: rule__Automaton__Group__0__Impl rule__Automaton__Group__1
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_41);
             rule__Automaton__Group__0__Impl();
 
             state._fsp--;
@@ -14754,7 +14772,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4673:1: ( rule__Automaton__Group__1__Impl rule__Automaton__Group__2 )
             // InternalMontiArcAndCore.g:4674:2: rule__Automaton__Group__1__Impl rule__Automaton__Group__2
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_41);
             rule__Automaton__Group__1__Impl();
 
             state._fsp--;
@@ -14797,13 +14815,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getAutomatonAccess().getSyncAssignment_1()); 
             // InternalMontiArcAndCore.g:4688:2: ( rule__Automaton__SyncAssignment_1 )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==RULE_SYNC) ) {
-                alt43=1;
+            if ( (LA44_0==RULE_SYNC) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
                     // InternalMontiArcAndCore.g:4688:3: rule__Automaton__SyncAssignment_1
                     {
@@ -14850,7 +14868,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4700:1: ( rule__Automaton__Group__2__Impl rule__Automaton__Group__3 )
             // InternalMontiArcAndCore.g:4701:2: rule__Automaton__Group__2__Impl rule__Automaton__Group__3
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_42);
             rule__Automaton__Group__2__Impl();
 
             state._fsp--;
@@ -14925,7 +14943,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4727:1: ( rule__Automaton__Group__3__Impl rule__Automaton__Group__4 )
             // InternalMontiArcAndCore.g:4728:2: rule__Automaton__Group__3__Impl rule__Automaton__Group__4
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_42);
             rule__Automaton__Group__3__Impl();
 
             state._fsp--;
@@ -14968,13 +14986,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getAutomatonAccess().getNameAssignment_3()); 
             // InternalMontiArcAndCore.g:4742:2: ( rule__Automaton__NameAssignment_3 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==RULE_ID) ) {
-                alt44=1;
+            if ( (LA45_0==RULE_ID) ) {
+                alt45=1;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
                     // InternalMontiArcAndCore.g:4742:3: rule__Automaton__NameAssignment_3
                     {
@@ -15021,7 +15039,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4754:1: ( rule__Automaton__Group__4__Impl rule__Automaton__Group__5 )
             // InternalMontiArcAndCore.g:4755:2: rule__Automaton__Group__4__Impl rule__Automaton__Group__5
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             rule__Automaton__Group__4__Impl();
 
             state._fsp--;
@@ -15096,7 +15114,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4781:1: ( rule__Automaton__Group__5__Impl rule__Automaton__Group__6 )
             // InternalMontiArcAndCore.g:4782:2: rule__Automaton__Group__5__Impl rule__Automaton__Group__6
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             rule__Automaton__Group__5__Impl();
 
             state._fsp--;
@@ -15139,21 +15157,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getAutomatonAccess().getAlternatives_5()); 
             // InternalMontiArcAndCore.g:4796:2: ( rule__Automaton__Alternatives_5 )*
-            loop45:
+            loop46:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA45_0==RULE_ID||(LA45_0>=41 && LA45_0<=42)||LA45_0==52||LA45_0==66) ) {
-                    alt45=1;
+                if ( (LA46_0==RULE_ID||(LA46_0>=41 && LA46_0<=42)||LA46_0==52||LA46_0==66) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt46) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:4796:3: rule__Automaton__Alternatives_5
             	    {
-            	    pushFollow(FOLLOW_43);
+            	    pushFollow(FOLLOW_44);
             	    rule__Automaton__Alternatives_5();
 
             	    state._fsp--;
@@ -15163,7 +15181,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop46;
                 }
             } while (true);
 
@@ -15269,7 +15287,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4835:1: ( rule__SCState__Group__0__Impl rule__SCState__Group__1 )
             // InternalMontiArcAndCore.g:4836:2: rule__SCState__Group__0__Impl rule__SCState__Group__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_45);
             rule__SCState__Group__0__Impl();
 
             state._fsp--;
@@ -15312,21 +15330,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getSCStateAccess().getModifierAssignment_0()); 
             // InternalMontiArcAndCore.g:4850:2: ( rule__SCState__ModifierAssignment_0 )*
-            loop46:
+            loop47:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( ((LA46_0>=41 && LA46_0<=42)) ) {
-                    alt46=1;
+                if ( ((LA47_0>=41 && LA47_0<=42)) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt47) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:4850:3: rule__SCState__ModifierAssignment_0
             	    {
-            	    pushFollow(FOLLOW_45);
+            	    pushFollow(FOLLOW_46);
             	    rule__SCState__ModifierAssignment_0();
 
             	    state._fsp--;
@@ -15336,7 +15354,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop47;
                 }
             } while (true);
 
@@ -15372,7 +15390,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4862:1: ( rule__SCState__Group__1__Impl rule__SCState__Group__2 )
             // InternalMontiArcAndCore.g:4863:2: rule__SCState__Group__1__Impl rule__SCState__Group__2
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_45);
             rule__SCState__Group__1__Impl();
 
             state._fsp--;
@@ -15415,13 +15433,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getSCStateAccess().getAnteAssignment_1()); 
             // InternalMontiArcAndCore.g:4877:2: ( rule__SCState__AnteAssignment_1 )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA47_0==52) ) {
-                alt47=1;
+            if ( (LA48_0==52) ) {
+                alt48=1;
             }
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
                     // InternalMontiArcAndCore.g:4877:3: rule__SCState__AnteAssignment_1
                     {
@@ -15698,7 +15716,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4970:1: ( rule__InvState__Group__0__Impl rule__InvState__Group__1 )
             // InternalMontiArcAndCore.g:4971:2: rule__InvState__Group__0__Impl rule__InvState__Group__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_45);
             rule__InvState__Group__0__Impl();
 
             state._fsp--;
@@ -15741,21 +15759,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getInvStateAccess().getModifierAssignment_0()); 
             // InternalMontiArcAndCore.g:4985:2: ( rule__InvState__ModifierAssignment_0 )*
-            loop48:
+            loop49:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( ((LA48_0>=41 && LA48_0<=42)) ) {
-                    alt48=1;
+                if ( ((LA49_0>=41 && LA49_0<=42)) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt49) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:4985:3: rule__InvState__ModifierAssignment_0
             	    {
-            	    pushFollow(FOLLOW_45);
+            	    pushFollow(FOLLOW_46);
             	    rule__InvState__ModifierAssignment_0();
 
             	    state._fsp--;
@@ -15765,7 +15783,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop49;
                 }
             } while (true);
 
@@ -16421,7 +16439,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5213:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
             // InternalMontiArcAndCore.g:5214:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_47);
             rule__Transition__Group__0__Impl();
 
             state._fsp--;
@@ -16506,7 +16524,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5240:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
             // InternalMontiArcAndCore.g:5241:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_47);
             rule__Transition__Group__1__Impl();
 
             state._fsp--;
@@ -16549,13 +16567,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getTransitionAccess().getGroup_1()); 
             // InternalMontiArcAndCore.g:5255:2: ( rule__Transition__Group_1__0 )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA49_0==60) ) {
-                alt49=1;
+            if ( (LA50_0==60) ) {
+                alt50=1;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
                     // InternalMontiArcAndCore.g:5255:3: rule__Transition__Group_1__0
                     {
@@ -16602,7 +16620,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5267:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
             // InternalMontiArcAndCore.g:5268:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_47);
             rule__Transition__Group__2__Impl();
 
             state._fsp--;
@@ -16645,13 +16663,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getTransitionAccess().getGroup_2()); 
             // InternalMontiArcAndCore.g:5282:2: ( rule__Transition__Group_2__0 )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==46) ) {
-                alt50=1;
+            if ( (LA51_0==46) ) {
+                alt51=1;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
                     // InternalMontiArcAndCore.g:5282:3: rule__Transition__Group_2__0
                     {
@@ -16698,7 +16716,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5294:1: ( rule__Transition__Group__3__Impl rule__Transition__Group__4 )
             // InternalMontiArcAndCore.g:5295:2: rule__Transition__Group__3__Impl rule__Transition__Group__4
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_47);
             rule__Transition__Group__3__Impl();
 
             state._fsp--;
@@ -16741,13 +16759,13 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getTransitionAccess().getGroup_3()); 
             // InternalMontiArcAndCore.g:5309:2: ( rule__Transition__Group_3__0 )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==39) ) {
-                alt51=1;
+            if ( (LA52_0==39) ) {
+                alt52=1;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
                     // InternalMontiArcAndCore.g:5309:3: rule__Transition__Group_3__0
                     {
@@ -17479,7 +17497,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5564:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
             // InternalMontiArcAndCore.g:5565:2: rule__Block__Group__1__Impl rule__Block__Group__2
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_48);
             rule__Block__Group__1__Impl();
 
             state._fsp--;
@@ -17554,7 +17572,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5591:1: ( rule__Block__Group__2__Impl rule__Block__Group__3 )
             // InternalMontiArcAndCore.g:5592:2: rule__Block__Group__2__Impl rule__Block__Group__3
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_48);
             rule__Block__Group__2__Impl();
 
             state._fsp--;
@@ -17597,21 +17615,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getBlockAccess().getBlocksAssignment_2()); 
             // InternalMontiArcAndCore.g:5606:2: ( rule__Block__BlocksAssignment_2 )*
-            loop52:
+            loop53:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( ((LA52_0>=RULE_MCQUALIFIEDNAME && LA52_0<=RULE_ID)||(LA52_0>=RULE_INT && LA52_0<=RULE_STRING)) ) {
-                    alt52=1;
+                if ( ((LA53_0>=RULE_MCQUALIFIEDNAME && LA53_0<=RULE_ID)||(LA53_0>=RULE_INT && LA53_0<=RULE_STRING)) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt53) {
             	case 1 :
             	    // InternalMontiArcAndCore.g:5606:3: rule__Block__BlocksAssignment_2
             	    {
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_49);
             	    rule__Block__BlocksAssignment_2();
 
             	    state._fsp--;
@@ -17621,7 +17639,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop53;
                 }
             } while (true);
 
@@ -17882,7 +17900,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:5699:1: ( rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1 )
             // InternalMontiArcAndCore.g:5700:2: rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_33);
             rule__SimpleInit__Group__0__Impl();
 
             state._fsp--;
@@ -21531,21 +21549,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
     protected DFA2 dfa2 = new DFA2(this);
     protected DFA23 dfa23 = new DFA23(this);
     static final String dfa_1s = "\15\uffff";
-    static final String dfa_2s = "\1\uffff\10\14\4\uffff";
+    static final String dfa_2s = "\1\uffff\10\13\4\uffff";
     static final String dfa_3s = "\1\16\10\4\4\uffff";
     static final String dfa_4s = "\1\40\10\60\4\uffff";
-    static final String dfa_5s = "\11\uffff\1\3\1\4\1\2\1\1";
+    static final String dfa_5s = "\11\uffff\1\3\1\4\1\1\1\2";
     static final String dfa_6s = "\15\uffff}>";
     static final String[] dfa_7s = {
             "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\7\11\4\12",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
-            "\2\14\33\uffff\1\14\14\uffff\1\13\1\uffff\1\14",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
+            "\2\13\33\uffff\1\13\14\uffff\1\14\1\uffff\1\13",
             "",
             "",
             "",
@@ -21642,29 +21660,30 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0240000000000002L,0x0000000000000008L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0040000000000000L,0x0000000000000008L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0190000000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x02400001FFFFC000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x02600001FFFFC000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x02400001FFFFC002L,0x0000000000000008L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0004000000000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0240000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0400080000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x2420080000000230L,0x0000000000000002L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x2400080000000232L,0x0000000000000002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0001000000000030L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000030L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00000001FFFFC020L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x2400080000000230L,0x0000000000000002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0010000000000020L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0030060000000020L,0x0000000000000004L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0010060000000022L,0x0000000000000004L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0010060000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000060000000002L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x1000508000000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x00200000000001B0L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x00000000000001B2L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0400080000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x2420080000000230L,0x0000000000000002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x2400080000000232L,0x0000000000000002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0001000000000030L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000030L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x00000001FFFFC020L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x2400080000000230L,0x0000000000000002L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0010000000000020L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0030060000000020L,0x0000000000000004L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0010060000000022L,0x0000000000000004L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0010060000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000060000000002L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x1000508000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x00200000000001B0L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x00000000000001B2L});
 
 }

@@ -2984,7 +2984,7 @@ rule__CDClass__Group__6__Impl
 :
 (
 	{ before(grammarAccess.getCDClassAccess().getMembersAssignment_6()); }
-	(rule__CDClass__MembersAssignment_6)
+	(rule__CDClass__MembersAssignment_6)*
 	{ after(grammarAccess.getCDClassAccess().getMembersAssignment_6()); }
 )
 ;

@@ -278,7 +278,7 @@ public class MontiArcAndCoreSemanticSequencer extends AbstractDelegatingSemantic
 	 *     CDClass returns CDClass
 	 *
 	 * Constraint:
-	 *     (public?='public'? name=ID extends=ID? (implements+=ID implements+=ID*)? members+=Member)
+	 *     (public?='public'? name=ID extends=ID? (implements+=ID implements+=ID*)? members+=Member*)
 	 * </pre>
 	 */
 	protected void sequence_CDClass(ISerializationContext context, CDClass semanticObject) {

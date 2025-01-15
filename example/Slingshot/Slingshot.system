@@ -17,7 +17,7 @@
     <providedRole_AssemblyConnector href="Slingshot.repository#__gT50BWpEe-DGZvw9jQajw"/>
     <requiredRole_AssemblyConnector href="Slingshot.repository#_gZyPQClIEe-fT_GEyVXRKA"/>
   </connectors__ComposedStructure>
-  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1YAgMClJEe-lBN28kF6cQQ" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_LavEcBWqEe-DGZvw9jQajw" assemblyContext_ProvidedDelegationConnector="_yaC6QClJEe-lBN28kF6cQQ">
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1YAgMClJEe-lBN28kF6cQP" entityName="SystemToUsageSimulationDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_LavEcBWqEe-DGZvw9jQajw" assemblyContext_ProvidedDelegationConnector="_yaC6QClJEe-lBN28kF6cQQ">
     <innerProvidedRole_ProvidedDelegationConnector href="Slingshot.repository#_hGyfMClIEe-fT_GEyVXRKA"/>
   </connectors__ComposedStructure>
   <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_LavEcBWqEe-DGZvw9jQajw" entityName="">

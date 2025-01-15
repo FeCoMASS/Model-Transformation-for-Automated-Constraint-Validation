@@ -1408,7 +1408,7 @@ ruleCDClass returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)*
 		otherlv_11='}'
 		{
 			newLeafNode(otherlv_11, grammarAccess.getCDClassAccess().getRightCurlyBracketKeyword_7());

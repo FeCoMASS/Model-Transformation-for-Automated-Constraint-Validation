@@ -105,7 +105,7 @@ CDDefinition:
 // Class Diagram Body Elements
 CDClass:
 	(public?='public')? 'class' name=ID ('extends' extends=ID)? ('implements' implements+=ID (','implements+=ID)*)?'{'
-		members+=Member
+		members+=Member*
 	'}'
 ;
 

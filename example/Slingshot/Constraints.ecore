@@ -4,8 +4,18 @@
   <eAnnotations references="Slingshot.repository#_Gan2ABWpEe-DGZvw9jQajw">
     <details key="return" value="responseTime"/>
   </eAnnotations>
-  <eAnnotations references="Slingshot.system#_1YAgMClJEe-lBN28kF6cQQ">
+  <eAnnotations references="Slingshot.system#_1YAgMClJEe-lBN28kF6cQP">
     <details key="Source:In" value="x.numberOfUsers > 0 &amp;&amp; x.numberOfUsers &lt; 2147483647"/>
     <details key="Target:In" value="x.numberOfUsers > 0"/>
+    <details key="Source:Out" value="x.responseTime > 1"/>
+    <details key="Target:Out" value="x.responseTime > 1"/>
+  </eAnnotations>
+  <eAnnotations references="Slingshot.system#_0s6UwClJEe-lBN28kF6cQQ">
+    <details key="Source:Out" value="x.method = asdf"/>
+    <details key="Target:In" value="x.method = asdf"/>
+  </eAnnotations>
+  <eAnnotations references="Slingshot.system#_Ph2DwBWqEe-DGZvw9jQajw">
+    <details key="Source:Out" value="x.resourceDemand > 1"/>
+    <details key="Target:In" value="x.resourceDemand > 1"/>
   </eAnnotations>
 </ecore:EPackage>

@@ -700,13 +700,13 @@ public class MontiArcAndCoreGrammarAccess extends AbstractElementFinder.Abstract
 		//// Class Diagram Body Elements
 		//CDClass:
 		//    (public?='public')? 'class' name=ID ('extends' extends=ID)? ('implements' implements+=ID (','implements+=ID)*)?'{'
-		//        members+=Member
+		//        members+=Member*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//(public?='public')? 'class' name=ID ('extends' extends=ID)? ('implements' implements+=ID (','implements+=ID)*)?'{'
-		//    members+=Member
+		//    members+=Member*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -764,7 +764,7 @@ public class MontiArcAndCoreGrammarAccess extends AbstractElementFinder.Abstract
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 		
-		//members+=Member
+		//members+=Member*
 		public Assignment getMembersAssignment_6() { return cMembersAssignment_6; }
 		
 		//Member
@@ -2378,7 +2378,7 @@ public class MontiArcAndCoreGrammarAccess extends AbstractElementFinder.Abstract
 	//// Class Diagram Body Elements
 	//CDClass:
 	//    (public?='public')? 'class' name=ID ('extends' extends=ID)? ('implements' implements+=ID (','implements+=ID)*)?'{'
-	//        members+=Member
+	//        members+=Member*
 	//    '}'
 	//;
 	public CDClassElements getCDClassAccess() {
