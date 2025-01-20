@@ -1493,9 +1493,20 @@ public class MontiArcAndCorePackageImpl extends EPackageImpl implements MontiArc
    * @generated
    */
   @Override
-  public EAttribute getCondition_Condition()
+  public EAttribute getCondition_Delayed()
   {
     return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCondition_Condition()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2029,6 +2040,7 @@ public class MontiArcAndCorePackageImpl extends EPackageImpl implements MontiArc
     createEAttribute(portEClass, PORT__NAME);
 
     conditionEClass = createEClass(CONDITION);
+    createEAttribute(conditionEClass, CONDITION__DELAYED);
     createEAttribute(conditionEClass, CONDITION__CONDITION);
 
     namesEClass = createEClass(NAMES);
@@ -2259,6 +2271,7 @@ public class MontiArcAndCorePackageImpl extends EPackageImpl implements MontiArc
     initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCondition_Delayed(), ecorePackage.getEBoolean(), "delayed", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCondition_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namesEClass, Names.class, "Names", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

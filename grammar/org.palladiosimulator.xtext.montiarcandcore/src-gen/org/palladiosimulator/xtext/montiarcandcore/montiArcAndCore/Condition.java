@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.Condition#isDelayed <em>Delayed</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.Condition#getCondition <em>Condition</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Condition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Delayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delayed</em>' attribute.
+   * @see #setDelayed(boolean)
+   * @see org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.MontiArcAndCorePackage#getCondition_Delayed()
+   * @model
+   * @generated
+   */
+  boolean isDelayed();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.Condition#isDelayed <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Delayed</em>' attribute.
+   * @see #isDelayed()
+   * @generated
+   */
+  void setDelayed(boolean value);
+
   /**
    * Returns the value of the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->

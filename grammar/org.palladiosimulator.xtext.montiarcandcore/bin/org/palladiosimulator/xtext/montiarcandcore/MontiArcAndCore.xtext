@@ -161,7 +161,7 @@ Port:
 ;
 
 Condition:
-	'<<''condition' '=' condition=STRING '>>'
+	'<<'(delayed?='delayed,')?'condition' '=' condition=STRING '>>'
 ;
 
 Names:

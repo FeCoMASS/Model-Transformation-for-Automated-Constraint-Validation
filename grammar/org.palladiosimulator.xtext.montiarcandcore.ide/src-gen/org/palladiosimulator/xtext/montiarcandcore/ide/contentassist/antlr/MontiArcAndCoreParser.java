@@ -165,7 +165,8 @@ public class MontiArcAndCoreParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPortAccess().getTypeAssignment_3_0(), "rule__Port__TypeAssignment_3_0");
 			builder.put(grammarAccess.getPortAccess().getDataTypeAssignment_3_1(), "rule__Port__DataTypeAssignment_3_1");
 			builder.put(grammarAccess.getPortAccess().getNameAssignment_4(), "rule__Port__NameAssignment_4");
-			builder.put(grammarAccess.getConditionAccess().getConditionAssignment_3(), "rule__Condition__ConditionAssignment_3");
+			builder.put(grammarAccess.getConditionAccess().getDelayedAssignment_1(), "rule__Condition__DelayedAssignment_1");
+			builder.put(grammarAccess.getConditionAccess().getConditionAssignment_4(), "rule__Condition__ConditionAssignment_4");
 			builder.put(grammarAccess.getNamesAccess().getNamesAssignment_0(), "rule__Names__NamesAssignment_0");
 			builder.put(grammarAccess.getNamesAccess().getNamesAssignment_1_1(), "rule__Names__NamesAssignment_1_1");
 			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_0(), "rule__Variable__TypeAssignment_0");

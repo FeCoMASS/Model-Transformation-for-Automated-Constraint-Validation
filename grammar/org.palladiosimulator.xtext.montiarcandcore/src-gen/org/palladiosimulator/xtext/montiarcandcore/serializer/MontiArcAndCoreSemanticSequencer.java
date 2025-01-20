@@ -370,17 +370,11 @@ public class MontiArcAndCoreSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Condition returns Condition
 	 *
 	 * Constraint:
-	 *     condition=STRING
+	 *     (delayed?='delayed, '? condition=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MontiArcAndCorePackage.Literals.CONDITION__CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcAndCorePackage.Literals.CONDITION__CONDITION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_3_0(), semanticObject.getCondition());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -7,15 +7,19 @@
   <eAnnotations references="Slingshot.system#_1YAgMClJEe-lBN28kF6cQP">
     <details key="Source:In" value="x.numberOfUsers > 0 &amp;&amp; x.numberOfUsers &lt; 2147483647"/>
     <details key="Target:In" value="x.numberOfUsers > 0"/>
-    <details key="Source:Out" value="x.responseTime > 1"/>
-    <details key="Target:Out" value="x.responseTime > 1"/>
+    <details key="Source:Out" value="x.responseTime > 1.0"/>
+    <details key="Target:Out" value="x.responseTime > 1.0"/>
   </eAnnotations>
   <eAnnotations references="Slingshot.system#_0s6UwClJEe-lBN28kF6cQQ">
-    <details key="Source:Out" value="x.method = asdf"/>
-    <details key="Target:In" value="x.method = asdf"/>
+    <details key="Source:Out" value="x.method == &quot;asdf&quot;"/>
+    <details key="Target:In" value="x.method == &quot;asdf&quot;"/>
+    <details key="Source:Out:Delayed"/>
   </eAnnotations>
   <eAnnotations references="Slingshot.system#_Ph2DwBWqEe-DGZvw9jQajw">
-    <details key="Source:Out" value="x.resourceDemand > 1"/>
-    <details key="Target:In" value="x.resourceDemand > 1"/>
+    <details key="Source:Out" value="x.resourceDemand > 1.0"/>
+    <details key="Target:In" value="x.resourceDemand > 1.0"/>
+    <details key="Target:Out" value="x.utilization > 1.0"/>
+    <details key="Source:In" value="x.utilization > 1.0"/>
+    <details key="Target:Out:Delayed"/>
   </eAnnotations>
 </ecore:EPackage>

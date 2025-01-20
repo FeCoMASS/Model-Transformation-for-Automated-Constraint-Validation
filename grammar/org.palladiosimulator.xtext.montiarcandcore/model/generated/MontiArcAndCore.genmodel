@@ -141,6 +141,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MontiArcAndCore.ecore#//Port/name"/>
     </genClasses>
     <genClasses ecoreClass="MontiArcAndCore.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MontiArcAndCore.ecore#//Condition/delayed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MontiArcAndCore.ecore#//Condition/condition"/>
     </genClasses>
     <genClasses ecoreClass="MontiArcAndCore.ecore#//Names">

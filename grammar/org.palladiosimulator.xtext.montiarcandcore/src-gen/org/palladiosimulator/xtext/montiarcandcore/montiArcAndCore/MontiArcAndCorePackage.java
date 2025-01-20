@@ -1264,13 +1264,22 @@ public interface MontiArcAndCorePackage extends EPackage
   int CONDITION = 34;
 
   /**
+   * The feature id for the '<em><b>Delayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION__DELAYED = 0;
+
+  /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION__CONDITION = 0;
+  int CONDITION__CONDITION = 1;
 
   /**
    * The number of structural features of the '<em>Condition</em>' class.
@@ -1279,7 +1288,7 @@ public interface MontiArcAndCorePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = 1;
+  int CONDITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.impl.NamesImpl <em>Names</em>}' class.
@@ -2724,6 +2733,17 @@ public interface MontiArcAndCorePackage extends EPackage
   EClass getCondition();
 
   /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.Condition#isDelayed <em>Delayed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Delayed</em>'.
+   * @see org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.Condition#isDelayed()
+   * @see #getCondition()
+   * @generated
+   */
+  EAttribute getCondition_Delayed();
+
+  /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.Condition#getCondition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3922,6 +3942,14 @@ public interface MontiArcAndCorePackage extends EPackage
      * @generated
      */
     EClass CONDITION = eINSTANCE.getCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Delayed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITION__DELAYED = eINSTANCE.getCondition_Delayed();
 
     /**
      * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.

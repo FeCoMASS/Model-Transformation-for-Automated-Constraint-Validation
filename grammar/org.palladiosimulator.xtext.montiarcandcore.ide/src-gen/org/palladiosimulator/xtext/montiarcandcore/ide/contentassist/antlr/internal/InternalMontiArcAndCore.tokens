@@ -35,6 +35,7 @@
 'classdiagram'=51
 'component'=58
 'condition'=63
+'delayed, '=70
 'double'=21
 'enum'=57
 'extends'=55
@@ -120,3 +121,4 @@ T__66=66
 T__67=67
 T__68=68
 T__69=69
+T__70=70

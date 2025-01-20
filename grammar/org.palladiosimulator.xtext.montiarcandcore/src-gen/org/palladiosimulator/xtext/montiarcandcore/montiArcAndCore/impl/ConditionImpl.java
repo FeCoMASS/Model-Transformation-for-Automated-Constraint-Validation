@@ -21,6 +21,7 @@ import org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.MontiArcAndCo
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.impl.ConditionImpl#isDelayed <em>Delayed</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.impl.ConditionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
@@ -28,6 +29,26 @@ import org.palladiosimulator.xtext.montiarcandcore.montiArcAndCore.MontiArcAndCo
  */
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
+  /**
+   * The default value of the '{@link #isDelayed() <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDelayed()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean DELAYED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isDelayed() <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDelayed()
+   * @generated
+   * @ordered
+   */
+  protected boolean delayed = DELAYED_EDEFAULT;
+
   /**
    * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -75,6 +96,31 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
+  public boolean isDelayed()
+  {
+    return delayed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDelayed(boolean newDelayed)
+  {
+    boolean oldDelayed = delayed;
+    delayed = newDelayed;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcAndCorePackage.CONDITION__DELAYED, oldDelayed, delayed));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getCondition()
   {
     return condition;
@@ -104,6 +150,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case MontiArcAndCorePackage.CONDITION__DELAYED:
+        return isDelayed();
       case MontiArcAndCorePackage.CONDITION__CONDITION:
         return getCondition();
     }
@@ -120,6 +168,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case MontiArcAndCorePackage.CONDITION__DELAYED:
+        setDelayed((Boolean)newValue);
+        return;
       case MontiArcAndCorePackage.CONDITION__CONDITION:
         setCondition((String)newValue);
         return;
@@ -137,6 +188,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case MontiArcAndCorePackage.CONDITION__DELAYED:
+        setDelayed(DELAYED_EDEFAULT);
+        return;
       case MontiArcAndCorePackage.CONDITION__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
@@ -154,6 +208,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case MontiArcAndCorePackage.CONDITION__DELAYED:
+        return delayed != DELAYED_EDEFAULT;
       case MontiArcAndCorePackage.CONDITION__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
@@ -171,7 +227,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (condition: ");
+    result.append(" (delayed: ");
+    result.append(delayed);
+    result.append(", condition: ");
     result.append(condition);
     result.append(')');
     return result.toString();

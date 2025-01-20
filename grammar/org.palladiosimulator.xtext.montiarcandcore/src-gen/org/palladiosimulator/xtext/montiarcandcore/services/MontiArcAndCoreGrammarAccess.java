@@ -1348,37 +1348,45 @@ public class MontiArcAndCoreGrammarAccess extends AbstractElementFinder.Abstract
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.montiarcandcore.MontiArcAndCore.Condition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLessThanSignLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cConditionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cConditionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cConditionSTRINGTerminalRuleCall_3_0 = (RuleCall)cConditionAssignment_3.eContents().get(0);
-		private final Keyword cGreaterThanSignGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDelayedAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cDelayedDelayedKeyword_1_0 = (Keyword)cDelayedAssignment_1.eContents().get(0);
+		private final Keyword cConditionKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
+		private final Keyword cGreaterThanSignGreaterThanSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Condition:
-		//    '<<''condition' '=' condition=STRING '>>'
+		//    '<<'(delayed?='delayed, ')?'condition' '=' condition=STRING '>>'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'<<''condition' '=' condition=STRING '>>'
+		//'<<'(delayed?='delayed, ')?'condition' '=' condition=STRING '>>'
 		public Group getGroup() { return cGroup; }
 		
 		//'<<'
 		public Keyword getLessThanSignLessThanSignKeyword_0() { return cLessThanSignLessThanSignKeyword_0; }
 		
+		//(delayed?='delayed, ')?
+		public Assignment getDelayedAssignment_1() { return cDelayedAssignment_1; }
+		
+		//'delayed, '
+		public Keyword getDelayedDelayedKeyword_1_0() { return cDelayedDelayedKeyword_1_0; }
+		
 		//'condition'
-		public Keyword getConditionKeyword_1() { return cConditionKeyword_1; }
+		public Keyword getConditionKeyword_2() { return cConditionKeyword_2; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 		
 		//condition=STRING
-		public Assignment getConditionAssignment_3() { return cConditionAssignment_3; }
+		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
 		
 		//STRING
-		public RuleCall getConditionSTRINGTerminalRuleCall_3_0() { return cConditionSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getConditionSTRINGTerminalRuleCall_4_0() { return cConditionSTRINGTerminalRuleCall_4_0; }
 		
 		//'>>'
-		public Keyword getGreaterThanSignGreaterThanSignKeyword_4() { return cGreaterThanSignGreaterThanSignKeyword_4; }
+		public Keyword getGreaterThanSignGreaterThanSignKeyword_5() { return cGreaterThanSignGreaterThanSignKeyword_5; }
 	}
 	public class NamesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.montiarcandcore.MontiArcAndCore.Names");
@@ -2531,7 +2539,7 @@ public class MontiArcAndCoreGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//Condition:
-	//    '<<''condition' '=' condition=STRING '>>'
+	//    '<<'(delayed?='delayed, ')?'condition' '=' condition=STRING '>>'
 	//;
 	public ConditionElements getConditionAccess() {
 		return pCondition;

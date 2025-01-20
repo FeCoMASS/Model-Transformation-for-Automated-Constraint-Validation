@@ -88,6 +88,20 @@ query EAnnotation::applyAssemblyConnectorConstraints() {
 		log("Applying target constraint " + targetOutCondition + " to " + target.entityName + "." + portTargetOut.name + "(" + portTargetOut.repr() + ")");
 		portTargetOut.condition := targetOutCondition.stringToCondition();
 	};
+	
+	if (self.details -> exists(x | x.key = "Source:In:Delayed")) {
+		portSourceIn.condition.delayed := true;
+	};
+	if (self.details -> exists(x | x.key = "Source:Out:Delayed")) {
+		portSourceOut.condition.delayed := true;
+	};
+	if (self.details -> exists(x | x.key = "Target:In:Delayed")) {
+		portTargetIn.condition.delayed := true;
+	};
+	if (self.details -> exists(x | x.key = "Target:Out:Delayed")) {
+		portTargetOut.condition.delayed := true;
+	};
+
 }
 
 query EAnnotation::applyProvidedDelegationConnectorConstraints() {
@@ -117,6 +131,19 @@ query EAnnotation::applyProvidedDelegationConnectorConstraints() {
 	if (targetOutCondition <> null) {
 		log("Applying target constraint " + targetOutCondition + " to " + target.entityName + "." + portTargetOut.name);
 		portTargetOut.condition := targetOutCondition.stringToCondition();
+	};
+	
+	if (self.details -> exists(x | x.key = "Source:In:Delayed")) {
+		portSourceIn.condition.delayed := true;
+	};
+	if (self.details -> exists(x | x.key = "Source:Out:Delayed")) {
+		portSourceOut.condition.delayed := true;
+	};
+	if (self.details -> exists(x | x.key = "Target:In:Delayed")) {
+		portTargetIn.condition.delayed := true;
+	};
+	if (self.details -> exists(x | x.key = "Target:Out:Delayed")) {
+		portTargetOut.condition.delayed := true;
 	};
 }
 

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_ID", "RULE_DOTSTAR", "RULE_INT", "RULE_STRING", "RULE_SYNC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'Boolean'", "'Byte'", "'Integer'", "'Long'", "'Char'", "'Double'", "'String'", "'Set'", "'List'", "'Map'", "'Optional'", "'>'", "'<'", "'=='", "'&&'", "'+'", "'-'", "'/'", "'*'", "'initial'", "'final'", "'import'", "';'", "'package'", "'['", "']'", "'('", "')'", "','", "'classdiagram'", "'{'", "'}'", "'class'", "'extends'", "'implements'", "'enum'", "'component'", "'='", "'->'", "'port'", "'<<'", "'condition'", "'>>'", "'automaton'", "'state'", "'public'", "'in'", "'out'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_ID", "RULE_DOTSTAR", "RULE_INT", "RULE_STRING", "RULE_SYNC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'Boolean'", "'Byte'", "'Integer'", "'Long'", "'Char'", "'Double'", "'String'", "'Set'", "'List'", "'Map'", "'Optional'", "'>'", "'<'", "'=='", "'&&'", "'+'", "'-'", "'/'", "'*'", "'initial'", "'final'", "'import'", "';'", "'package'", "'['", "']'", "'('", "')'", "','", "'classdiagram'", "'{'", "'}'", "'class'", "'extends'", "'implements'", "'enum'", "'component'", "'='", "'->'", "'port'", "'<<'", "'condition'", "'>>'", "'automaton'", "'state'", "'public'", "'in'", "'out'", "'delayed, '"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -64,6 +64,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
     public static final int T__64=64;
     public static final int T__21=21;
     public static final int T__65=65;
+    public static final int T__70=70;
     public static final int RULE_STRING=8;
     public static final int RULE_SL_COMMENT=11;
     public static final int T__37=37;
@@ -4260,11 +4261,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
                 {
                 int LA6_4 = input.LA(2);
 
-                if ( ((LA6_4>=33 && LA6_4<=40)) ) {
-                    alt6=3;
-                }
-                else if ( (LA6_4==EOF||LA6_4==44||LA6_4==47||(LA6_4>=49 && LA6_4<=50)) ) {
+                if ( (LA6_4==EOF||LA6_4==44||LA6_4==47||(LA6_4>=49 && LA6_4<=50)) ) {
                     alt6=2;
+                }
+                else if ( ((LA6_4>=33 && LA6_4<=40)) ) {
+                    alt6=3;
                 }
                 else {
                     NoViableAltException nvae =
@@ -4896,11 +4897,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
                 {
                 int LA13_2 = input.LA(2);
 
-                if ( (LA13_2==60) ) {
-                    alt13=3;
-                }
-                else if ( ((LA13_2>=RULE_MCQUALIFIEDNAME && LA13_2<=RULE_ID)) ) {
+                if ( ((LA13_2>=RULE_MCQUALIFIEDNAME && LA13_2<=RULE_ID)) ) {
                     alt13=5;
+                }
+                else if ( (LA13_2==60) ) {
+                    alt13=3;
                 }
                 else {
                     NoViableAltException nvae =
@@ -5844,11 +5845,11 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             if ( (LA24_0==RULE_ID) ) {
                 int LA24_1 = input.LA(2);
 
-                if ( (LA24_1==59) ) {
-                    alt24=1;
-                }
-                else if ( ((LA24_1>=33 && LA24_1<=40)||LA24_1==44) ) {
+                if ( ((LA24_1>=33 && LA24_1<=40)||LA24_1==44) ) {
                     alt24=2;
+                }
+                else if ( (LA24_1==59) ) {
+                    alt24=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -13814,7 +13815,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4349:1: ( rule__Condition__Group__1__Impl rule__Condition__Group__2 )
             // InternalMontiArcAndCore.g:4350:2: rule__Condition__Group__1__Impl rule__Condition__Group__2
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_38);
             rule__Condition__Group__1__Impl();
 
             state._fsp--;
@@ -13843,21 +13844,42 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Condition__Group__1__Impl"
-    // InternalMontiArcAndCore.g:4357:1: rule__Condition__Group__1__Impl : ( 'condition' ) ;
+    // InternalMontiArcAndCore.g:4357:1: rule__Condition__Group__1__Impl : ( ( rule__Condition__DelayedAssignment_1 )? ) ;
     public final void rule__Condition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4361:1: ( ( 'condition' ) )
-            // InternalMontiArcAndCore.g:4362:1: ( 'condition' )
+            // InternalMontiArcAndCore.g:4361:1: ( ( ( rule__Condition__DelayedAssignment_1 )? ) )
+            // InternalMontiArcAndCore.g:4362:1: ( ( rule__Condition__DelayedAssignment_1 )? )
             {
-            // InternalMontiArcAndCore.g:4362:1: ( 'condition' )
-            // InternalMontiArcAndCore.g:4363:2: 'condition'
+            // InternalMontiArcAndCore.g:4362:1: ( ( rule__Condition__DelayedAssignment_1 )? )
+            // InternalMontiArcAndCore.g:4363:2: ( rule__Condition__DelayedAssignment_1 )?
             {
-             before(grammarAccess.getConditionAccess().getConditionKeyword_1()); 
-            match(input,63,FOLLOW_2); 
-             after(grammarAccess.getConditionAccess().getConditionKeyword_1()); 
+             before(grammarAccess.getConditionAccess().getDelayedAssignment_1()); 
+            // InternalMontiArcAndCore.g:4364:2: ( rule__Condition__DelayedAssignment_1 )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
+
+            if ( (LA43_0==70) ) {
+                alt43=1;
+            }
+            switch (alt43) {
+                case 1 :
+                    // InternalMontiArcAndCore.g:4364:3: rule__Condition__DelayedAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Condition__DelayedAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getConditionAccess().getDelayedAssignment_1()); 
 
             }
 
@@ -13889,7 +13911,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4376:1: ( rule__Condition__Group__2__Impl rule__Condition__Group__3 )
             // InternalMontiArcAndCore.g:4377:2: rule__Condition__Group__2__Impl rule__Condition__Group__3
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_33);
             rule__Condition__Group__2__Impl();
 
             state._fsp--;
@@ -13918,21 +13940,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Condition__Group__2__Impl"
-    // InternalMontiArcAndCore.g:4384:1: rule__Condition__Group__2__Impl : ( '=' ) ;
+    // InternalMontiArcAndCore.g:4384:1: rule__Condition__Group__2__Impl : ( 'condition' ) ;
     public final void rule__Condition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4388:1: ( ( '=' ) )
-            // InternalMontiArcAndCore.g:4389:1: ( '=' )
+            // InternalMontiArcAndCore.g:4388:1: ( ( 'condition' ) )
+            // InternalMontiArcAndCore.g:4389:1: ( 'condition' )
             {
-            // InternalMontiArcAndCore.g:4389:1: ( '=' )
-            // InternalMontiArcAndCore.g:4390:2: '='
+            // InternalMontiArcAndCore.g:4389:1: ( 'condition' )
+            // InternalMontiArcAndCore.g:4390:2: 'condition'
             {
-             before(grammarAccess.getConditionAccess().getEqualsSignKeyword_2()); 
-            match(input,59,FOLLOW_2); 
-             after(grammarAccess.getConditionAccess().getEqualsSignKeyword_2()); 
+             before(grammarAccess.getConditionAccess().getConditionKeyword_2()); 
+            match(input,63,FOLLOW_2); 
+             after(grammarAccess.getConditionAccess().getConditionKeyword_2()); 
 
             }
 
@@ -13964,7 +13986,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             // InternalMontiArcAndCore.g:4403:1: ( rule__Condition__Group__3__Impl rule__Condition__Group__4 )
             // InternalMontiArcAndCore.g:4404:2: rule__Condition__Group__3__Impl rule__Condition__Group__4
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_39);
             rule__Condition__Group__3__Impl();
 
             state._fsp--;
@@ -13993,31 +14015,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Condition__Group__3__Impl"
-    // InternalMontiArcAndCore.g:4411:1: rule__Condition__Group__3__Impl : ( ( rule__Condition__ConditionAssignment_3 ) ) ;
+    // InternalMontiArcAndCore.g:4411:1: rule__Condition__Group__3__Impl : ( '=' ) ;
     public final void rule__Condition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4415:1: ( ( ( rule__Condition__ConditionAssignment_3 ) ) )
-            // InternalMontiArcAndCore.g:4416:1: ( ( rule__Condition__ConditionAssignment_3 ) )
+            // InternalMontiArcAndCore.g:4415:1: ( ( '=' ) )
+            // InternalMontiArcAndCore.g:4416:1: ( '=' )
             {
-            // InternalMontiArcAndCore.g:4416:1: ( ( rule__Condition__ConditionAssignment_3 ) )
-            // InternalMontiArcAndCore.g:4417:2: ( rule__Condition__ConditionAssignment_3 )
+            // InternalMontiArcAndCore.g:4416:1: ( '=' )
+            // InternalMontiArcAndCore.g:4417:2: '='
             {
-             before(grammarAccess.getConditionAccess().getConditionAssignment_3()); 
-            // InternalMontiArcAndCore.g:4418:2: ( rule__Condition__ConditionAssignment_3 )
-            // InternalMontiArcAndCore.g:4418:3: rule__Condition__ConditionAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Condition__ConditionAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConditionAccess().getConditionAssignment_3()); 
+             before(grammarAccess.getConditionAccess().getEqualsSignKeyword_3()); 
+            match(input,59,FOLLOW_2); 
+             after(grammarAccess.getConditionAccess().getEqualsSignKeyword_3()); 
 
             }
 
@@ -14040,17 +14052,22 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Condition__Group__4"
-    // InternalMontiArcAndCore.g:4426:1: rule__Condition__Group__4 : rule__Condition__Group__4__Impl ;
+    // InternalMontiArcAndCore.g:4426:1: rule__Condition__Group__4 : rule__Condition__Group__4__Impl rule__Condition__Group__5 ;
     public final void rule__Condition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4430:1: ( rule__Condition__Group__4__Impl )
-            // InternalMontiArcAndCore.g:4431:2: rule__Condition__Group__4__Impl
+            // InternalMontiArcAndCore.g:4430:1: ( rule__Condition__Group__4__Impl rule__Condition__Group__5 )
+            // InternalMontiArcAndCore.g:4431:2: rule__Condition__Group__4__Impl rule__Condition__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_40);
             rule__Condition__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Condition__Group__5();
 
             state._fsp--;
 
@@ -14073,21 +14090,31 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Condition__Group__4__Impl"
-    // InternalMontiArcAndCore.g:4437:1: rule__Condition__Group__4__Impl : ( '>>' ) ;
+    // InternalMontiArcAndCore.g:4438:1: rule__Condition__Group__4__Impl : ( ( rule__Condition__ConditionAssignment_4 ) ) ;
     public final void rule__Condition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4441:1: ( ( '>>' ) )
-            // InternalMontiArcAndCore.g:4442:1: ( '>>' )
+            // InternalMontiArcAndCore.g:4442:1: ( ( ( rule__Condition__ConditionAssignment_4 ) ) )
+            // InternalMontiArcAndCore.g:4443:1: ( ( rule__Condition__ConditionAssignment_4 ) )
             {
-            // InternalMontiArcAndCore.g:4442:1: ( '>>' )
-            // InternalMontiArcAndCore.g:4443:2: '>>'
+            // InternalMontiArcAndCore.g:4443:1: ( ( rule__Condition__ConditionAssignment_4 ) )
+            // InternalMontiArcAndCore.g:4444:2: ( rule__Condition__ConditionAssignment_4 )
             {
-             before(grammarAccess.getConditionAccess().getGreaterThanSignGreaterThanSignKeyword_4()); 
-            match(input,64,FOLLOW_2); 
-             after(grammarAccess.getConditionAccess().getGreaterThanSignGreaterThanSignKeyword_4()); 
+             before(grammarAccess.getConditionAccess().getConditionAssignment_4()); 
+            // InternalMontiArcAndCore.g:4445:2: ( rule__Condition__ConditionAssignment_4 )
+            // InternalMontiArcAndCore.g:4445:3: rule__Condition__ConditionAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condition__ConditionAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConditionAccess().getConditionAssignment_4()); 
 
             }
 
@@ -14109,15 +14136,85 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__Condition__Group__4__Impl"
 
 
+    // $ANTLR start "rule__Condition__Group__5"
+    // InternalMontiArcAndCore.g:4453:1: rule__Condition__Group__5 : rule__Condition__Group__5__Impl ;
+    public final void rule__Condition__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMontiArcAndCore.g:4457:1: ( rule__Condition__Group__5__Impl )
+            // InternalMontiArcAndCore.g:4458:2: rule__Condition__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condition__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__Group__5"
+
+
+    // $ANTLR start "rule__Condition__Group__5__Impl"
+    // InternalMontiArcAndCore.g:4464:1: rule__Condition__Group__5__Impl : ( '>>' ) ;
+    public final void rule__Condition__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMontiArcAndCore.g:4468:1: ( ( '>>' ) )
+            // InternalMontiArcAndCore.g:4469:1: ( '>>' )
+            {
+            // InternalMontiArcAndCore.g:4469:1: ( '>>' )
+            // InternalMontiArcAndCore.g:4470:2: '>>'
+            {
+             before(grammarAccess.getConditionAccess().getGreaterThanSignGreaterThanSignKeyword_5()); 
+            match(input,64,FOLLOW_2); 
+             after(grammarAccess.getConditionAccess().getGreaterThanSignGreaterThanSignKeyword_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__Group__5__Impl"
+
+
     // $ANTLR start "rule__Names__Group__0"
-    // InternalMontiArcAndCore.g:4453:1: rule__Names__Group__0 : rule__Names__Group__0__Impl rule__Names__Group__1 ;
+    // InternalMontiArcAndCore.g:4480:1: rule__Names__Group__0 : rule__Names__Group__0__Impl rule__Names__Group__1 ;
     public final void rule__Names__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4457:1: ( rule__Names__Group__0__Impl rule__Names__Group__1 )
-            // InternalMontiArcAndCore.g:4458:2: rule__Names__Group__0__Impl rule__Names__Group__1
+            // InternalMontiArcAndCore.g:4484:1: ( rule__Names__Group__0__Impl rule__Names__Group__1 )
+            // InternalMontiArcAndCore.g:4485:2: rule__Names__Group__0__Impl rule__Names__Group__1
             {
             pushFollow(FOLLOW_27);
             rule__Names__Group__0__Impl();
@@ -14148,21 +14245,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group__0__Impl"
-    // InternalMontiArcAndCore.g:4465:1: rule__Names__Group__0__Impl : ( ( rule__Names__NamesAssignment_0 ) ) ;
+    // InternalMontiArcAndCore.g:4492:1: rule__Names__Group__0__Impl : ( ( rule__Names__NamesAssignment_0 ) ) ;
     public final void rule__Names__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4469:1: ( ( ( rule__Names__NamesAssignment_0 ) ) )
-            // InternalMontiArcAndCore.g:4470:1: ( ( rule__Names__NamesAssignment_0 ) )
+            // InternalMontiArcAndCore.g:4496:1: ( ( ( rule__Names__NamesAssignment_0 ) ) )
+            // InternalMontiArcAndCore.g:4497:1: ( ( rule__Names__NamesAssignment_0 ) )
             {
-            // InternalMontiArcAndCore.g:4470:1: ( ( rule__Names__NamesAssignment_0 ) )
-            // InternalMontiArcAndCore.g:4471:2: ( rule__Names__NamesAssignment_0 )
+            // InternalMontiArcAndCore.g:4497:1: ( ( rule__Names__NamesAssignment_0 ) )
+            // InternalMontiArcAndCore.g:4498:2: ( rule__Names__NamesAssignment_0 )
             {
              before(grammarAccess.getNamesAccess().getNamesAssignment_0()); 
-            // InternalMontiArcAndCore.g:4472:2: ( rule__Names__NamesAssignment_0 )
-            // InternalMontiArcAndCore.g:4472:3: rule__Names__NamesAssignment_0
+            // InternalMontiArcAndCore.g:4499:2: ( rule__Names__NamesAssignment_0 )
+            // InternalMontiArcAndCore.g:4499:3: rule__Names__NamesAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Names__NamesAssignment_0();
@@ -14195,14 +14292,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group__1"
-    // InternalMontiArcAndCore.g:4480:1: rule__Names__Group__1 : rule__Names__Group__1__Impl ;
+    // InternalMontiArcAndCore.g:4507:1: rule__Names__Group__1 : rule__Names__Group__1__Impl ;
     public final void rule__Names__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4484:1: ( rule__Names__Group__1__Impl )
-            // InternalMontiArcAndCore.g:4485:2: rule__Names__Group__1__Impl
+            // InternalMontiArcAndCore.g:4511:1: ( rule__Names__Group__1__Impl )
+            // InternalMontiArcAndCore.g:4512:2: rule__Names__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Names__Group__1__Impl();
@@ -14228,33 +14325,33 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group__1__Impl"
-    // InternalMontiArcAndCore.g:4491:1: rule__Names__Group__1__Impl : ( ( rule__Names__Group_1__0 )* ) ;
+    // InternalMontiArcAndCore.g:4518:1: rule__Names__Group__1__Impl : ( ( rule__Names__Group_1__0 )* ) ;
     public final void rule__Names__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4495:1: ( ( ( rule__Names__Group_1__0 )* ) )
-            // InternalMontiArcAndCore.g:4496:1: ( ( rule__Names__Group_1__0 )* )
+            // InternalMontiArcAndCore.g:4522:1: ( ( ( rule__Names__Group_1__0 )* ) )
+            // InternalMontiArcAndCore.g:4523:1: ( ( rule__Names__Group_1__0 )* )
             {
-            // InternalMontiArcAndCore.g:4496:1: ( ( rule__Names__Group_1__0 )* )
-            // InternalMontiArcAndCore.g:4497:2: ( rule__Names__Group_1__0 )*
+            // InternalMontiArcAndCore.g:4523:1: ( ( rule__Names__Group_1__0 )* )
+            // InternalMontiArcAndCore.g:4524:2: ( rule__Names__Group_1__0 )*
             {
              before(grammarAccess.getNamesAccess().getGroup_1()); 
-            // InternalMontiArcAndCore.g:4498:2: ( rule__Names__Group_1__0 )*
-            loop43:
+            // InternalMontiArcAndCore.g:4525:2: ( rule__Names__Group_1__0 )*
+            loop44:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA43_0==50) ) {
-                    alt43=1;
+                if ( (LA44_0==50) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt44) {
             	case 1 :
-            	    // InternalMontiArcAndCore.g:4498:3: rule__Names__Group_1__0
+            	    // InternalMontiArcAndCore.g:4525:3: rule__Names__Group_1__0
             	    {
             	    pushFollow(FOLLOW_17);
             	    rule__Names__Group_1__0();
@@ -14266,7 +14363,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop43;
+            	    break loop44;
                 }
             } while (true);
 
@@ -14293,14 +14390,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group_1__0"
-    // InternalMontiArcAndCore.g:4507:1: rule__Names__Group_1__0 : rule__Names__Group_1__0__Impl rule__Names__Group_1__1 ;
+    // InternalMontiArcAndCore.g:4534:1: rule__Names__Group_1__0 : rule__Names__Group_1__0__Impl rule__Names__Group_1__1 ;
     public final void rule__Names__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4511:1: ( rule__Names__Group_1__0__Impl rule__Names__Group_1__1 )
-            // InternalMontiArcAndCore.g:4512:2: rule__Names__Group_1__0__Impl rule__Names__Group_1__1
+            // InternalMontiArcAndCore.g:4538:1: ( rule__Names__Group_1__0__Impl rule__Names__Group_1__1 )
+            // InternalMontiArcAndCore.g:4539:2: rule__Names__Group_1__0__Impl rule__Names__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__Names__Group_1__0__Impl();
@@ -14331,17 +14428,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group_1__0__Impl"
-    // InternalMontiArcAndCore.g:4519:1: rule__Names__Group_1__0__Impl : ( ',' ) ;
+    // InternalMontiArcAndCore.g:4546:1: rule__Names__Group_1__0__Impl : ( ',' ) ;
     public final void rule__Names__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4523:1: ( ( ',' ) )
-            // InternalMontiArcAndCore.g:4524:1: ( ',' )
+            // InternalMontiArcAndCore.g:4550:1: ( ( ',' ) )
+            // InternalMontiArcAndCore.g:4551:1: ( ',' )
             {
-            // InternalMontiArcAndCore.g:4524:1: ( ',' )
-            // InternalMontiArcAndCore.g:4525:2: ','
+            // InternalMontiArcAndCore.g:4551:1: ( ',' )
+            // InternalMontiArcAndCore.g:4552:2: ','
             {
              before(grammarAccess.getNamesAccess().getCommaKeyword_1_0()); 
             match(input,50,FOLLOW_2); 
@@ -14368,14 +14465,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group_1__1"
-    // InternalMontiArcAndCore.g:4534:1: rule__Names__Group_1__1 : rule__Names__Group_1__1__Impl ;
+    // InternalMontiArcAndCore.g:4561:1: rule__Names__Group_1__1 : rule__Names__Group_1__1__Impl ;
     public final void rule__Names__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4538:1: ( rule__Names__Group_1__1__Impl )
-            // InternalMontiArcAndCore.g:4539:2: rule__Names__Group_1__1__Impl
+            // InternalMontiArcAndCore.g:4565:1: ( rule__Names__Group_1__1__Impl )
+            // InternalMontiArcAndCore.g:4566:2: rule__Names__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Names__Group_1__1__Impl();
@@ -14401,21 +14498,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__Group_1__1__Impl"
-    // InternalMontiArcAndCore.g:4545:1: rule__Names__Group_1__1__Impl : ( ( rule__Names__NamesAssignment_1_1 ) ) ;
+    // InternalMontiArcAndCore.g:4572:1: rule__Names__Group_1__1__Impl : ( ( rule__Names__NamesAssignment_1_1 ) ) ;
     public final void rule__Names__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4549:1: ( ( ( rule__Names__NamesAssignment_1_1 ) ) )
-            // InternalMontiArcAndCore.g:4550:1: ( ( rule__Names__NamesAssignment_1_1 ) )
+            // InternalMontiArcAndCore.g:4576:1: ( ( ( rule__Names__NamesAssignment_1_1 ) ) )
+            // InternalMontiArcAndCore.g:4577:1: ( ( rule__Names__NamesAssignment_1_1 ) )
             {
-            // InternalMontiArcAndCore.g:4550:1: ( ( rule__Names__NamesAssignment_1_1 ) )
-            // InternalMontiArcAndCore.g:4551:2: ( rule__Names__NamesAssignment_1_1 )
+            // InternalMontiArcAndCore.g:4577:1: ( ( rule__Names__NamesAssignment_1_1 ) )
+            // InternalMontiArcAndCore.g:4578:2: ( rule__Names__NamesAssignment_1_1 )
             {
              before(grammarAccess.getNamesAccess().getNamesAssignment_1_1()); 
-            // InternalMontiArcAndCore.g:4552:2: ( rule__Names__NamesAssignment_1_1 )
-            // InternalMontiArcAndCore.g:4552:3: rule__Names__NamesAssignment_1_1
+            // InternalMontiArcAndCore.g:4579:2: ( rule__Names__NamesAssignment_1_1 )
+            // InternalMontiArcAndCore.g:4579:3: rule__Names__NamesAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Names__NamesAssignment_1_1();
@@ -14448,14 +14545,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__Group__0"
-    // InternalMontiArcAndCore.g:4561:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
+    // InternalMontiArcAndCore.g:4588:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
     public final void rule__Variable__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4565:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
-            // InternalMontiArcAndCore.g:4566:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
+            // InternalMontiArcAndCore.g:4592:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
+            // InternalMontiArcAndCore.g:4593:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Variable__Group__0__Impl();
@@ -14486,21 +14583,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__Group__0__Impl"
-    // InternalMontiArcAndCore.g:4573:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__TypeAssignment_0 ) ) ;
+    // InternalMontiArcAndCore.g:4600:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__TypeAssignment_0 ) ) ;
     public final void rule__Variable__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4577:1: ( ( ( rule__Variable__TypeAssignment_0 ) ) )
-            // InternalMontiArcAndCore.g:4578:1: ( ( rule__Variable__TypeAssignment_0 ) )
+            // InternalMontiArcAndCore.g:4604:1: ( ( ( rule__Variable__TypeAssignment_0 ) ) )
+            // InternalMontiArcAndCore.g:4605:1: ( ( rule__Variable__TypeAssignment_0 ) )
             {
-            // InternalMontiArcAndCore.g:4578:1: ( ( rule__Variable__TypeAssignment_0 ) )
-            // InternalMontiArcAndCore.g:4579:2: ( rule__Variable__TypeAssignment_0 )
+            // InternalMontiArcAndCore.g:4605:1: ( ( rule__Variable__TypeAssignment_0 ) )
+            // InternalMontiArcAndCore.g:4606:2: ( rule__Variable__TypeAssignment_0 )
             {
              before(grammarAccess.getVariableAccess().getTypeAssignment_0()); 
-            // InternalMontiArcAndCore.g:4580:2: ( rule__Variable__TypeAssignment_0 )
-            // InternalMontiArcAndCore.g:4580:3: rule__Variable__TypeAssignment_0
+            // InternalMontiArcAndCore.g:4607:2: ( rule__Variable__TypeAssignment_0 )
+            // InternalMontiArcAndCore.g:4607:3: rule__Variable__TypeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Variable__TypeAssignment_0();
@@ -14533,14 +14630,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__Group__1"
-    // InternalMontiArcAndCore.g:4588:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
+    // InternalMontiArcAndCore.g:4615:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
     public final void rule__Variable__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4592:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
-            // InternalMontiArcAndCore.g:4593:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
+            // InternalMontiArcAndCore.g:4619:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
+            // InternalMontiArcAndCore.g:4620:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Variable__Group__1__Impl();
@@ -14571,21 +14668,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__Group__1__Impl"
-    // InternalMontiArcAndCore.g:4600:1: rule__Variable__Group__1__Impl : ( ( rule__Variable__NameAssignment_1 ) ) ;
+    // InternalMontiArcAndCore.g:4627:1: rule__Variable__Group__1__Impl : ( ( rule__Variable__NameAssignment_1 ) ) ;
     public final void rule__Variable__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4604:1: ( ( ( rule__Variable__NameAssignment_1 ) ) )
-            // InternalMontiArcAndCore.g:4605:1: ( ( rule__Variable__NameAssignment_1 ) )
+            // InternalMontiArcAndCore.g:4631:1: ( ( ( rule__Variable__NameAssignment_1 ) ) )
+            // InternalMontiArcAndCore.g:4632:1: ( ( rule__Variable__NameAssignment_1 ) )
             {
-            // InternalMontiArcAndCore.g:4605:1: ( ( rule__Variable__NameAssignment_1 ) )
-            // InternalMontiArcAndCore.g:4606:2: ( rule__Variable__NameAssignment_1 )
+            // InternalMontiArcAndCore.g:4632:1: ( ( rule__Variable__NameAssignment_1 ) )
+            // InternalMontiArcAndCore.g:4633:2: ( rule__Variable__NameAssignment_1 )
             {
              before(grammarAccess.getVariableAccess().getNameAssignment_1()); 
-            // InternalMontiArcAndCore.g:4607:2: ( rule__Variable__NameAssignment_1 )
-            // InternalMontiArcAndCore.g:4607:3: rule__Variable__NameAssignment_1
+            // InternalMontiArcAndCore.g:4634:2: ( rule__Variable__NameAssignment_1 )
+            // InternalMontiArcAndCore.g:4634:3: rule__Variable__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Variable__NameAssignment_1();
@@ -14618,14 +14715,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__Group__2"
-    // InternalMontiArcAndCore.g:4615:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl ;
+    // InternalMontiArcAndCore.g:4642:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl ;
     public final void rule__Variable__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4619:1: ( rule__Variable__Group__2__Impl )
-            // InternalMontiArcAndCore.g:4620:2: rule__Variable__Group__2__Impl
+            // InternalMontiArcAndCore.g:4646:1: ( rule__Variable__Group__2__Impl )
+            // InternalMontiArcAndCore.g:4647:2: rule__Variable__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Variable__Group__2__Impl();
@@ -14651,17 +14748,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__Group__2__Impl"
-    // InternalMontiArcAndCore.g:4626:1: rule__Variable__Group__2__Impl : ( ';' ) ;
+    // InternalMontiArcAndCore.g:4653:1: rule__Variable__Group__2__Impl : ( ';' ) ;
     public final void rule__Variable__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4630:1: ( ( ';' ) )
-            // InternalMontiArcAndCore.g:4631:1: ( ';' )
+            // InternalMontiArcAndCore.g:4657:1: ( ( ';' ) )
+            // InternalMontiArcAndCore.g:4658:1: ( ';' )
             {
-            // InternalMontiArcAndCore.g:4631:1: ( ';' )
-            // InternalMontiArcAndCore.g:4632:2: ';'
+            // InternalMontiArcAndCore.g:4658:1: ( ';' )
+            // InternalMontiArcAndCore.g:4659:2: ';'
             {
              before(grammarAccess.getVariableAccess().getSemicolonKeyword_2()); 
             match(input,44,FOLLOW_2); 
@@ -14688,14 +14785,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__0"
-    // InternalMontiArcAndCore.g:4642:1: rule__Automaton__Group__0 : rule__Automaton__Group__0__Impl rule__Automaton__Group__1 ;
+    // InternalMontiArcAndCore.g:4669:1: rule__Automaton__Group__0 : rule__Automaton__Group__0__Impl rule__Automaton__Group__1 ;
     public final void rule__Automaton__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4646:1: ( rule__Automaton__Group__0__Impl rule__Automaton__Group__1 )
-            // InternalMontiArcAndCore.g:4647:2: rule__Automaton__Group__0__Impl rule__Automaton__Group__1
+            // InternalMontiArcAndCore.g:4673:1: ( rule__Automaton__Group__0__Impl rule__Automaton__Group__1 )
+            // InternalMontiArcAndCore.g:4674:2: rule__Automaton__Group__0__Impl rule__Automaton__Group__1
             {
             pushFollow(FOLLOW_41);
             rule__Automaton__Group__0__Impl();
@@ -14726,21 +14823,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__0__Impl"
-    // InternalMontiArcAndCore.g:4654:1: rule__Automaton__Group__0__Impl : ( () ) ;
+    // InternalMontiArcAndCore.g:4681:1: rule__Automaton__Group__0__Impl : ( () ) ;
     public final void rule__Automaton__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4658:1: ( ( () ) )
-            // InternalMontiArcAndCore.g:4659:1: ( () )
+            // InternalMontiArcAndCore.g:4685:1: ( ( () ) )
+            // InternalMontiArcAndCore.g:4686:1: ( () )
             {
-            // InternalMontiArcAndCore.g:4659:1: ( () )
-            // InternalMontiArcAndCore.g:4660:2: ()
+            // InternalMontiArcAndCore.g:4686:1: ( () )
+            // InternalMontiArcAndCore.g:4687:2: ()
             {
              before(grammarAccess.getAutomatonAccess().getAutomatonAction_0()); 
-            // InternalMontiArcAndCore.g:4661:2: ()
-            // InternalMontiArcAndCore.g:4661:3: 
+            // InternalMontiArcAndCore.g:4688:2: ()
+            // InternalMontiArcAndCore.g:4688:3: 
             {
             }
 
@@ -14763,14 +14860,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__1"
-    // InternalMontiArcAndCore.g:4669:1: rule__Automaton__Group__1 : rule__Automaton__Group__1__Impl rule__Automaton__Group__2 ;
+    // InternalMontiArcAndCore.g:4696:1: rule__Automaton__Group__1 : rule__Automaton__Group__1__Impl rule__Automaton__Group__2 ;
     public final void rule__Automaton__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4673:1: ( rule__Automaton__Group__1__Impl rule__Automaton__Group__2 )
-            // InternalMontiArcAndCore.g:4674:2: rule__Automaton__Group__1__Impl rule__Automaton__Group__2
+            // InternalMontiArcAndCore.g:4700:1: ( rule__Automaton__Group__1__Impl rule__Automaton__Group__2 )
+            // InternalMontiArcAndCore.g:4701:2: rule__Automaton__Group__1__Impl rule__Automaton__Group__2
             {
             pushFollow(FOLLOW_41);
             rule__Automaton__Group__1__Impl();
@@ -14801,29 +14898,29 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__1__Impl"
-    // InternalMontiArcAndCore.g:4681:1: rule__Automaton__Group__1__Impl : ( ( rule__Automaton__SyncAssignment_1 )? ) ;
+    // InternalMontiArcAndCore.g:4708:1: rule__Automaton__Group__1__Impl : ( ( rule__Automaton__SyncAssignment_1 )? ) ;
     public final void rule__Automaton__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4685:1: ( ( ( rule__Automaton__SyncAssignment_1 )? ) )
-            // InternalMontiArcAndCore.g:4686:1: ( ( rule__Automaton__SyncAssignment_1 )? )
+            // InternalMontiArcAndCore.g:4712:1: ( ( ( rule__Automaton__SyncAssignment_1 )? ) )
+            // InternalMontiArcAndCore.g:4713:1: ( ( rule__Automaton__SyncAssignment_1 )? )
             {
-            // InternalMontiArcAndCore.g:4686:1: ( ( rule__Automaton__SyncAssignment_1 )? )
-            // InternalMontiArcAndCore.g:4687:2: ( rule__Automaton__SyncAssignment_1 )?
+            // InternalMontiArcAndCore.g:4713:1: ( ( rule__Automaton__SyncAssignment_1 )? )
+            // InternalMontiArcAndCore.g:4714:2: ( rule__Automaton__SyncAssignment_1 )?
             {
              before(grammarAccess.getAutomatonAccess().getSyncAssignment_1()); 
-            // InternalMontiArcAndCore.g:4688:2: ( rule__Automaton__SyncAssignment_1 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalMontiArcAndCore.g:4715:2: ( rule__Automaton__SyncAssignment_1 )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==RULE_SYNC) ) {
-                alt44=1;
+            if ( (LA45_0==RULE_SYNC) ) {
+                alt45=1;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // InternalMontiArcAndCore.g:4688:3: rule__Automaton__SyncAssignment_1
+                    // InternalMontiArcAndCore.g:4715:3: rule__Automaton__SyncAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Automaton__SyncAssignment_1();
@@ -14859,14 +14956,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__2"
-    // InternalMontiArcAndCore.g:4696:1: rule__Automaton__Group__2 : rule__Automaton__Group__2__Impl rule__Automaton__Group__3 ;
+    // InternalMontiArcAndCore.g:4723:1: rule__Automaton__Group__2 : rule__Automaton__Group__2__Impl rule__Automaton__Group__3 ;
     public final void rule__Automaton__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4700:1: ( rule__Automaton__Group__2__Impl rule__Automaton__Group__3 )
-            // InternalMontiArcAndCore.g:4701:2: rule__Automaton__Group__2__Impl rule__Automaton__Group__3
+            // InternalMontiArcAndCore.g:4727:1: ( rule__Automaton__Group__2__Impl rule__Automaton__Group__3 )
+            // InternalMontiArcAndCore.g:4728:2: rule__Automaton__Group__2__Impl rule__Automaton__Group__3
             {
             pushFollow(FOLLOW_42);
             rule__Automaton__Group__2__Impl();
@@ -14897,17 +14994,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__2__Impl"
-    // InternalMontiArcAndCore.g:4708:1: rule__Automaton__Group__2__Impl : ( 'automaton' ) ;
+    // InternalMontiArcAndCore.g:4735:1: rule__Automaton__Group__2__Impl : ( 'automaton' ) ;
     public final void rule__Automaton__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4712:1: ( ( 'automaton' ) )
-            // InternalMontiArcAndCore.g:4713:1: ( 'automaton' )
+            // InternalMontiArcAndCore.g:4739:1: ( ( 'automaton' ) )
+            // InternalMontiArcAndCore.g:4740:1: ( 'automaton' )
             {
-            // InternalMontiArcAndCore.g:4713:1: ( 'automaton' )
-            // InternalMontiArcAndCore.g:4714:2: 'automaton'
+            // InternalMontiArcAndCore.g:4740:1: ( 'automaton' )
+            // InternalMontiArcAndCore.g:4741:2: 'automaton'
             {
              before(grammarAccess.getAutomatonAccess().getAutomatonKeyword_2()); 
             match(input,65,FOLLOW_2); 
@@ -14934,14 +15031,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__3"
-    // InternalMontiArcAndCore.g:4723:1: rule__Automaton__Group__3 : rule__Automaton__Group__3__Impl rule__Automaton__Group__4 ;
+    // InternalMontiArcAndCore.g:4750:1: rule__Automaton__Group__3 : rule__Automaton__Group__3__Impl rule__Automaton__Group__4 ;
     public final void rule__Automaton__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4727:1: ( rule__Automaton__Group__3__Impl rule__Automaton__Group__4 )
-            // InternalMontiArcAndCore.g:4728:2: rule__Automaton__Group__3__Impl rule__Automaton__Group__4
+            // InternalMontiArcAndCore.g:4754:1: ( rule__Automaton__Group__3__Impl rule__Automaton__Group__4 )
+            // InternalMontiArcAndCore.g:4755:2: rule__Automaton__Group__3__Impl rule__Automaton__Group__4
             {
             pushFollow(FOLLOW_42);
             rule__Automaton__Group__3__Impl();
@@ -14972,29 +15069,29 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__3__Impl"
-    // InternalMontiArcAndCore.g:4735:1: rule__Automaton__Group__3__Impl : ( ( rule__Automaton__NameAssignment_3 )? ) ;
+    // InternalMontiArcAndCore.g:4762:1: rule__Automaton__Group__3__Impl : ( ( rule__Automaton__NameAssignment_3 )? ) ;
     public final void rule__Automaton__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4739:1: ( ( ( rule__Automaton__NameAssignment_3 )? ) )
-            // InternalMontiArcAndCore.g:4740:1: ( ( rule__Automaton__NameAssignment_3 )? )
+            // InternalMontiArcAndCore.g:4766:1: ( ( ( rule__Automaton__NameAssignment_3 )? ) )
+            // InternalMontiArcAndCore.g:4767:1: ( ( rule__Automaton__NameAssignment_3 )? )
             {
-            // InternalMontiArcAndCore.g:4740:1: ( ( rule__Automaton__NameAssignment_3 )? )
-            // InternalMontiArcAndCore.g:4741:2: ( rule__Automaton__NameAssignment_3 )?
+            // InternalMontiArcAndCore.g:4767:1: ( ( rule__Automaton__NameAssignment_3 )? )
+            // InternalMontiArcAndCore.g:4768:2: ( rule__Automaton__NameAssignment_3 )?
             {
              before(grammarAccess.getAutomatonAccess().getNameAssignment_3()); 
-            // InternalMontiArcAndCore.g:4742:2: ( rule__Automaton__NameAssignment_3 )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // InternalMontiArcAndCore.g:4769:2: ( rule__Automaton__NameAssignment_3 )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==RULE_ID) ) {
-                alt45=1;
+            if ( (LA46_0==RULE_ID) ) {
+                alt46=1;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
-                    // InternalMontiArcAndCore.g:4742:3: rule__Automaton__NameAssignment_3
+                    // InternalMontiArcAndCore.g:4769:3: rule__Automaton__NameAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Automaton__NameAssignment_3();
@@ -15030,14 +15127,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__4"
-    // InternalMontiArcAndCore.g:4750:1: rule__Automaton__Group__4 : rule__Automaton__Group__4__Impl rule__Automaton__Group__5 ;
+    // InternalMontiArcAndCore.g:4777:1: rule__Automaton__Group__4 : rule__Automaton__Group__4__Impl rule__Automaton__Group__5 ;
     public final void rule__Automaton__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4754:1: ( rule__Automaton__Group__4__Impl rule__Automaton__Group__5 )
-            // InternalMontiArcAndCore.g:4755:2: rule__Automaton__Group__4__Impl rule__Automaton__Group__5
+            // InternalMontiArcAndCore.g:4781:1: ( rule__Automaton__Group__4__Impl rule__Automaton__Group__5 )
+            // InternalMontiArcAndCore.g:4782:2: rule__Automaton__Group__4__Impl rule__Automaton__Group__5
             {
             pushFollow(FOLLOW_43);
             rule__Automaton__Group__4__Impl();
@@ -15068,17 +15165,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__4__Impl"
-    // InternalMontiArcAndCore.g:4762:1: rule__Automaton__Group__4__Impl : ( '{' ) ;
+    // InternalMontiArcAndCore.g:4789:1: rule__Automaton__Group__4__Impl : ( '{' ) ;
     public final void rule__Automaton__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4766:1: ( ( '{' ) )
-            // InternalMontiArcAndCore.g:4767:1: ( '{' )
+            // InternalMontiArcAndCore.g:4793:1: ( ( '{' ) )
+            // InternalMontiArcAndCore.g:4794:1: ( '{' )
             {
-            // InternalMontiArcAndCore.g:4767:1: ( '{' )
-            // InternalMontiArcAndCore.g:4768:2: '{'
+            // InternalMontiArcAndCore.g:4794:1: ( '{' )
+            // InternalMontiArcAndCore.g:4795:2: '{'
             {
              before(grammarAccess.getAutomatonAccess().getLeftCurlyBracketKeyword_4()); 
             match(input,52,FOLLOW_2); 
@@ -15105,14 +15202,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__5"
-    // InternalMontiArcAndCore.g:4777:1: rule__Automaton__Group__5 : rule__Automaton__Group__5__Impl rule__Automaton__Group__6 ;
+    // InternalMontiArcAndCore.g:4804:1: rule__Automaton__Group__5 : rule__Automaton__Group__5__Impl rule__Automaton__Group__6 ;
     public final void rule__Automaton__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4781:1: ( rule__Automaton__Group__5__Impl rule__Automaton__Group__6 )
-            // InternalMontiArcAndCore.g:4782:2: rule__Automaton__Group__5__Impl rule__Automaton__Group__6
+            // InternalMontiArcAndCore.g:4808:1: ( rule__Automaton__Group__5__Impl rule__Automaton__Group__6 )
+            // InternalMontiArcAndCore.g:4809:2: rule__Automaton__Group__5__Impl rule__Automaton__Group__6
             {
             pushFollow(FOLLOW_43);
             rule__Automaton__Group__5__Impl();
@@ -15143,33 +15240,33 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__5__Impl"
-    // InternalMontiArcAndCore.g:4789:1: rule__Automaton__Group__5__Impl : ( ( rule__Automaton__Alternatives_5 )* ) ;
+    // InternalMontiArcAndCore.g:4816:1: rule__Automaton__Group__5__Impl : ( ( rule__Automaton__Alternatives_5 )* ) ;
     public final void rule__Automaton__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4793:1: ( ( ( rule__Automaton__Alternatives_5 )* ) )
-            // InternalMontiArcAndCore.g:4794:1: ( ( rule__Automaton__Alternatives_5 )* )
+            // InternalMontiArcAndCore.g:4820:1: ( ( ( rule__Automaton__Alternatives_5 )* ) )
+            // InternalMontiArcAndCore.g:4821:1: ( ( rule__Automaton__Alternatives_5 )* )
             {
-            // InternalMontiArcAndCore.g:4794:1: ( ( rule__Automaton__Alternatives_5 )* )
-            // InternalMontiArcAndCore.g:4795:2: ( rule__Automaton__Alternatives_5 )*
+            // InternalMontiArcAndCore.g:4821:1: ( ( rule__Automaton__Alternatives_5 )* )
+            // InternalMontiArcAndCore.g:4822:2: ( rule__Automaton__Alternatives_5 )*
             {
              before(grammarAccess.getAutomatonAccess().getAlternatives_5()); 
-            // InternalMontiArcAndCore.g:4796:2: ( rule__Automaton__Alternatives_5 )*
-            loop46:
+            // InternalMontiArcAndCore.g:4823:2: ( rule__Automaton__Alternatives_5 )*
+            loop47:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA46_0==RULE_ID||(LA46_0>=41 && LA46_0<=42)||LA46_0==52||LA46_0==66) ) {
-                    alt46=1;
+                if ( (LA47_0==RULE_ID||(LA47_0>=41 && LA47_0<=42)||LA47_0==52||LA47_0==66) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt47) {
             	case 1 :
-            	    // InternalMontiArcAndCore.g:4796:3: rule__Automaton__Alternatives_5
+            	    // InternalMontiArcAndCore.g:4823:3: rule__Automaton__Alternatives_5
             	    {
             	    pushFollow(FOLLOW_44);
             	    rule__Automaton__Alternatives_5();
@@ -15181,7 +15278,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop47;
                 }
             } while (true);
 
@@ -15208,14 +15305,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__6"
-    // InternalMontiArcAndCore.g:4804:1: rule__Automaton__Group__6 : rule__Automaton__Group__6__Impl ;
+    // InternalMontiArcAndCore.g:4831:1: rule__Automaton__Group__6 : rule__Automaton__Group__6__Impl ;
     public final void rule__Automaton__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4808:1: ( rule__Automaton__Group__6__Impl )
-            // InternalMontiArcAndCore.g:4809:2: rule__Automaton__Group__6__Impl
+            // InternalMontiArcAndCore.g:4835:1: ( rule__Automaton__Group__6__Impl )
+            // InternalMontiArcAndCore.g:4836:2: rule__Automaton__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Automaton__Group__6__Impl();
@@ -15241,17 +15338,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__Group__6__Impl"
-    // InternalMontiArcAndCore.g:4815:1: rule__Automaton__Group__6__Impl : ( '}' ) ;
+    // InternalMontiArcAndCore.g:4842:1: rule__Automaton__Group__6__Impl : ( '}' ) ;
     public final void rule__Automaton__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4819:1: ( ( '}' ) )
-            // InternalMontiArcAndCore.g:4820:1: ( '}' )
+            // InternalMontiArcAndCore.g:4846:1: ( ( '}' ) )
+            // InternalMontiArcAndCore.g:4847:1: ( '}' )
             {
-            // InternalMontiArcAndCore.g:4820:1: ( '}' )
-            // InternalMontiArcAndCore.g:4821:2: '}'
+            // InternalMontiArcAndCore.g:4847:1: ( '}' )
+            // InternalMontiArcAndCore.g:4848:2: '}'
             {
              before(grammarAccess.getAutomatonAccess().getRightCurlyBracketKeyword_6()); 
             match(input,53,FOLLOW_2); 
@@ -15278,14 +15375,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__0"
-    // InternalMontiArcAndCore.g:4831:1: rule__SCState__Group__0 : rule__SCState__Group__0__Impl rule__SCState__Group__1 ;
+    // InternalMontiArcAndCore.g:4858:1: rule__SCState__Group__0 : rule__SCState__Group__0__Impl rule__SCState__Group__1 ;
     public final void rule__SCState__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4835:1: ( rule__SCState__Group__0__Impl rule__SCState__Group__1 )
-            // InternalMontiArcAndCore.g:4836:2: rule__SCState__Group__0__Impl rule__SCState__Group__1
+            // InternalMontiArcAndCore.g:4862:1: ( rule__SCState__Group__0__Impl rule__SCState__Group__1 )
+            // InternalMontiArcAndCore.g:4863:2: rule__SCState__Group__0__Impl rule__SCState__Group__1
             {
             pushFollow(FOLLOW_45);
             rule__SCState__Group__0__Impl();
@@ -15316,33 +15413,33 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__0__Impl"
-    // InternalMontiArcAndCore.g:4843:1: rule__SCState__Group__0__Impl : ( ( rule__SCState__ModifierAssignment_0 )* ) ;
+    // InternalMontiArcAndCore.g:4870:1: rule__SCState__Group__0__Impl : ( ( rule__SCState__ModifierAssignment_0 )* ) ;
     public final void rule__SCState__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4847:1: ( ( ( rule__SCState__ModifierAssignment_0 )* ) )
-            // InternalMontiArcAndCore.g:4848:1: ( ( rule__SCState__ModifierAssignment_0 )* )
+            // InternalMontiArcAndCore.g:4874:1: ( ( ( rule__SCState__ModifierAssignment_0 )* ) )
+            // InternalMontiArcAndCore.g:4875:1: ( ( rule__SCState__ModifierAssignment_0 )* )
             {
-            // InternalMontiArcAndCore.g:4848:1: ( ( rule__SCState__ModifierAssignment_0 )* )
-            // InternalMontiArcAndCore.g:4849:2: ( rule__SCState__ModifierAssignment_0 )*
+            // InternalMontiArcAndCore.g:4875:1: ( ( rule__SCState__ModifierAssignment_0 )* )
+            // InternalMontiArcAndCore.g:4876:2: ( rule__SCState__ModifierAssignment_0 )*
             {
              before(grammarAccess.getSCStateAccess().getModifierAssignment_0()); 
-            // InternalMontiArcAndCore.g:4850:2: ( rule__SCState__ModifierAssignment_0 )*
-            loop47:
+            // InternalMontiArcAndCore.g:4877:2: ( rule__SCState__ModifierAssignment_0 )*
+            loop48:
             do {
-                int alt47=2;
-                int LA47_0 = input.LA(1);
+                int alt48=2;
+                int LA48_0 = input.LA(1);
 
-                if ( ((LA47_0>=41 && LA47_0<=42)) ) {
-                    alt47=1;
+                if ( ((LA48_0>=41 && LA48_0<=42)) ) {
+                    alt48=1;
                 }
 
 
-                switch (alt47) {
+                switch (alt48) {
             	case 1 :
-            	    // InternalMontiArcAndCore.g:4850:3: rule__SCState__ModifierAssignment_0
+            	    // InternalMontiArcAndCore.g:4877:3: rule__SCState__ModifierAssignment_0
             	    {
             	    pushFollow(FOLLOW_46);
             	    rule__SCState__ModifierAssignment_0();
@@ -15354,7 +15451,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop47;
+            	    break loop48;
                 }
             } while (true);
 
@@ -15381,14 +15478,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__1"
-    // InternalMontiArcAndCore.g:4858:1: rule__SCState__Group__1 : rule__SCState__Group__1__Impl rule__SCState__Group__2 ;
+    // InternalMontiArcAndCore.g:4885:1: rule__SCState__Group__1 : rule__SCState__Group__1__Impl rule__SCState__Group__2 ;
     public final void rule__SCState__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4862:1: ( rule__SCState__Group__1__Impl rule__SCState__Group__2 )
-            // InternalMontiArcAndCore.g:4863:2: rule__SCState__Group__1__Impl rule__SCState__Group__2
+            // InternalMontiArcAndCore.g:4889:1: ( rule__SCState__Group__1__Impl rule__SCState__Group__2 )
+            // InternalMontiArcAndCore.g:4890:2: rule__SCState__Group__1__Impl rule__SCState__Group__2
             {
             pushFollow(FOLLOW_45);
             rule__SCState__Group__1__Impl();
@@ -15419,29 +15516,29 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__1__Impl"
-    // InternalMontiArcAndCore.g:4870:1: rule__SCState__Group__1__Impl : ( ( rule__SCState__AnteAssignment_1 )? ) ;
+    // InternalMontiArcAndCore.g:4897:1: rule__SCState__Group__1__Impl : ( ( rule__SCState__AnteAssignment_1 )? ) ;
     public final void rule__SCState__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4874:1: ( ( ( rule__SCState__AnteAssignment_1 )? ) )
-            // InternalMontiArcAndCore.g:4875:1: ( ( rule__SCState__AnteAssignment_1 )? )
+            // InternalMontiArcAndCore.g:4901:1: ( ( ( rule__SCState__AnteAssignment_1 )? ) )
+            // InternalMontiArcAndCore.g:4902:1: ( ( rule__SCState__AnteAssignment_1 )? )
             {
-            // InternalMontiArcAndCore.g:4875:1: ( ( rule__SCState__AnteAssignment_1 )? )
-            // InternalMontiArcAndCore.g:4876:2: ( rule__SCState__AnteAssignment_1 )?
+            // InternalMontiArcAndCore.g:4902:1: ( ( rule__SCState__AnteAssignment_1 )? )
+            // InternalMontiArcAndCore.g:4903:2: ( rule__SCState__AnteAssignment_1 )?
             {
              before(grammarAccess.getSCStateAccess().getAnteAssignment_1()); 
-            // InternalMontiArcAndCore.g:4877:2: ( rule__SCState__AnteAssignment_1 )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // InternalMontiArcAndCore.g:4904:2: ( rule__SCState__AnteAssignment_1 )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA48_0==52) ) {
-                alt48=1;
+            if ( (LA49_0==52) ) {
+                alt49=1;
             }
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
-                    // InternalMontiArcAndCore.g:4877:3: rule__SCState__AnteAssignment_1
+                    // InternalMontiArcAndCore.g:4904:3: rule__SCState__AnteAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__SCState__AnteAssignment_1();
@@ -15477,14 +15574,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__2"
-    // InternalMontiArcAndCore.g:4885:1: rule__SCState__Group__2 : rule__SCState__Group__2__Impl rule__SCState__Group__3 ;
+    // InternalMontiArcAndCore.g:4912:1: rule__SCState__Group__2 : rule__SCState__Group__2__Impl rule__SCState__Group__3 ;
     public final void rule__SCState__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4889:1: ( rule__SCState__Group__2__Impl rule__SCState__Group__3 )
-            // InternalMontiArcAndCore.g:4890:2: rule__SCState__Group__2__Impl rule__SCState__Group__3
+            // InternalMontiArcAndCore.g:4916:1: ( rule__SCState__Group__2__Impl rule__SCState__Group__3 )
+            // InternalMontiArcAndCore.g:4917:2: rule__SCState__Group__2__Impl rule__SCState__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__SCState__Group__2__Impl();
@@ -15515,17 +15612,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__2__Impl"
-    // InternalMontiArcAndCore.g:4897:1: rule__SCState__Group__2__Impl : ( 'state' ) ;
+    // InternalMontiArcAndCore.g:4924:1: rule__SCState__Group__2__Impl : ( 'state' ) ;
     public final void rule__SCState__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4901:1: ( ( 'state' ) )
-            // InternalMontiArcAndCore.g:4902:1: ( 'state' )
+            // InternalMontiArcAndCore.g:4928:1: ( ( 'state' ) )
+            // InternalMontiArcAndCore.g:4929:1: ( 'state' )
             {
-            // InternalMontiArcAndCore.g:4902:1: ( 'state' )
-            // InternalMontiArcAndCore.g:4903:2: 'state'
+            // InternalMontiArcAndCore.g:4929:1: ( 'state' )
+            // InternalMontiArcAndCore.g:4930:2: 'state'
             {
              before(grammarAccess.getSCStateAccess().getStateKeyword_2()); 
             match(input,66,FOLLOW_2); 
@@ -15552,14 +15649,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__3"
-    // InternalMontiArcAndCore.g:4912:1: rule__SCState__Group__3 : rule__SCState__Group__3__Impl rule__SCState__Group__4 ;
+    // InternalMontiArcAndCore.g:4939:1: rule__SCState__Group__3 : rule__SCState__Group__3__Impl rule__SCState__Group__4 ;
     public final void rule__SCState__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4916:1: ( rule__SCState__Group__3__Impl rule__SCState__Group__4 )
-            // InternalMontiArcAndCore.g:4917:2: rule__SCState__Group__3__Impl rule__SCState__Group__4
+            // InternalMontiArcAndCore.g:4943:1: ( rule__SCState__Group__3__Impl rule__SCState__Group__4 )
+            // InternalMontiArcAndCore.g:4944:2: rule__SCState__Group__3__Impl rule__SCState__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__SCState__Group__3__Impl();
@@ -15590,21 +15687,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__3__Impl"
-    // InternalMontiArcAndCore.g:4924:1: rule__SCState__Group__3__Impl : ( ( rule__SCState__NameAssignment_3 ) ) ;
+    // InternalMontiArcAndCore.g:4951:1: rule__SCState__Group__3__Impl : ( ( rule__SCState__NameAssignment_3 ) ) ;
     public final void rule__SCState__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4928:1: ( ( ( rule__SCState__NameAssignment_3 ) ) )
-            // InternalMontiArcAndCore.g:4929:1: ( ( rule__SCState__NameAssignment_3 ) )
+            // InternalMontiArcAndCore.g:4955:1: ( ( ( rule__SCState__NameAssignment_3 ) ) )
+            // InternalMontiArcAndCore.g:4956:1: ( ( rule__SCState__NameAssignment_3 ) )
             {
-            // InternalMontiArcAndCore.g:4929:1: ( ( rule__SCState__NameAssignment_3 ) )
-            // InternalMontiArcAndCore.g:4930:2: ( rule__SCState__NameAssignment_3 )
+            // InternalMontiArcAndCore.g:4956:1: ( ( rule__SCState__NameAssignment_3 ) )
+            // InternalMontiArcAndCore.g:4957:2: ( rule__SCState__NameAssignment_3 )
             {
              before(grammarAccess.getSCStateAccess().getNameAssignment_3()); 
-            // InternalMontiArcAndCore.g:4931:2: ( rule__SCState__NameAssignment_3 )
-            // InternalMontiArcAndCore.g:4931:3: rule__SCState__NameAssignment_3
+            // InternalMontiArcAndCore.g:4958:2: ( rule__SCState__NameAssignment_3 )
+            // InternalMontiArcAndCore.g:4958:3: rule__SCState__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SCState__NameAssignment_3();
@@ -15637,14 +15734,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__4"
-    // InternalMontiArcAndCore.g:4939:1: rule__SCState__Group__4 : rule__SCState__Group__4__Impl ;
+    // InternalMontiArcAndCore.g:4966:1: rule__SCState__Group__4 : rule__SCState__Group__4__Impl ;
     public final void rule__SCState__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4943:1: ( rule__SCState__Group__4__Impl )
-            // InternalMontiArcAndCore.g:4944:2: rule__SCState__Group__4__Impl
+            // InternalMontiArcAndCore.g:4970:1: ( rule__SCState__Group__4__Impl )
+            // InternalMontiArcAndCore.g:4971:2: rule__SCState__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SCState__Group__4__Impl();
@@ -15670,17 +15767,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__Group__4__Impl"
-    // InternalMontiArcAndCore.g:4950:1: rule__SCState__Group__4__Impl : ( ';' ) ;
+    // InternalMontiArcAndCore.g:4977:1: rule__SCState__Group__4__Impl : ( ';' ) ;
     public final void rule__SCState__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4954:1: ( ( ';' ) )
-            // InternalMontiArcAndCore.g:4955:1: ( ';' )
+            // InternalMontiArcAndCore.g:4981:1: ( ( ';' ) )
+            // InternalMontiArcAndCore.g:4982:1: ( ';' )
             {
-            // InternalMontiArcAndCore.g:4955:1: ( ';' )
-            // InternalMontiArcAndCore.g:4956:2: ';'
+            // InternalMontiArcAndCore.g:4982:1: ( ';' )
+            // InternalMontiArcAndCore.g:4983:2: ';'
             {
              before(grammarAccess.getSCStateAccess().getSemicolonKeyword_4()); 
             match(input,44,FOLLOW_2); 
@@ -15707,14 +15804,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__0"
-    // InternalMontiArcAndCore.g:4966:1: rule__InvState__Group__0 : rule__InvState__Group__0__Impl rule__InvState__Group__1 ;
+    // InternalMontiArcAndCore.g:4993:1: rule__InvState__Group__0 : rule__InvState__Group__0__Impl rule__InvState__Group__1 ;
     public final void rule__InvState__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4970:1: ( rule__InvState__Group__0__Impl rule__InvState__Group__1 )
-            // InternalMontiArcAndCore.g:4971:2: rule__InvState__Group__0__Impl rule__InvState__Group__1
+            // InternalMontiArcAndCore.g:4997:1: ( rule__InvState__Group__0__Impl rule__InvState__Group__1 )
+            // InternalMontiArcAndCore.g:4998:2: rule__InvState__Group__0__Impl rule__InvState__Group__1
             {
             pushFollow(FOLLOW_45);
             rule__InvState__Group__0__Impl();
@@ -15745,33 +15842,33 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__0__Impl"
-    // InternalMontiArcAndCore.g:4978:1: rule__InvState__Group__0__Impl : ( ( rule__InvState__ModifierAssignment_0 )* ) ;
+    // InternalMontiArcAndCore.g:5005:1: rule__InvState__Group__0__Impl : ( ( rule__InvState__ModifierAssignment_0 )* ) ;
     public final void rule__InvState__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4982:1: ( ( ( rule__InvState__ModifierAssignment_0 )* ) )
-            // InternalMontiArcAndCore.g:4983:1: ( ( rule__InvState__ModifierAssignment_0 )* )
+            // InternalMontiArcAndCore.g:5009:1: ( ( ( rule__InvState__ModifierAssignment_0 )* ) )
+            // InternalMontiArcAndCore.g:5010:1: ( ( rule__InvState__ModifierAssignment_0 )* )
             {
-            // InternalMontiArcAndCore.g:4983:1: ( ( rule__InvState__ModifierAssignment_0 )* )
-            // InternalMontiArcAndCore.g:4984:2: ( rule__InvState__ModifierAssignment_0 )*
+            // InternalMontiArcAndCore.g:5010:1: ( ( rule__InvState__ModifierAssignment_0 )* )
+            // InternalMontiArcAndCore.g:5011:2: ( rule__InvState__ModifierAssignment_0 )*
             {
              before(grammarAccess.getInvStateAccess().getModifierAssignment_0()); 
-            // InternalMontiArcAndCore.g:4985:2: ( rule__InvState__ModifierAssignment_0 )*
-            loop49:
+            // InternalMontiArcAndCore.g:5012:2: ( rule__InvState__ModifierAssignment_0 )*
+            loop50:
             do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( ((LA49_0>=41 && LA49_0<=42)) ) {
-                    alt49=1;
+                if ( ((LA50_0>=41 && LA50_0<=42)) ) {
+                    alt50=1;
                 }
 
 
-                switch (alt49) {
+                switch (alt50) {
             	case 1 :
-            	    // InternalMontiArcAndCore.g:4985:3: rule__InvState__ModifierAssignment_0
+            	    // InternalMontiArcAndCore.g:5012:3: rule__InvState__ModifierAssignment_0
             	    {
             	    pushFollow(FOLLOW_46);
             	    rule__InvState__ModifierAssignment_0();
@@ -15783,7 +15880,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop50;
                 }
             } while (true);
 
@@ -15810,14 +15907,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__1"
-    // InternalMontiArcAndCore.g:4993:1: rule__InvState__Group__1 : rule__InvState__Group__1__Impl rule__InvState__Group__2 ;
+    // InternalMontiArcAndCore.g:5020:1: rule__InvState__Group__1 : rule__InvState__Group__1__Impl rule__InvState__Group__2 ;
     public final void rule__InvState__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:4997:1: ( rule__InvState__Group__1__Impl rule__InvState__Group__2 )
-            // InternalMontiArcAndCore.g:4998:2: rule__InvState__Group__1__Impl rule__InvState__Group__2
+            // InternalMontiArcAndCore.g:5024:1: ( rule__InvState__Group__1__Impl rule__InvState__Group__2 )
+            // InternalMontiArcAndCore.g:5025:2: rule__InvState__Group__1__Impl rule__InvState__Group__2
             {
             pushFollow(FOLLOW_15);
             rule__InvState__Group__1__Impl();
@@ -15848,17 +15945,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__1__Impl"
-    // InternalMontiArcAndCore.g:5005:1: rule__InvState__Group__1__Impl : ( 'state' ) ;
+    // InternalMontiArcAndCore.g:5032:1: rule__InvState__Group__1__Impl : ( 'state' ) ;
     public final void rule__InvState__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5009:1: ( ( 'state' ) )
-            // InternalMontiArcAndCore.g:5010:1: ( 'state' )
+            // InternalMontiArcAndCore.g:5036:1: ( ( 'state' ) )
+            // InternalMontiArcAndCore.g:5037:1: ( 'state' )
             {
-            // InternalMontiArcAndCore.g:5010:1: ( 'state' )
-            // InternalMontiArcAndCore.g:5011:2: 'state'
+            // InternalMontiArcAndCore.g:5037:1: ( 'state' )
+            // InternalMontiArcAndCore.g:5038:2: 'state'
             {
              before(grammarAccess.getInvStateAccess().getStateKeyword_1()); 
             match(input,66,FOLLOW_2); 
@@ -15885,14 +15982,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__2"
-    // InternalMontiArcAndCore.g:5020:1: rule__InvState__Group__2 : rule__InvState__Group__2__Impl rule__InvState__Group__3 ;
+    // InternalMontiArcAndCore.g:5047:1: rule__InvState__Group__2 : rule__InvState__Group__2__Impl rule__InvState__Group__3 ;
     public final void rule__InvState__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5024:1: ( rule__InvState__Group__2__Impl rule__InvState__Group__3 )
-            // InternalMontiArcAndCore.g:5025:2: rule__InvState__Group__2__Impl rule__InvState__Group__3
+            // InternalMontiArcAndCore.g:5051:1: ( rule__InvState__Group__2__Impl rule__InvState__Group__3 )
+            // InternalMontiArcAndCore.g:5052:2: rule__InvState__Group__2__Impl rule__InvState__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__InvState__Group__2__Impl();
@@ -15923,21 +16020,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__2__Impl"
-    // InternalMontiArcAndCore.g:5032:1: rule__InvState__Group__2__Impl : ( ( rule__InvState__NameAssignment_2 ) ) ;
+    // InternalMontiArcAndCore.g:5059:1: rule__InvState__Group__2__Impl : ( ( rule__InvState__NameAssignment_2 ) ) ;
     public final void rule__InvState__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5036:1: ( ( ( rule__InvState__NameAssignment_2 ) ) )
-            // InternalMontiArcAndCore.g:5037:1: ( ( rule__InvState__NameAssignment_2 ) )
+            // InternalMontiArcAndCore.g:5063:1: ( ( ( rule__InvState__NameAssignment_2 ) ) )
+            // InternalMontiArcAndCore.g:5064:1: ( ( rule__InvState__NameAssignment_2 ) )
             {
-            // InternalMontiArcAndCore.g:5037:1: ( ( rule__InvState__NameAssignment_2 ) )
-            // InternalMontiArcAndCore.g:5038:2: ( rule__InvState__NameAssignment_2 )
+            // InternalMontiArcAndCore.g:5064:1: ( ( rule__InvState__NameAssignment_2 ) )
+            // InternalMontiArcAndCore.g:5065:2: ( rule__InvState__NameAssignment_2 )
             {
              before(grammarAccess.getInvStateAccess().getNameAssignment_2()); 
-            // InternalMontiArcAndCore.g:5039:2: ( rule__InvState__NameAssignment_2 )
-            // InternalMontiArcAndCore.g:5039:3: rule__InvState__NameAssignment_2
+            // InternalMontiArcAndCore.g:5066:2: ( rule__InvState__NameAssignment_2 )
+            // InternalMontiArcAndCore.g:5066:3: rule__InvState__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__InvState__NameAssignment_2();
@@ -15970,14 +16067,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__3"
-    // InternalMontiArcAndCore.g:5047:1: rule__InvState__Group__3 : rule__InvState__Group__3__Impl rule__InvState__Group__4 ;
+    // InternalMontiArcAndCore.g:5074:1: rule__InvState__Group__3 : rule__InvState__Group__3__Impl rule__InvState__Group__4 ;
     public final void rule__InvState__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5051:1: ( rule__InvState__Group__3__Impl rule__InvState__Group__4 )
-            // InternalMontiArcAndCore.g:5052:2: rule__InvState__Group__3__Impl rule__InvState__Group__4
+            // InternalMontiArcAndCore.g:5078:1: ( rule__InvState__Group__3__Impl rule__InvState__Group__4 )
+            // InternalMontiArcAndCore.g:5079:2: rule__InvState__Group__3__Impl rule__InvState__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__InvState__Group__3__Impl();
@@ -16008,17 +16105,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__3__Impl"
-    // InternalMontiArcAndCore.g:5059:1: rule__InvState__Group__3__Impl : ( '[' ) ;
+    // InternalMontiArcAndCore.g:5086:1: rule__InvState__Group__3__Impl : ( '[' ) ;
     public final void rule__InvState__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5063:1: ( ( '[' ) )
-            // InternalMontiArcAndCore.g:5064:1: ( '[' )
+            // InternalMontiArcAndCore.g:5090:1: ( ( '[' ) )
+            // InternalMontiArcAndCore.g:5091:1: ( '[' )
             {
-            // InternalMontiArcAndCore.g:5064:1: ( '[' )
-            // InternalMontiArcAndCore.g:5065:2: '['
+            // InternalMontiArcAndCore.g:5091:1: ( '[' )
+            // InternalMontiArcAndCore.g:5092:2: '['
             {
              before(grammarAccess.getInvStateAccess().getLeftSquareBracketKeyword_3()); 
             match(input,46,FOLLOW_2); 
@@ -16045,14 +16142,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__4"
-    // InternalMontiArcAndCore.g:5074:1: rule__InvState__Group__4 : rule__InvState__Group__4__Impl rule__InvState__Group__5 ;
+    // InternalMontiArcAndCore.g:5101:1: rule__InvState__Group__4 : rule__InvState__Group__4__Impl rule__InvState__Group__5 ;
     public final void rule__InvState__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5078:1: ( rule__InvState__Group__4__Impl rule__InvState__Group__5 )
-            // InternalMontiArcAndCore.g:5079:2: rule__InvState__Group__4__Impl rule__InvState__Group__5
+            // InternalMontiArcAndCore.g:5105:1: ( rule__InvState__Group__4__Impl rule__InvState__Group__5 )
+            // InternalMontiArcAndCore.g:5106:2: rule__InvState__Group__4__Impl rule__InvState__Group__5
             {
             pushFollow(FOLLOW_12);
             rule__InvState__Group__4__Impl();
@@ -16083,21 +16180,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__4__Impl"
-    // InternalMontiArcAndCore.g:5086:1: rule__InvState__Group__4__Impl : ( ( rule__InvState__ExpressionAssignment_4 ) ) ;
+    // InternalMontiArcAndCore.g:5113:1: rule__InvState__Group__4__Impl : ( ( rule__InvState__ExpressionAssignment_4 ) ) ;
     public final void rule__InvState__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5090:1: ( ( ( rule__InvState__ExpressionAssignment_4 ) ) )
-            // InternalMontiArcAndCore.g:5091:1: ( ( rule__InvState__ExpressionAssignment_4 ) )
+            // InternalMontiArcAndCore.g:5117:1: ( ( ( rule__InvState__ExpressionAssignment_4 ) ) )
+            // InternalMontiArcAndCore.g:5118:1: ( ( rule__InvState__ExpressionAssignment_4 ) )
             {
-            // InternalMontiArcAndCore.g:5091:1: ( ( rule__InvState__ExpressionAssignment_4 ) )
-            // InternalMontiArcAndCore.g:5092:2: ( rule__InvState__ExpressionAssignment_4 )
+            // InternalMontiArcAndCore.g:5118:1: ( ( rule__InvState__ExpressionAssignment_4 ) )
+            // InternalMontiArcAndCore.g:5119:2: ( rule__InvState__ExpressionAssignment_4 )
             {
              before(grammarAccess.getInvStateAccess().getExpressionAssignment_4()); 
-            // InternalMontiArcAndCore.g:5093:2: ( rule__InvState__ExpressionAssignment_4 )
-            // InternalMontiArcAndCore.g:5093:3: rule__InvState__ExpressionAssignment_4
+            // InternalMontiArcAndCore.g:5120:2: ( rule__InvState__ExpressionAssignment_4 )
+            // InternalMontiArcAndCore.g:5120:3: rule__InvState__ExpressionAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__InvState__ExpressionAssignment_4();
@@ -16130,14 +16227,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__5"
-    // InternalMontiArcAndCore.g:5101:1: rule__InvState__Group__5 : rule__InvState__Group__5__Impl rule__InvState__Group__6 ;
+    // InternalMontiArcAndCore.g:5128:1: rule__InvState__Group__5 : rule__InvState__Group__5__Impl rule__InvState__Group__6 ;
     public final void rule__InvState__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5105:1: ( rule__InvState__Group__5__Impl rule__InvState__Group__6 )
-            // InternalMontiArcAndCore.g:5106:2: rule__InvState__Group__5__Impl rule__InvState__Group__6
+            // InternalMontiArcAndCore.g:5132:1: ( rule__InvState__Group__5__Impl rule__InvState__Group__6 )
+            // InternalMontiArcAndCore.g:5133:2: rule__InvState__Group__5__Impl rule__InvState__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__InvState__Group__5__Impl();
@@ -16168,17 +16265,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__5__Impl"
-    // InternalMontiArcAndCore.g:5113:1: rule__InvState__Group__5__Impl : ( ']' ) ;
+    // InternalMontiArcAndCore.g:5140:1: rule__InvState__Group__5__Impl : ( ']' ) ;
     public final void rule__InvState__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5117:1: ( ( ']' ) )
-            // InternalMontiArcAndCore.g:5118:1: ( ']' )
+            // InternalMontiArcAndCore.g:5144:1: ( ( ']' ) )
+            // InternalMontiArcAndCore.g:5145:1: ( ']' )
             {
-            // InternalMontiArcAndCore.g:5118:1: ( ']' )
-            // InternalMontiArcAndCore.g:5119:2: ']'
+            // InternalMontiArcAndCore.g:5145:1: ( ']' )
+            // InternalMontiArcAndCore.g:5146:2: ']'
             {
              before(grammarAccess.getInvStateAccess().getRightSquareBracketKeyword_5()); 
             match(input,47,FOLLOW_2); 
@@ -16205,14 +16302,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__6"
-    // InternalMontiArcAndCore.g:5128:1: rule__InvState__Group__6 : rule__InvState__Group__6__Impl ;
+    // InternalMontiArcAndCore.g:5155:1: rule__InvState__Group__6 : rule__InvState__Group__6__Impl ;
     public final void rule__InvState__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5132:1: ( rule__InvState__Group__6__Impl )
-            // InternalMontiArcAndCore.g:5133:2: rule__InvState__Group__6__Impl
+            // InternalMontiArcAndCore.g:5159:1: ( rule__InvState__Group__6__Impl )
+            // InternalMontiArcAndCore.g:5160:2: rule__InvState__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__InvState__Group__6__Impl();
@@ -16238,17 +16335,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__Group__6__Impl"
-    // InternalMontiArcAndCore.g:5139:1: rule__InvState__Group__6__Impl : ( ';' ) ;
+    // InternalMontiArcAndCore.g:5166:1: rule__InvState__Group__6__Impl : ( ';' ) ;
     public final void rule__InvState__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5143:1: ( ( ';' ) )
-            // InternalMontiArcAndCore.g:5144:1: ( ';' )
+            // InternalMontiArcAndCore.g:5170:1: ( ( ';' ) )
+            // InternalMontiArcAndCore.g:5171:1: ( ';' )
             {
-            // InternalMontiArcAndCore.g:5144:1: ( ';' )
-            // InternalMontiArcAndCore.g:5145:2: ';'
+            // InternalMontiArcAndCore.g:5171:1: ( ';' )
+            // InternalMontiArcAndCore.g:5172:2: ';'
             {
              before(grammarAccess.getInvStateAccess().getSemicolonKeyword_6()); 
             match(input,44,FOLLOW_2); 
@@ -16275,14 +16372,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCSAnte__Group__0"
-    // InternalMontiArcAndCore.g:5155:1: rule__SCSAnte__Group__0 : rule__SCSAnte__Group__0__Impl rule__SCSAnte__Group__1 ;
+    // InternalMontiArcAndCore.g:5182:1: rule__SCSAnte__Group__0 : rule__SCSAnte__Group__0__Impl rule__SCSAnte__Group__1 ;
     public final void rule__SCSAnte__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5159:1: ( rule__SCSAnte__Group__0__Impl rule__SCSAnte__Group__1 )
-            // InternalMontiArcAndCore.g:5160:2: rule__SCSAnte__Group__0__Impl rule__SCSAnte__Group__1
+            // InternalMontiArcAndCore.g:5186:1: ( rule__SCSAnte__Group__0__Impl rule__SCSAnte__Group__1 )
+            // InternalMontiArcAndCore.g:5187:2: rule__SCSAnte__Group__0__Impl rule__SCSAnte__Group__1
             {
             pushFollow(FOLLOW_20);
             rule__SCSAnte__Group__0__Impl();
@@ -16313,21 +16410,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCSAnte__Group__0__Impl"
-    // InternalMontiArcAndCore.g:5167:1: rule__SCSAnte__Group__0__Impl : ( () ) ;
+    // InternalMontiArcAndCore.g:5194:1: rule__SCSAnte__Group__0__Impl : ( () ) ;
     public final void rule__SCSAnte__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5171:1: ( ( () ) )
-            // InternalMontiArcAndCore.g:5172:1: ( () )
+            // InternalMontiArcAndCore.g:5198:1: ( ( () ) )
+            // InternalMontiArcAndCore.g:5199:1: ( () )
             {
-            // InternalMontiArcAndCore.g:5172:1: ( () )
-            // InternalMontiArcAndCore.g:5173:2: ()
+            // InternalMontiArcAndCore.g:5199:1: ( () )
+            // InternalMontiArcAndCore.g:5200:2: ()
             {
              before(grammarAccess.getSCSAnteAccess().getSCSAnteAction_0()); 
-            // InternalMontiArcAndCore.g:5174:2: ()
-            // InternalMontiArcAndCore.g:5174:3: 
+            // InternalMontiArcAndCore.g:5201:2: ()
+            // InternalMontiArcAndCore.g:5201:3: 
             {
             }
 
@@ -16350,14 +16447,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCSAnte__Group__1"
-    // InternalMontiArcAndCore.g:5182:1: rule__SCSAnte__Group__1 : rule__SCSAnte__Group__1__Impl ;
+    // InternalMontiArcAndCore.g:5209:1: rule__SCSAnte__Group__1 : rule__SCSAnte__Group__1__Impl ;
     public final void rule__SCSAnte__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5186:1: ( rule__SCSAnte__Group__1__Impl )
-            // InternalMontiArcAndCore.g:5187:2: rule__SCSAnte__Group__1__Impl
+            // InternalMontiArcAndCore.g:5213:1: ( rule__SCSAnte__Group__1__Impl )
+            // InternalMontiArcAndCore.g:5214:2: rule__SCSAnte__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SCSAnte__Group__1__Impl();
@@ -16383,21 +16480,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCSAnte__Group__1__Impl"
-    // InternalMontiArcAndCore.g:5193:1: rule__SCSAnte__Group__1__Impl : ( ( rule__SCSAnte__BlockAssignment_1 ) ) ;
+    // InternalMontiArcAndCore.g:5220:1: rule__SCSAnte__Group__1__Impl : ( ( rule__SCSAnte__BlockAssignment_1 ) ) ;
     public final void rule__SCSAnte__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5197:1: ( ( ( rule__SCSAnte__BlockAssignment_1 ) ) )
-            // InternalMontiArcAndCore.g:5198:1: ( ( rule__SCSAnte__BlockAssignment_1 ) )
+            // InternalMontiArcAndCore.g:5224:1: ( ( ( rule__SCSAnte__BlockAssignment_1 ) ) )
+            // InternalMontiArcAndCore.g:5225:1: ( ( rule__SCSAnte__BlockAssignment_1 ) )
             {
-            // InternalMontiArcAndCore.g:5198:1: ( ( rule__SCSAnte__BlockAssignment_1 ) )
-            // InternalMontiArcAndCore.g:5199:2: ( rule__SCSAnte__BlockAssignment_1 )
+            // InternalMontiArcAndCore.g:5225:1: ( ( rule__SCSAnte__BlockAssignment_1 ) )
+            // InternalMontiArcAndCore.g:5226:2: ( rule__SCSAnte__BlockAssignment_1 )
             {
              before(grammarAccess.getSCSAnteAccess().getBlockAssignment_1()); 
-            // InternalMontiArcAndCore.g:5200:2: ( rule__SCSAnte__BlockAssignment_1 )
-            // InternalMontiArcAndCore.g:5200:3: rule__SCSAnte__BlockAssignment_1
+            // InternalMontiArcAndCore.g:5227:2: ( rule__SCSAnte__BlockAssignment_1 )
+            // InternalMontiArcAndCore.g:5227:3: rule__SCSAnte__BlockAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SCSAnte__BlockAssignment_1();
@@ -16430,14 +16527,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__0"
-    // InternalMontiArcAndCore.g:5209:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
+    // InternalMontiArcAndCore.g:5236:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
     public final void rule__Transition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5213:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
-            // InternalMontiArcAndCore.g:5214:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
+            // InternalMontiArcAndCore.g:5240:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
+            // InternalMontiArcAndCore.g:5241:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
             {
             pushFollow(FOLLOW_47);
             rule__Transition__Group__0__Impl();
@@ -16468,21 +16565,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__0__Impl"
-    // InternalMontiArcAndCore.g:5221:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__SourceAssignment_0 ) ) ;
+    // InternalMontiArcAndCore.g:5248:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__SourceAssignment_0 ) ) ;
     public final void rule__Transition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5225:1: ( ( ( rule__Transition__SourceAssignment_0 ) ) )
-            // InternalMontiArcAndCore.g:5226:1: ( ( rule__Transition__SourceAssignment_0 ) )
+            // InternalMontiArcAndCore.g:5252:1: ( ( ( rule__Transition__SourceAssignment_0 ) ) )
+            // InternalMontiArcAndCore.g:5253:1: ( ( rule__Transition__SourceAssignment_0 ) )
             {
-            // InternalMontiArcAndCore.g:5226:1: ( ( rule__Transition__SourceAssignment_0 ) )
-            // InternalMontiArcAndCore.g:5227:2: ( rule__Transition__SourceAssignment_0 )
+            // InternalMontiArcAndCore.g:5253:1: ( ( rule__Transition__SourceAssignment_0 ) )
+            // InternalMontiArcAndCore.g:5254:2: ( rule__Transition__SourceAssignment_0 )
             {
              before(grammarAccess.getTransitionAccess().getSourceAssignment_0()); 
-            // InternalMontiArcAndCore.g:5228:2: ( rule__Transition__SourceAssignment_0 )
-            // InternalMontiArcAndCore.g:5228:3: rule__Transition__SourceAssignment_0
+            // InternalMontiArcAndCore.g:5255:2: ( rule__Transition__SourceAssignment_0 )
+            // InternalMontiArcAndCore.g:5255:3: rule__Transition__SourceAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Transition__SourceAssignment_0();
@@ -16515,14 +16612,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__1"
-    // InternalMontiArcAndCore.g:5236:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
+    // InternalMontiArcAndCore.g:5263:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
     public final void rule__Transition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5240:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
-            // InternalMontiArcAndCore.g:5241:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
+            // InternalMontiArcAndCore.g:5267:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
+            // InternalMontiArcAndCore.g:5268:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
             {
             pushFollow(FOLLOW_47);
             rule__Transition__Group__1__Impl();
@@ -16553,29 +16650,29 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__1__Impl"
-    // InternalMontiArcAndCore.g:5248:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__Group_1__0 )? ) ;
+    // InternalMontiArcAndCore.g:5275:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__Group_1__0 )? ) ;
     public final void rule__Transition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5252:1: ( ( ( rule__Transition__Group_1__0 )? ) )
-            // InternalMontiArcAndCore.g:5253:1: ( ( rule__Transition__Group_1__0 )? )
+            // InternalMontiArcAndCore.g:5279:1: ( ( ( rule__Transition__Group_1__0 )? ) )
+            // InternalMontiArcAndCore.g:5280:1: ( ( rule__Transition__Group_1__0 )? )
             {
-            // InternalMontiArcAndCore.g:5253:1: ( ( rule__Transition__Group_1__0 )? )
-            // InternalMontiArcAndCore.g:5254:2: ( rule__Transition__Group_1__0 )?
+            // InternalMontiArcAndCore.g:5280:1: ( ( rule__Transition__Group_1__0 )? )
+            // InternalMontiArcAndCore.g:5281:2: ( rule__Transition__Group_1__0 )?
             {
              before(grammarAccess.getTransitionAccess().getGroup_1()); 
-            // InternalMontiArcAndCore.g:5255:2: ( rule__Transition__Group_1__0 )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalMontiArcAndCore.g:5282:2: ( rule__Transition__Group_1__0 )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==60) ) {
-                alt50=1;
+            if ( (LA51_0==60) ) {
+                alt51=1;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
-                    // InternalMontiArcAndCore.g:5255:3: rule__Transition__Group_1__0
+                    // InternalMontiArcAndCore.g:5282:3: rule__Transition__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Transition__Group_1__0();
@@ -16611,14 +16708,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__2"
-    // InternalMontiArcAndCore.g:5263:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl rule__Transition__Group__3 ;
+    // InternalMontiArcAndCore.g:5290:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl rule__Transition__Group__3 ;
     public final void rule__Transition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5267:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
-            // InternalMontiArcAndCore.g:5268:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
+            // InternalMontiArcAndCore.g:5294:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
+            // InternalMontiArcAndCore.g:5295:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
             {
             pushFollow(FOLLOW_47);
             rule__Transition__Group__2__Impl();
@@ -16649,29 +16746,29 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__2__Impl"
-    // InternalMontiArcAndCore.g:5275:1: rule__Transition__Group__2__Impl : ( ( rule__Transition__Group_2__0 )? ) ;
+    // InternalMontiArcAndCore.g:5302:1: rule__Transition__Group__2__Impl : ( ( rule__Transition__Group_2__0 )? ) ;
     public final void rule__Transition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5279:1: ( ( ( rule__Transition__Group_2__0 )? ) )
-            // InternalMontiArcAndCore.g:5280:1: ( ( rule__Transition__Group_2__0 )? )
+            // InternalMontiArcAndCore.g:5306:1: ( ( ( rule__Transition__Group_2__0 )? ) )
+            // InternalMontiArcAndCore.g:5307:1: ( ( rule__Transition__Group_2__0 )? )
             {
-            // InternalMontiArcAndCore.g:5280:1: ( ( rule__Transition__Group_2__0 )? )
-            // InternalMontiArcAndCore.g:5281:2: ( rule__Transition__Group_2__0 )?
+            // InternalMontiArcAndCore.g:5307:1: ( ( rule__Transition__Group_2__0 )? )
+            // InternalMontiArcAndCore.g:5308:2: ( rule__Transition__Group_2__0 )?
             {
              before(grammarAccess.getTransitionAccess().getGroup_2()); 
-            // InternalMontiArcAndCore.g:5282:2: ( rule__Transition__Group_2__0 )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // InternalMontiArcAndCore.g:5309:2: ( rule__Transition__Group_2__0 )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==46) ) {
-                alt51=1;
+            if ( (LA52_0==46) ) {
+                alt52=1;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
-                    // InternalMontiArcAndCore.g:5282:3: rule__Transition__Group_2__0
+                    // InternalMontiArcAndCore.g:5309:3: rule__Transition__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Transition__Group_2__0();
@@ -16707,14 +16804,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__3"
-    // InternalMontiArcAndCore.g:5290:1: rule__Transition__Group__3 : rule__Transition__Group__3__Impl rule__Transition__Group__4 ;
+    // InternalMontiArcAndCore.g:5317:1: rule__Transition__Group__3 : rule__Transition__Group__3__Impl rule__Transition__Group__4 ;
     public final void rule__Transition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5294:1: ( rule__Transition__Group__3__Impl rule__Transition__Group__4 )
-            // InternalMontiArcAndCore.g:5295:2: rule__Transition__Group__3__Impl rule__Transition__Group__4
+            // InternalMontiArcAndCore.g:5321:1: ( rule__Transition__Group__3__Impl rule__Transition__Group__4 )
+            // InternalMontiArcAndCore.g:5322:2: rule__Transition__Group__3__Impl rule__Transition__Group__4
             {
             pushFollow(FOLLOW_47);
             rule__Transition__Group__3__Impl();
@@ -16745,29 +16842,29 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__3__Impl"
-    // InternalMontiArcAndCore.g:5302:1: rule__Transition__Group__3__Impl : ( ( rule__Transition__Group_3__0 )? ) ;
+    // InternalMontiArcAndCore.g:5329:1: rule__Transition__Group__3__Impl : ( ( rule__Transition__Group_3__0 )? ) ;
     public final void rule__Transition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5306:1: ( ( ( rule__Transition__Group_3__0 )? ) )
-            // InternalMontiArcAndCore.g:5307:1: ( ( rule__Transition__Group_3__0 )? )
+            // InternalMontiArcAndCore.g:5333:1: ( ( ( rule__Transition__Group_3__0 )? ) )
+            // InternalMontiArcAndCore.g:5334:1: ( ( rule__Transition__Group_3__0 )? )
             {
-            // InternalMontiArcAndCore.g:5307:1: ( ( rule__Transition__Group_3__0 )? )
-            // InternalMontiArcAndCore.g:5308:2: ( rule__Transition__Group_3__0 )?
+            // InternalMontiArcAndCore.g:5334:1: ( ( rule__Transition__Group_3__0 )? )
+            // InternalMontiArcAndCore.g:5335:2: ( rule__Transition__Group_3__0 )?
             {
              before(grammarAccess.getTransitionAccess().getGroup_3()); 
-            // InternalMontiArcAndCore.g:5309:2: ( rule__Transition__Group_3__0 )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalMontiArcAndCore.g:5336:2: ( rule__Transition__Group_3__0 )?
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA52_0==39) ) {
-                alt52=1;
+            if ( (LA53_0==39) ) {
+                alt53=1;
             }
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
-                    // InternalMontiArcAndCore.g:5309:3: rule__Transition__Group_3__0
+                    // InternalMontiArcAndCore.g:5336:3: rule__Transition__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Transition__Group_3__0();
@@ -16803,14 +16900,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__4"
-    // InternalMontiArcAndCore.g:5317:1: rule__Transition__Group__4 : rule__Transition__Group__4__Impl ;
+    // InternalMontiArcAndCore.g:5344:1: rule__Transition__Group__4 : rule__Transition__Group__4__Impl ;
     public final void rule__Transition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5321:1: ( rule__Transition__Group__4__Impl )
-            // InternalMontiArcAndCore.g:5322:2: rule__Transition__Group__4__Impl
+            // InternalMontiArcAndCore.g:5348:1: ( rule__Transition__Group__4__Impl )
+            // InternalMontiArcAndCore.g:5349:2: rule__Transition__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group__4__Impl();
@@ -16836,17 +16933,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group__4__Impl"
-    // InternalMontiArcAndCore.g:5328:1: rule__Transition__Group__4__Impl : ( ';' ) ;
+    // InternalMontiArcAndCore.g:5355:1: rule__Transition__Group__4__Impl : ( ';' ) ;
     public final void rule__Transition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5332:1: ( ( ';' ) )
-            // InternalMontiArcAndCore.g:5333:1: ( ';' )
+            // InternalMontiArcAndCore.g:5359:1: ( ( ';' ) )
+            // InternalMontiArcAndCore.g:5360:1: ( ';' )
             {
-            // InternalMontiArcAndCore.g:5333:1: ( ';' )
-            // InternalMontiArcAndCore.g:5334:2: ';'
+            // InternalMontiArcAndCore.g:5360:1: ( ';' )
+            // InternalMontiArcAndCore.g:5361:2: ';'
             {
              before(grammarAccess.getTransitionAccess().getSemicolonKeyword_4()); 
             match(input,44,FOLLOW_2); 
@@ -16873,14 +16970,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_1__0"
-    // InternalMontiArcAndCore.g:5344:1: rule__Transition__Group_1__0 : rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 ;
+    // InternalMontiArcAndCore.g:5371:1: rule__Transition__Group_1__0 : rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 ;
     public final void rule__Transition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5348:1: ( rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 )
-            // InternalMontiArcAndCore.g:5349:2: rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1
+            // InternalMontiArcAndCore.g:5375:1: ( rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 )
+            // InternalMontiArcAndCore.g:5376:2: rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1
             {
             pushFollow(FOLLOW_15);
             rule__Transition__Group_1__0__Impl();
@@ -16911,17 +17008,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_1__0__Impl"
-    // InternalMontiArcAndCore.g:5356:1: rule__Transition__Group_1__0__Impl : ( '->' ) ;
+    // InternalMontiArcAndCore.g:5383:1: rule__Transition__Group_1__0__Impl : ( '->' ) ;
     public final void rule__Transition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5360:1: ( ( '->' ) )
-            // InternalMontiArcAndCore.g:5361:1: ( '->' )
+            // InternalMontiArcAndCore.g:5387:1: ( ( '->' ) )
+            // InternalMontiArcAndCore.g:5388:1: ( '->' )
             {
-            // InternalMontiArcAndCore.g:5361:1: ( '->' )
-            // InternalMontiArcAndCore.g:5362:2: '->'
+            // InternalMontiArcAndCore.g:5388:1: ( '->' )
+            // InternalMontiArcAndCore.g:5389:2: '->'
             {
              before(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); 
             match(input,60,FOLLOW_2); 
@@ -16948,14 +17045,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_1__1"
-    // InternalMontiArcAndCore.g:5371:1: rule__Transition__Group_1__1 : rule__Transition__Group_1__1__Impl ;
+    // InternalMontiArcAndCore.g:5398:1: rule__Transition__Group_1__1 : rule__Transition__Group_1__1__Impl ;
     public final void rule__Transition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5375:1: ( rule__Transition__Group_1__1__Impl )
-            // InternalMontiArcAndCore.g:5376:2: rule__Transition__Group_1__1__Impl
+            // InternalMontiArcAndCore.g:5402:1: ( rule__Transition__Group_1__1__Impl )
+            // InternalMontiArcAndCore.g:5403:2: rule__Transition__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group_1__1__Impl();
@@ -16981,21 +17078,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_1__1__Impl"
-    // InternalMontiArcAndCore.g:5382:1: rule__Transition__Group_1__1__Impl : ( ( rule__Transition__TargetAssignment_1_1 ) ) ;
+    // InternalMontiArcAndCore.g:5409:1: rule__Transition__Group_1__1__Impl : ( ( rule__Transition__TargetAssignment_1_1 ) ) ;
     public final void rule__Transition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5386:1: ( ( ( rule__Transition__TargetAssignment_1_1 ) ) )
-            // InternalMontiArcAndCore.g:5387:1: ( ( rule__Transition__TargetAssignment_1_1 ) )
+            // InternalMontiArcAndCore.g:5413:1: ( ( ( rule__Transition__TargetAssignment_1_1 ) ) )
+            // InternalMontiArcAndCore.g:5414:1: ( ( rule__Transition__TargetAssignment_1_1 ) )
             {
-            // InternalMontiArcAndCore.g:5387:1: ( ( rule__Transition__TargetAssignment_1_1 ) )
-            // InternalMontiArcAndCore.g:5388:2: ( rule__Transition__TargetAssignment_1_1 )
+            // InternalMontiArcAndCore.g:5414:1: ( ( rule__Transition__TargetAssignment_1_1 ) )
+            // InternalMontiArcAndCore.g:5415:2: ( rule__Transition__TargetAssignment_1_1 )
             {
              before(grammarAccess.getTransitionAccess().getTargetAssignment_1_1()); 
-            // InternalMontiArcAndCore.g:5389:2: ( rule__Transition__TargetAssignment_1_1 )
-            // InternalMontiArcAndCore.g:5389:3: rule__Transition__TargetAssignment_1_1
+            // InternalMontiArcAndCore.g:5416:2: ( rule__Transition__TargetAssignment_1_1 )
+            // InternalMontiArcAndCore.g:5416:3: rule__Transition__TargetAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Transition__TargetAssignment_1_1();
@@ -17028,14 +17125,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_2__0"
-    // InternalMontiArcAndCore.g:5398:1: rule__Transition__Group_2__0 : rule__Transition__Group_2__0__Impl rule__Transition__Group_2__1 ;
+    // InternalMontiArcAndCore.g:5425:1: rule__Transition__Group_2__0 : rule__Transition__Group_2__0__Impl rule__Transition__Group_2__1 ;
     public final void rule__Transition__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5402:1: ( rule__Transition__Group_2__0__Impl rule__Transition__Group_2__1 )
-            // InternalMontiArcAndCore.g:5403:2: rule__Transition__Group_2__0__Impl rule__Transition__Group_2__1
+            // InternalMontiArcAndCore.g:5429:1: ( rule__Transition__Group_2__0__Impl rule__Transition__Group_2__1 )
+            // InternalMontiArcAndCore.g:5430:2: rule__Transition__Group_2__0__Impl rule__Transition__Group_2__1
             {
             pushFollow(FOLLOW_14);
             rule__Transition__Group_2__0__Impl();
@@ -17066,17 +17163,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_2__0__Impl"
-    // InternalMontiArcAndCore.g:5410:1: rule__Transition__Group_2__0__Impl : ( '[' ) ;
+    // InternalMontiArcAndCore.g:5437:1: rule__Transition__Group_2__0__Impl : ( '[' ) ;
     public final void rule__Transition__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5414:1: ( ( '[' ) )
-            // InternalMontiArcAndCore.g:5415:1: ( '[' )
+            // InternalMontiArcAndCore.g:5441:1: ( ( '[' ) )
+            // InternalMontiArcAndCore.g:5442:1: ( '[' )
             {
-            // InternalMontiArcAndCore.g:5415:1: ( '[' )
-            // InternalMontiArcAndCore.g:5416:2: '['
+            // InternalMontiArcAndCore.g:5442:1: ( '[' )
+            // InternalMontiArcAndCore.g:5443:2: '['
             {
              before(grammarAccess.getTransitionAccess().getLeftSquareBracketKeyword_2_0()); 
             match(input,46,FOLLOW_2); 
@@ -17103,14 +17200,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_2__1"
-    // InternalMontiArcAndCore.g:5425:1: rule__Transition__Group_2__1 : rule__Transition__Group_2__1__Impl rule__Transition__Group_2__2 ;
+    // InternalMontiArcAndCore.g:5452:1: rule__Transition__Group_2__1 : rule__Transition__Group_2__1__Impl rule__Transition__Group_2__2 ;
     public final void rule__Transition__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5429:1: ( rule__Transition__Group_2__1__Impl rule__Transition__Group_2__2 )
-            // InternalMontiArcAndCore.g:5430:2: rule__Transition__Group_2__1__Impl rule__Transition__Group_2__2
+            // InternalMontiArcAndCore.g:5456:1: ( rule__Transition__Group_2__1__Impl rule__Transition__Group_2__2 )
+            // InternalMontiArcAndCore.g:5457:2: rule__Transition__Group_2__1__Impl rule__Transition__Group_2__2
             {
             pushFollow(FOLLOW_12);
             rule__Transition__Group_2__1__Impl();
@@ -17141,21 +17238,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_2__1__Impl"
-    // InternalMontiArcAndCore.g:5437:1: rule__Transition__Group_2__1__Impl : ( ( rule__Transition__ExpressionAssignment_2_1 ) ) ;
+    // InternalMontiArcAndCore.g:5464:1: rule__Transition__Group_2__1__Impl : ( ( rule__Transition__ExpressionAssignment_2_1 ) ) ;
     public final void rule__Transition__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5441:1: ( ( ( rule__Transition__ExpressionAssignment_2_1 ) ) )
-            // InternalMontiArcAndCore.g:5442:1: ( ( rule__Transition__ExpressionAssignment_2_1 ) )
+            // InternalMontiArcAndCore.g:5468:1: ( ( ( rule__Transition__ExpressionAssignment_2_1 ) ) )
+            // InternalMontiArcAndCore.g:5469:1: ( ( rule__Transition__ExpressionAssignment_2_1 ) )
             {
-            // InternalMontiArcAndCore.g:5442:1: ( ( rule__Transition__ExpressionAssignment_2_1 ) )
-            // InternalMontiArcAndCore.g:5443:2: ( rule__Transition__ExpressionAssignment_2_1 )
+            // InternalMontiArcAndCore.g:5469:1: ( ( rule__Transition__ExpressionAssignment_2_1 ) )
+            // InternalMontiArcAndCore.g:5470:2: ( rule__Transition__ExpressionAssignment_2_1 )
             {
              before(grammarAccess.getTransitionAccess().getExpressionAssignment_2_1()); 
-            // InternalMontiArcAndCore.g:5444:2: ( rule__Transition__ExpressionAssignment_2_1 )
-            // InternalMontiArcAndCore.g:5444:3: rule__Transition__ExpressionAssignment_2_1
+            // InternalMontiArcAndCore.g:5471:2: ( rule__Transition__ExpressionAssignment_2_1 )
+            // InternalMontiArcAndCore.g:5471:3: rule__Transition__ExpressionAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Transition__ExpressionAssignment_2_1();
@@ -17188,14 +17285,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_2__2"
-    // InternalMontiArcAndCore.g:5452:1: rule__Transition__Group_2__2 : rule__Transition__Group_2__2__Impl ;
+    // InternalMontiArcAndCore.g:5479:1: rule__Transition__Group_2__2 : rule__Transition__Group_2__2__Impl ;
     public final void rule__Transition__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5456:1: ( rule__Transition__Group_2__2__Impl )
-            // InternalMontiArcAndCore.g:5457:2: rule__Transition__Group_2__2__Impl
+            // InternalMontiArcAndCore.g:5483:1: ( rule__Transition__Group_2__2__Impl )
+            // InternalMontiArcAndCore.g:5484:2: rule__Transition__Group_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group_2__2__Impl();
@@ -17221,17 +17318,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_2__2__Impl"
-    // InternalMontiArcAndCore.g:5463:1: rule__Transition__Group_2__2__Impl : ( ']' ) ;
+    // InternalMontiArcAndCore.g:5490:1: rule__Transition__Group_2__2__Impl : ( ']' ) ;
     public final void rule__Transition__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5467:1: ( ( ']' ) )
-            // InternalMontiArcAndCore.g:5468:1: ( ']' )
+            // InternalMontiArcAndCore.g:5494:1: ( ( ']' ) )
+            // InternalMontiArcAndCore.g:5495:1: ( ']' )
             {
-            // InternalMontiArcAndCore.g:5468:1: ( ']' )
-            // InternalMontiArcAndCore.g:5469:2: ']'
+            // InternalMontiArcAndCore.g:5495:1: ( ']' )
+            // InternalMontiArcAndCore.g:5496:2: ']'
             {
              before(grammarAccess.getTransitionAccess().getRightSquareBracketKeyword_2_2()); 
             match(input,47,FOLLOW_2); 
@@ -17258,14 +17355,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_3__0"
-    // InternalMontiArcAndCore.g:5479:1: rule__Transition__Group_3__0 : rule__Transition__Group_3__0__Impl rule__Transition__Group_3__1 ;
+    // InternalMontiArcAndCore.g:5506:1: rule__Transition__Group_3__0 : rule__Transition__Group_3__0__Impl rule__Transition__Group_3__1 ;
     public final void rule__Transition__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5483:1: ( rule__Transition__Group_3__0__Impl rule__Transition__Group_3__1 )
-            // InternalMontiArcAndCore.g:5484:2: rule__Transition__Group_3__0__Impl rule__Transition__Group_3__1
+            // InternalMontiArcAndCore.g:5510:1: ( rule__Transition__Group_3__0__Impl rule__Transition__Group_3__1 )
+            // InternalMontiArcAndCore.g:5511:2: rule__Transition__Group_3__0__Impl rule__Transition__Group_3__1
             {
             pushFollow(FOLLOW_20);
             rule__Transition__Group_3__0__Impl();
@@ -17296,17 +17393,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_3__0__Impl"
-    // InternalMontiArcAndCore.g:5491:1: rule__Transition__Group_3__0__Impl : ( '/' ) ;
+    // InternalMontiArcAndCore.g:5518:1: rule__Transition__Group_3__0__Impl : ( '/' ) ;
     public final void rule__Transition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5495:1: ( ( '/' ) )
-            // InternalMontiArcAndCore.g:5496:1: ( '/' )
+            // InternalMontiArcAndCore.g:5522:1: ( ( '/' ) )
+            // InternalMontiArcAndCore.g:5523:1: ( '/' )
             {
-            // InternalMontiArcAndCore.g:5496:1: ( '/' )
-            // InternalMontiArcAndCore.g:5497:2: '/'
+            // InternalMontiArcAndCore.g:5523:1: ( '/' )
+            // InternalMontiArcAndCore.g:5524:2: '/'
             {
              before(grammarAccess.getTransitionAccess().getSolidusKeyword_3_0()); 
             match(input,39,FOLLOW_2); 
@@ -17333,14 +17430,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_3__1"
-    // InternalMontiArcAndCore.g:5506:1: rule__Transition__Group_3__1 : rule__Transition__Group_3__1__Impl ;
+    // InternalMontiArcAndCore.g:5533:1: rule__Transition__Group_3__1 : rule__Transition__Group_3__1__Impl ;
     public final void rule__Transition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5510:1: ( rule__Transition__Group_3__1__Impl )
-            // InternalMontiArcAndCore.g:5511:2: rule__Transition__Group_3__1__Impl
+            // InternalMontiArcAndCore.g:5537:1: ( rule__Transition__Group_3__1__Impl )
+            // InternalMontiArcAndCore.g:5538:2: rule__Transition__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group_3__1__Impl();
@@ -17366,21 +17463,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__Group_3__1__Impl"
-    // InternalMontiArcAndCore.g:5517:1: rule__Transition__Group_3__1__Impl : ( ( rule__Transition__ReactionAssignment_3_1 ) ) ;
+    // InternalMontiArcAndCore.g:5544:1: rule__Transition__Group_3__1__Impl : ( ( rule__Transition__ReactionAssignment_3_1 ) ) ;
     public final void rule__Transition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5521:1: ( ( ( rule__Transition__ReactionAssignment_3_1 ) ) )
-            // InternalMontiArcAndCore.g:5522:1: ( ( rule__Transition__ReactionAssignment_3_1 ) )
+            // InternalMontiArcAndCore.g:5548:1: ( ( ( rule__Transition__ReactionAssignment_3_1 ) ) )
+            // InternalMontiArcAndCore.g:5549:1: ( ( rule__Transition__ReactionAssignment_3_1 ) )
             {
-            // InternalMontiArcAndCore.g:5522:1: ( ( rule__Transition__ReactionAssignment_3_1 ) )
-            // InternalMontiArcAndCore.g:5523:2: ( rule__Transition__ReactionAssignment_3_1 )
+            // InternalMontiArcAndCore.g:5549:1: ( ( rule__Transition__ReactionAssignment_3_1 ) )
+            // InternalMontiArcAndCore.g:5550:2: ( rule__Transition__ReactionAssignment_3_1 )
             {
              before(grammarAccess.getTransitionAccess().getReactionAssignment_3_1()); 
-            // InternalMontiArcAndCore.g:5524:2: ( rule__Transition__ReactionAssignment_3_1 )
-            // InternalMontiArcAndCore.g:5524:3: rule__Transition__ReactionAssignment_3_1
+            // InternalMontiArcAndCore.g:5551:2: ( rule__Transition__ReactionAssignment_3_1 )
+            // InternalMontiArcAndCore.g:5551:3: rule__Transition__ReactionAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Transition__ReactionAssignment_3_1();
@@ -17413,14 +17510,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__0"
-    // InternalMontiArcAndCore.g:5533:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
+    // InternalMontiArcAndCore.g:5560:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
     public final void rule__Block__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5537:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
-            // InternalMontiArcAndCore.g:5538:2: rule__Block__Group__0__Impl rule__Block__Group__1
+            // InternalMontiArcAndCore.g:5564:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
+            // InternalMontiArcAndCore.g:5565:2: rule__Block__Group__0__Impl rule__Block__Group__1
             {
             pushFollow(FOLLOW_20);
             rule__Block__Group__0__Impl();
@@ -17451,21 +17548,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__0__Impl"
-    // InternalMontiArcAndCore.g:5545:1: rule__Block__Group__0__Impl : ( () ) ;
+    // InternalMontiArcAndCore.g:5572:1: rule__Block__Group__0__Impl : ( () ) ;
     public final void rule__Block__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5549:1: ( ( () ) )
-            // InternalMontiArcAndCore.g:5550:1: ( () )
+            // InternalMontiArcAndCore.g:5576:1: ( ( () ) )
+            // InternalMontiArcAndCore.g:5577:1: ( () )
             {
-            // InternalMontiArcAndCore.g:5550:1: ( () )
-            // InternalMontiArcAndCore.g:5551:2: ()
+            // InternalMontiArcAndCore.g:5577:1: ( () )
+            // InternalMontiArcAndCore.g:5578:2: ()
             {
              before(grammarAccess.getBlockAccess().getBlockAction_0()); 
-            // InternalMontiArcAndCore.g:5552:2: ()
-            // InternalMontiArcAndCore.g:5552:3: 
+            // InternalMontiArcAndCore.g:5579:2: ()
+            // InternalMontiArcAndCore.g:5579:3: 
             {
             }
 
@@ -17488,14 +17585,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__1"
-    // InternalMontiArcAndCore.g:5560:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
+    // InternalMontiArcAndCore.g:5587:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
     public final void rule__Block__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5564:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
-            // InternalMontiArcAndCore.g:5565:2: rule__Block__Group__1__Impl rule__Block__Group__2
+            // InternalMontiArcAndCore.g:5591:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
+            // InternalMontiArcAndCore.g:5592:2: rule__Block__Group__1__Impl rule__Block__Group__2
             {
             pushFollow(FOLLOW_48);
             rule__Block__Group__1__Impl();
@@ -17526,17 +17623,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__1__Impl"
-    // InternalMontiArcAndCore.g:5572:1: rule__Block__Group__1__Impl : ( '{' ) ;
+    // InternalMontiArcAndCore.g:5599:1: rule__Block__Group__1__Impl : ( '{' ) ;
     public final void rule__Block__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5576:1: ( ( '{' ) )
-            // InternalMontiArcAndCore.g:5577:1: ( '{' )
+            // InternalMontiArcAndCore.g:5603:1: ( ( '{' ) )
+            // InternalMontiArcAndCore.g:5604:1: ( '{' )
             {
-            // InternalMontiArcAndCore.g:5577:1: ( '{' )
-            // InternalMontiArcAndCore.g:5578:2: '{'
+            // InternalMontiArcAndCore.g:5604:1: ( '{' )
+            // InternalMontiArcAndCore.g:5605:2: '{'
             {
              before(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,52,FOLLOW_2); 
@@ -17563,14 +17660,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__2"
-    // InternalMontiArcAndCore.g:5587:1: rule__Block__Group__2 : rule__Block__Group__2__Impl rule__Block__Group__3 ;
+    // InternalMontiArcAndCore.g:5614:1: rule__Block__Group__2 : rule__Block__Group__2__Impl rule__Block__Group__3 ;
     public final void rule__Block__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5591:1: ( rule__Block__Group__2__Impl rule__Block__Group__3 )
-            // InternalMontiArcAndCore.g:5592:2: rule__Block__Group__2__Impl rule__Block__Group__3
+            // InternalMontiArcAndCore.g:5618:1: ( rule__Block__Group__2__Impl rule__Block__Group__3 )
+            // InternalMontiArcAndCore.g:5619:2: rule__Block__Group__2__Impl rule__Block__Group__3
             {
             pushFollow(FOLLOW_48);
             rule__Block__Group__2__Impl();
@@ -17601,33 +17698,33 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__2__Impl"
-    // InternalMontiArcAndCore.g:5599:1: rule__Block__Group__2__Impl : ( ( rule__Block__BlocksAssignment_2 )* ) ;
+    // InternalMontiArcAndCore.g:5626:1: rule__Block__Group__2__Impl : ( ( rule__Block__BlocksAssignment_2 )* ) ;
     public final void rule__Block__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5603:1: ( ( ( rule__Block__BlocksAssignment_2 )* ) )
-            // InternalMontiArcAndCore.g:5604:1: ( ( rule__Block__BlocksAssignment_2 )* )
+            // InternalMontiArcAndCore.g:5630:1: ( ( ( rule__Block__BlocksAssignment_2 )* ) )
+            // InternalMontiArcAndCore.g:5631:1: ( ( rule__Block__BlocksAssignment_2 )* )
             {
-            // InternalMontiArcAndCore.g:5604:1: ( ( rule__Block__BlocksAssignment_2 )* )
-            // InternalMontiArcAndCore.g:5605:2: ( rule__Block__BlocksAssignment_2 )*
+            // InternalMontiArcAndCore.g:5631:1: ( ( rule__Block__BlocksAssignment_2 )* )
+            // InternalMontiArcAndCore.g:5632:2: ( rule__Block__BlocksAssignment_2 )*
             {
              before(grammarAccess.getBlockAccess().getBlocksAssignment_2()); 
-            // InternalMontiArcAndCore.g:5606:2: ( rule__Block__BlocksAssignment_2 )*
-            loop53:
+            // InternalMontiArcAndCore.g:5633:2: ( rule__Block__BlocksAssignment_2 )*
+            loop54:
             do {
-                int alt53=2;
-                int LA53_0 = input.LA(1);
+                int alt54=2;
+                int LA54_0 = input.LA(1);
 
-                if ( ((LA53_0>=RULE_MCQUALIFIEDNAME && LA53_0<=RULE_ID)||(LA53_0>=RULE_INT && LA53_0<=RULE_STRING)) ) {
-                    alt53=1;
+                if ( ((LA54_0>=RULE_MCQUALIFIEDNAME && LA54_0<=RULE_ID)||(LA54_0>=RULE_INT && LA54_0<=RULE_STRING)) ) {
+                    alt54=1;
                 }
 
 
-                switch (alt53) {
+                switch (alt54) {
             	case 1 :
-            	    // InternalMontiArcAndCore.g:5606:3: rule__Block__BlocksAssignment_2
+            	    // InternalMontiArcAndCore.g:5633:3: rule__Block__BlocksAssignment_2
             	    {
             	    pushFollow(FOLLOW_49);
             	    rule__Block__BlocksAssignment_2();
@@ -17639,7 +17736,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop53;
+            	    break loop54;
                 }
             } while (true);
 
@@ -17666,14 +17763,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__3"
-    // InternalMontiArcAndCore.g:5614:1: rule__Block__Group__3 : rule__Block__Group__3__Impl ;
+    // InternalMontiArcAndCore.g:5641:1: rule__Block__Group__3 : rule__Block__Group__3__Impl ;
     public final void rule__Block__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5618:1: ( rule__Block__Group__3__Impl )
-            // InternalMontiArcAndCore.g:5619:2: rule__Block__Group__3__Impl
+            // InternalMontiArcAndCore.g:5645:1: ( rule__Block__Group__3__Impl )
+            // InternalMontiArcAndCore.g:5646:2: rule__Block__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Block__Group__3__Impl();
@@ -17699,17 +17796,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__Group__3__Impl"
-    // InternalMontiArcAndCore.g:5625:1: rule__Block__Group__3__Impl : ( '}' ) ;
+    // InternalMontiArcAndCore.g:5652:1: rule__Block__Group__3__Impl : ( '}' ) ;
     public final void rule__Block__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5629:1: ( ( '}' ) )
-            // InternalMontiArcAndCore.g:5630:1: ( '}' )
+            // InternalMontiArcAndCore.g:5656:1: ( ( '}' ) )
+            // InternalMontiArcAndCore.g:5657:1: ( '}' )
             {
-            // InternalMontiArcAndCore.g:5630:1: ( '}' )
-            // InternalMontiArcAndCore.g:5631:2: '}'
+            // InternalMontiArcAndCore.g:5657:1: ( '}' )
+            // InternalMontiArcAndCore.g:5658:2: '}'
             {
              before(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_3()); 
             match(input,53,FOLLOW_2); 
@@ -17736,14 +17833,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleExpression__Group__0"
-    // InternalMontiArcAndCore.g:5641:1: rule__SimpleExpression__Group__0 : rule__SimpleExpression__Group__0__Impl rule__SimpleExpression__Group__1 ;
+    // InternalMontiArcAndCore.g:5668:1: rule__SimpleExpression__Group__0 : rule__SimpleExpression__Group__0__Impl rule__SimpleExpression__Group__1 ;
     public final void rule__SimpleExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5645:1: ( rule__SimpleExpression__Group__0__Impl rule__SimpleExpression__Group__1 )
-            // InternalMontiArcAndCore.g:5646:2: rule__SimpleExpression__Group__0__Impl rule__SimpleExpression__Group__1
+            // InternalMontiArcAndCore.g:5672:1: ( rule__SimpleExpression__Group__0__Impl rule__SimpleExpression__Group__1 )
+            // InternalMontiArcAndCore.g:5673:2: rule__SimpleExpression__Group__0__Impl rule__SimpleExpression__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__SimpleExpression__Group__0__Impl();
@@ -17774,21 +17871,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleExpression__Group__0__Impl"
-    // InternalMontiArcAndCore.g:5653:1: rule__SimpleExpression__Group__0__Impl : ( ( rule__SimpleExpression__ExpressionAssignment_0 ) ) ;
+    // InternalMontiArcAndCore.g:5680:1: rule__SimpleExpression__Group__0__Impl : ( ( rule__SimpleExpression__ExpressionAssignment_0 ) ) ;
     public final void rule__SimpleExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5657:1: ( ( ( rule__SimpleExpression__ExpressionAssignment_0 ) ) )
-            // InternalMontiArcAndCore.g:5658:1: ( ( rule__SimpleExpression__ExpressionAssignment_0 ) )
+            // InternalMontiArcAndCore.g:5684:1: ( ( ( rule__SimpleExpression__ExpressionAssignment_0 ) ) )
+            // InternalMontiArcAndCore.g:5685:1: ( ( rule__SimpleExpression__ExpressionAssignment_0 ) )
             {
-            // InternalMontiArcAndCore.g:5658:1: ( ( rule__SimpleExpression__ExpressionAssignment_0 ) )
-            // InternalMontiArcAndCore.g:5659:2: ( rule__SimpleExpression__ExpressionAssignment_0 )
+            // InternalMontiArcAndCore.g:5685:1: ( ( rule__SimpleExpression__ExpressionAssignment_0 ) )
+            // InternalMontiArcAndCore.g:5686:2: ( rule__SimpleExpression__ExpressionAssignment_0 )
             {
              before(grammarAccess.getSimpleExpressionAccess().getExpressionAssignment_0()); 
-            // InternalMontiArcAndCore.g:5660:2: ( rule__SimpleExpression__ExpressionAssignment_0 )
-            // InternalMontiArcAndCore.g:5660:3: rule__SimpleExpression__ExpressionAssignment_0
+            // InternalMontiArcAndCore.g:5687:2: ( rule__SimpleExpression__ExpressionAssignment_0 )
+            // InternalMontiArcAndCore.g:5687:3: rule__SimpleExpression__ExpressionAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__SimpleExpression__ExpressionAssignment_0();
@@ -17821,14 +17918,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleExpression__Group__1"
-    // InternalMontiArcAndCore.g:5668:1: rule__SimpleExpression__Group__1 : rule__SimpleExpression__Group__1__Impl ;
+    // InternalMontiArcAndCore.g:5695:1: rule__SimpleExpression__Group__1 : rule__SimpleExpression__Group__1__Impl ;
     public final void rule__SimpleExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5672:1: ( rule__SimpleExpression__Group__1__Impl )
-            // InternalMontiArcAndCore.g:5673:2: rule__SimpleExpression__Group__1__Impl
+            // InternalMontiArcAndCore.g:5699:1: ( rule__SimpleExpression__Group__1__Impl )
+            // InternalMontiArcAndCore.g:5700:2: rule__SimpleExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SimpleExpression__Group__1__Impl();
@@ -17854,17 +17951,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleExpression__Group__1__Impl"
-    // InternalMontiArcAndCore.g:5679:1: rule__SimpleExpression__Group__1__Impl : ( ';' ) ;
+    // InternalMontiArcAndCore.g:5706:1: rule__SimpleExpression__Group__1__Impl : ( ';' ) ;
     public final void rule__SimpleExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5683:1: ( ( ';' ) )
-            // InternalMontiArcAndCore.g:5684:1: ( ';' )
+            // InternalMontiArcAndCore.g:5710:1: ( ( ';' ) )
+            // InternalMontiArcAndCore.g:5711:1: ( ';' )
             {
-            // InternalMontiArcAndCore.g:5684:1: ( ';' )
-            // InternalMontiArcAndCore.g:5685:2: ';'
+            // InternalMontiArcAndCore.g:5711:1: ( ';' )
+            // InternalMontiArcAndCore.g:5712:2: ';'
             {
              before(grammarAccess.getSimpleExpressionAccess().getSemicolonKeyword_1()); 
             match(input,44,FOLLOW_2); 
@@ -17891,14 +17988,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__0"
-    // InternalMontiArcAndCore.g:5695:1: rule__SimpleInit__Group__0 : rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1 ;
+    // InternalMontiArcAndCore.g:5722:1: rule__SimpleInit__Group__0 : rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1 ;
     public final void rule__SimpleInit__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5699:1: ( rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1 )
-            // InternalMontiArcAndCore.g:5700:2: rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1
+            // InternalMontiArcAndCore.g:5726:1: ( rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1 )
+            // InternalMontiArcAndCore.g:5727:2: rule__SimpleInit__Group__0__Impl rule__SimpleInit__Group__1
             {
             pushFollow(FOLLOW_33);
             rule__SimpleInit__Group__0__Impl();
@@ -17929,21 +18026,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__0__Impl"
-    // InternalMontiArcAndCore.g:5707:1: rule__SimpleInit__Group__0__Impl : ( ( rule__SimpleInit__NameAssignment_0 ) ) ;
+    // InternalMontiArcAndCore.g:5734:1: rule__SimpleInit__Group__0__Impl : ( ( rule__SimpleInit__NameAssignment_0 ) ) ;
     public final void rule__SimpleInit__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5711:1: ( ( ( rule__SimpleInit__NameAssignment_0 ) ) )
-            // InternalMontiArcAndCore.g:5712:1: ( ( rule__SimpleInit__NameAssignment_0 ) )
+            // InternalMontiArcAndCore.g:5738:1: ( ( ( rule__SimpleInit__NameAssignment_0 ) ) )
+            // InternalMontiArcAndCore.g:5739:1: ( ( rule__SimpleInit__NameAssignment_0 ) )
             {
-            // InternalMontiArcAndCore.g:5712:1: ( ( rule__SimpleInit__NameAssignment_0 ) )
-            // InternalMontiArcAndCore.g:5713:2: ( rule__SimpleInit__NameAssignment_0 )
+            // InternalMontiArcAndCore.g:5739:1: ( ( rule__SimpleInit__NameAssignment_0 ) )
+            // InternalMontiArcAndCore.g:5740:2: ( rule__SimpleInit__NameAssignment_0 )
             {
              before(grammarAccess.getSimpleInitAccess().getNameAssignment_0()); 
-            // InternalMontiArcAndCore.g:5714:2: ( rule__SimpleInit__NameAssignment_0 )
-            // InternalMontiArcAndCore.g:5714:3: rule__SimpleInit__NameAssignment_0
+            // InternalMontiArcAndCore.g:5741:2: ( rule__SimpleInit__NameAssignment_0 )
+            // InternalMontiArcAndCore.g:5741:3: rule__SimpleInit__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__SimpleInit__NameAssignment_0();
@@ -17976,14 +18073,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__1"
-    // InternalMontiArcAndCore.g:5722:1: rule__SimpleInit__Group__1 : rule__SimpleInit__Group__1__Impl rule__SimpleInit__Group__2 ;
+    // InternalMontiArcAndCore.g:5749:1: rule__SimpleInit__Group__1 : rule__SimpleInit__Group__1__Impl rule__SimpleInit__Group__2 ;
     public final void rule__SimpleInit__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5726:1: ( rule__SimpleInit__Group__1__Impl rule__SimpleInit__Group__2 )
-            // InternalMontiArcAndCore.g:5727:2: rule__SimpleInit__Group__1__Impl rule__SimpleInit__Group__2
+            // InternalMontiArcAndCore.g:5753:1: ( rule__SimpleInit__Group__1__Impl rule__SimpleInit__Group__2 )
+            // InternalMontiArcAndCore.g:5754:2: rule__SimpleInit__Group__1__Impl rule__SimpleInit__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__SimpleInit__Group__1__Impl();
@@ -18014,17 +18111,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__1__Impl"
-    // InternalMontiArcAndCore.g:5734:1: rule__SimpleInit__Group__1__Impl : ( '=' ) ;
+    // InternalMontiArcAndCore.g:5761:1: rule__SimpleInit__Group__1__Impl : ( '=' ) ;
     public final void rule__SimpleInit__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5738:1: ( ( '=' ) )
-            // InternalMontiArcAndCore.g:5739:1: ( '=' )
+            // InternalMontiArcAndCore.g:5765:1: ( ( '=' ) )
+            // InternalMontiArcAndCore.g:5766:1: ( '=' )
             {
-            // InternalMontiArcAndCore.g:5739:1: ( '=' )
-            // InternalMontiArcAndCore.g:5740:2: '='
+            // InternalMontiArcAndCore.g:5766:1: ( '=' )
+            // InternalMontiArcAndCore.g:5767:2: '='
             {
              before(grammarAccess.getSimpleInitAccess().getEqualsSignKeyword_1()); 
             match(input,59,FOLLOW_2); 
@@ -18051,14 +18148,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__2"
-    // InternalMontiArcAndCore.g:5749:1: rule__SimpleInit__Group__2 : rule__SimpleInit__Group__2__Impl rule__SimpleInit__Group__3 ;
+    // InternalMontiArcAndCore.g:5776:1: rule__SimpleInit__Group__2 : rule__SimpleInit__Group__2__Impl rule__SimpleInit__Group__3 ;
     public final void rule__SimpleInit__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5753:1: ( rule__SimpleInit__Group__2__Impl rule__SimpleInit__Group__3 )
-            // InternalMontiArcAndCore.g:5754:2: rule__SimpleInit__Group__2__Impl rule__SimpleInit__Group__3
+            // InternalMontiArcAndCore.g:5780:1: ( rule__SimpleInit__Group__2__Impl rule__SimpleInit__Group__3 )
+            // InternalMontiArcAndCore.g:5781:2: rule__SimpleInit__Group__2__Impl rule__SimpleInit__Group__3
             {
             pushFollow(FOLLOW_7);
             rule__SimpleInit__Group__2__Impl();
@@ -18089,21 +18186,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__2__Impl"
-    // InternalMontiArcAndCore.g:5761:1: rule__SimpleInit__Group__2__Impl : ( ( rule__SimpleInit__ExpressionsAssignment_2 ) ) ;
+    // InternalMontiArcAndCore.g:5788:1: rule__SimpleInit__Group__2__Impl : ( ( rule__SimpleInit__ExpressionsAssignment_2 ) ) ;
     public final void rule__SimpleInit__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5765:1: ( ( ( rule__SimpleInit__ExpressionsAssignment_2 ) ) )
-            // InternalMontiArcAndCore.g:5766:1: ( ( rule__SimpleInit__ExpressionsAssignment_2 ) )
+            // InternalMontiArcAndCore.g:5792:1: ( ( ( rule__SimpleInit__ExpressionsAssignment_2 ) ) )
+            // InternalMontiArcAndCore.g:5793:1: ( ( rule__SimpleInit__ExpressionsAssignment_2 ) )
             {
-            // InternalMontiArcAndCore.g:5766:1: ( ( rule__SimpleInit__ExpressionsAssignment_2 ) )
-            // InternalMontiArcAndCore.g:5767:2: ( rule__SimpleInit__ExpressionsAssignment_2 )
+            // InternalMontiArcAndCore.g:5793:1: ( ( rule__SimpleInit__ExpressionsAssignment_2 ) )
+            // InternalMontiArcAndCore.g:5794:2: ( rule__SimpleInit__ExpressionsAssignment_2 )
             {
              before(grammarAccess.getSimpleInitAccess().getExpressionsAssignment_2()); 
-            // InternalMontiArcAndCore.g:5768:2: ( rule__SimpleInit__ExpressionsAssignment_2 )
-            // InternalMontiArcAndCore.g:5768:3: rule__SimpleInit__ExpressionsAssignment_2
+            // InternalMontiArcAndCore.g:5795:2: ( rule__SimpleInit__ExpressionsAssignment_2 )
+            // InternalMontiArcAndCore.g:5795:3: rule__SimpleInit__ExpressionsAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__SimpleInit__ExpressionsAssignment_2();
@@ -18136,14 +18233,14 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__3"
-    // InternalMontiArcAndCore.g:5776:1: rule__SimpleInit__Group__3 : rule__SimpleInit__Group__3__Impl ;
+    // InternalMontiArcAndCore.g:5803:1: rule__SimpleInit__Group__3 : rule__SimpleInit__Group__3__Impl ;
     public final void rule__SimpleInit__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5780:1: ( rule__SimpleInit__Group__3__Impl )
-            // InternalMontiArcAndCore.g:5781:2: rule__SimpleInit__Group__3__Impl
+            // InternalMontiArcAndCore.g:5807:1: ( rule__SimpleInit__Group__3__Impl )
+            // InternalMontiArcAndCore.g:5808:2: rule__SimpleInit__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SimpleInit__Group__3__Impl();
@@ -18169,17 +18266,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__Group__3__Impl"
-    // InternalMontiArcAndCore.g:5787:1: rule__SimpleInit__Group__3__Impl : ( ';' ) ;
+    // InternalMontiArcAndCore.g:5814:1: rule__SimpleInit__Group__3__Impl : ( ';' ) ;
     public final void rule__SimpleInit__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5791:1: ( ( ';' ) )
-            // InternalMontiArcAndCore.g:5792:1: ( ';' )
+            // InternalMontiArcAndCore.g:5818:1: ( ( ';' ) )
+            // InternalMontiArcAndCore.g:5819:1: ( ';' )
             {
-            // InternalMontiArcAndCore.g:5792:1: ( ';' )
-            // InternalMontiArcAndCore.g:5793:2: ';'
+            // InternalMontiArcAndCore.g:5819:1: ( ';' )
+            // InternalMontiArcAndCore.g:5820:2: ';'
             {
              before(grammarAccess.getSimpleInitAccess().getSemicolonKeyword_3()); 
             match(input,44,FOLLOW_2); 
@@ -18206,17 +18303,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MontiArcAndCore__ClassdiagramAssignment_0"
-    // InternalMontiArcAndCore.g:5803:1: rule__MontiArcAndCore__ClassdiagramAssignment_0 : ( ruleClassDiagramCompilationUnit ) ;
+    // InternalMontiArcAndCore.g:5830:1: rule__MontiArcAndCore__ClassdiagramAssignment_0 : ( ruleClassDiagramCompilationUnit ) ;
     public final void rule__MontiArcAndCore__ClassdiagramAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5807:1: ( ( ruleClassDiagramCompilationUnit ) )
-            // InternalMontiArcAndCore.g:5808:2: ( ruleClassDiagramCompilationUnit )
+            // InternalMontiArcAndCore.g:5834:1: ( ( ruleClassDiagramCompilationUnit ) )
+            // InternalMontiArcAndCore.g:5835:2: ( ruleClassDiagramCompilationUnit )
             {
-            // InternalMontiArcAndCore.g:5808:2: ( ruleClassDiagramCompilationUnit )
-            // InternalMontiArcAndCore.g:5809:3: ruleClassDiagramCompilationUnit
+            // InternalMontiArcAndCore.g:5835:2: ( ruleClassDiagramCompilationUnit )
+            // InternalMontiArcAndCore.g:5836:3: ruleClassDiagramCompilationUnit
             {
              before(grammarAccess.getMontiArcAndCoreAccess().getClassdiagramClassDiagramCompilationUnitParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -18247,17 +18344,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MontiArcAndCore__MontiarcdslAssignment_1"
-    // InternalMontiArcAndCore.g:5818:1: rule__MontiArcAndCore__MontiarcdslAssignment_1 : ( ruleMACompilationUnit ) ;
+    // InternalMontiArcAndCore.g:5845:1: rule__MontiArcAndCore__MontiarcdslAssignment_1 : ( ruleMACompilationUnit ) ;
     public final void rule__MontiArcAndCore__MontiarcdslAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5822:1: ( ( ruleMACompilationUnit ) )
-            // InternalMontiArcAndCore.g:5823:2: ( ruleMACompilationUnit )
+            // InternalMontiArcAndCore.g:5849:1: ( ( ruleMACompilationUnit ) )
+            // InternalMontiArcAndCore.g:5850:2: ( ruleMACompilationUnit )
             {
-            // InternalMontiArcAndCore.g:5823:2: ( ruleMACompilationUnit )
-            // InternalMontiArcAndCore.g:5824:3: ruleMACompilationUnit
+            // InternalMontiArcAndCore.g:5850:2: ( ruleMACompilationUnit )
+            // InternalMontiArcAndCore.g:5851:3: ruleMACompilationUnit
             {
              before(grammarAccess.getMontiArcAndCoreAccess().getMontiarcdslMACompilationUnitParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18288,17 +18385,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ImportStatements__ImportUriAssignment_1"
-    // InternalMontiArcAndCore.g:5833:1: rule__ImportStatements__ImportUriAssignment_1 : ( RULE_MCQUALIFIEDNAME ) ;
+    // InternalMontiArcAndCore.g:5860:1: rule__ImportStatements__ImportUriAssignment_1 : ( RULE_MCQUALIFIEDNAME ) ;
     public final void rule__ImportStatements__ImportUriAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5837:1: ( ( RULE_MCQUALIFIEDNAME ) )
-            // InternalMontiArcAndCore.g:5838:2: ( RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcAndCore.g:5864:1: ( ( RULE_MCQUALIFIEDNAME ) )
+            // InternalMontiArcAndCore.g:5865:2: ( RULE_MCQUALIFIEDNAME )
             {
-            // InternalMontiArcAndCore.g:5838:2: ( RULE_MCQUALIFIEDNAME )
-            // InternalMontiArcAndCore.g:5839:3: RULE_MCQUALIFIEDNAME
+            // InternalMontiArcAndCore.g:5865:2: ( RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcAndCore.g:5866:3: RULE_MCQUALIFIEDNAME
             {
              before(grammarAccess.getImportStatementsAccess().getImportUriMCQUALIFIEDNAMETerminalRuleCall_1_0()); 
             match(input,RULE_MCQUALIFIEDNAME,FOLLOW_2); 
@@ -18325,17 +18422,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ImportStatements__StarAssignment_2"
-    // InternalMontiArcAndCore.g:5848:1: rule__ImportStatements__StarAssignment_2 : ( RULE_DOTSTAR ) ;
+    // InternalMontiArcAndCore.g:5875:1: rule__ImportStatements__StarAssignment_2 : ( RULE_DOTSTAR ) ;
     public final void rule__ImportStatements__StarAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5852:1: ( ( RULE_DOTSTAR ) )
-            // InternalMontiArcAndCore.g:5853:2: ( RULE_DOTSTAR )
+            // InternalMontiArcAndCore.g:5879:1: ( ( RULE_DOTSTAR ) )
+            // InternalMontiArcAndCore.g:5880:2: ( RULE_DOTSTAR )
             {
-            // InternalMontiArcAndCore.g:5853:2: ( RULE_DOTSTAR )
-            // InternalMontiArcAndCore.g:5854:3: RULE_DOTSTAR
+            // InternalMontiArcAndCore.g:5880:2: ( RULE_DOTSTAR )
+            // InternalMontiArcAndCore.g:5881:3: RULE_DOTSTAR
             {
              before(grammarAccess.getImportStatementsAccess().getStarDOTSTARTerminalRuleCall_2_0()); 
             match(input,RULE_DOTSTAR,FOLLOW_2); 
@@ -18362,21 +18459,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Package__NameAssignment_1"
-    // InternalMontiArcAndCore.g:5863:1: rule__Package__NameAssignment_1 : ( ( rule__Package__NameAlternatives_1_0 ) ) ;
+    // InternalMontiArcAndCore.g:5890:1: rule__Package__NameAssignment_1 : ( ( rule__Package__NameAlternatives_1_0 ) ) ;
     public final void rule__Package__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5867:1: ( ( ( rule__Package__NameAlternatives_1_0 ) ) )
-            // InternalMontiArcAndCore.g:5868:2: ( ( rule__Package__NameAlternatives_1_0 ) )
+            // InternalMontiArcAndCore.g:5894:1: ( ( ( rule__Package__NameAlternatives_1_0 ) ) )
+            // InternalMontiArcAndCore.g:5895:2: ( ( rule__Package__NameAlternatives_1_0 ) )
             {
-            // InternalMontiArcAndCore.g:5868:2: ( ( rule__Package__NameAlternatives_1_0 ) )
-            // InternalMontiArcAndCore.g:5869:3: ( rule__Package__NameAlternatives_1_0 )
+            // InternalMontiArcAndCore.g:5895:2: ( ( rule__Package__NameAlternatives_1_0 ) )
+            // InternalMontiArcAndCore.g:5896:3: ( rule__Package__NameAlternatives_1_0 )
             {
              before(grammarAccess.getPackageAccess().getNameAlternatives_1_0()); 
-            // InternalMontiArcAndCore.g:5870:3: ( rule__Package__NameAlternatives_1_0 )
-            // InternalMontiArcAndCore.g:5870:4: rule__Package__NameAlternatives_1_0
+            // InternalMontiArcAndCore.g:5897:3: ( rule__Package__NameAlternatives_1_0 )
+            // InternalMontiArcAndCore.g:5897:4: rule__Package__NameAlternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Package__NameAlternatives_1_0();
@@ -18409,21 +18506,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MCPrimitiveType__TypeAssignment"
-    // InternalMontiArcAndCore.g:5878:1: rule__MCPrimitiveType__TypeAssignment : ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) ;
+    // InternalMontiArcAndCore.g:5905:1: rule__MCPrimitiveType__TypeAssignment : ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) ;
     public final void rule__MCPrimitiveType__TypeAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5882:1: ( ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) )
-            // InternalMontiArcAndCore.g:5883:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
+            // InternalMontiArcAndCore.g:5909:1: ( ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) )
+            // InternalMontiArcAndCore.g:5910:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
             {
-            // InternalMontiArcAndCore.g:5883:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
-            // InternalMontiArcAndCore.g:5884:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
+            // InternalMontiArcAndCore.g:5910:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
+            // InternalMontiArcAndCore.g:5911:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
             {
              before(grammarAccess.getMCPrimitiveTypeAccess().getTypeAlternatives_0()); 
-            // InternalMontiArcAndCore.g:5885:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
-            // InternalMontiArcAndCore.g:5885:4: rule__MCPrimitiveType__TypeAlternatives_0
+            // InternalMontiArcAndCore.g:5912:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
+            // InternalMontiArcAndCore.g:5912:4: rule__MCPrimitiveType__TypeAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__MCPrimitiveType__TypeAlternatives_0();
@@ -18456,21 +18553,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MCObjectType__TypeAssignment"
-    // InternalMontiArcAndCore.g:5893:1: rule__MCObjectType__TypeAssignment : ( ( rule__MCObjectType__TypeAlternatives_0 ) ) ;
+    // InternalMontiArcAndCore.g:5920:1: rule__MCObjectType__TypeAssignment : ( ( rule__MCObjectType__TypeAlternatives_0 ) ) ;
     public final void rule__MCObjectType__TypeAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5897:1: ( ( ( rule__MCObjectType__TypeAlternatives_0 ) ) )
-            // InternalMontiArcAndCore.g:5898:2: ( ( rule__MCObjectType__TypeAlternatives_0 ) )
+            // InternalMontiArcAndCore.g:5924:1: ( ( ( rule__MCObjectType__TypeAlternatives_0 ) ) )
+            // InternalMontiArcAndCore.g:5925:2: ( ( rule__MCObjectType__TypeAlternatives_0 ) )
             {
-            // InternalMontiArcAndCore.g:5898:2: ( ( rule__MCObjectType__TypeAlternatives_0 ) )
-            // InternalMontiArcAndCore.g:5899:3: ( rule__MCObjectType__TypeAlternatives_0 )
+            // InternalMontiArcAndCore.g:5925:2: ( ( rule__MCObjectType__TypeAlternatives_0 ) )
+            // InternalMontiArcAndCore.g:5926:3: ( rule__MCObjectType__TypeAlternatives_0 )
             {
              before(grammarAccess.getMCObjectTypeAccess().getTypeAlternatives_0()); 
-            // InternalMontiArcAndCore.g:5900:3: ( rule__MCObjectType__TypeAlternatives_0 )
-            // InternalMontiArcAndCore.g:5900:4: rule__MCObjectType__TypeAlternatives_0
+            // InternalMontiArcAndCore.g:5927:3: ( rule__MCObjectType__TypeAlternatives_0 )
+            // InternalMontiArcAndCore.g:5927:4: rule__MCObjectType__TypeAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__MCObjectType__TypeAlternatives_0();
@@ -18503,21 +18600,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MCCollectionType__CollectionAssignment_0"
-    // InternalMontiArcAndCore.g:5908:1: rule__MCCollectionType__CollectionAssignment_0 : ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) ) ;
+    // InternalMontiArcAndCore.g:5935:1: rule__MCCollectionType__CollectionAssignment_0 : ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) ) ;
     public final void rule__MCCollectionType__CollectionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5912:1: ( ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) ) )
-            // InternalMontiArcAndCore.g:5913:2: ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:5939:1: ( ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) ) )
+            // InternalMontiArcAndCore.g:5940:2: ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) )
             {
-            // InternalMontiArcAndCore.g:5913:2: ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) )
-            // InternalMontiArcAndCore.g:5914:3: ( rule__MCCollectionType__CollectionAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:5940:2: ( ( rule__MCCollectionType__CollectionAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:5941:3: ( rule__MCCollectionType__CollectionAlternatives_0_0 )
             {
              before(grammarAccess.getMCCollectionTypeAccess().getCollectionAlternatives_0_0()); 
-            // InternalMontiArcAndCore.g:5915:3: ( rule__MCCollectionType__CollectionAlternatives_0_0 )
-            // InternalMontiArcAndCore.g:5915:4: rule__MCCollectionType__CollectionAlternatives_0_0
+            // InternalMontiArcAndCore.g:5942:3: ( rule__MCCollectionType__CollectionAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:5942:4: rule__MCCollectionType__CollectionAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__MCCollectionType__CollectionAlternatives_0_0();
@@ -18550,17 +18647,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MCCollectionType__InnerTypeAssignment_2"
-    // InternalMontiArcAndCore.g:5923:1: rule__MCCollectionType__InnerTypeAssignment_2 : ( ruleType ) ;
+    // InternalMontiArcAndCore.g:5950:1: rule__MCCollectionType__InnerTypeAssignment_2 : ( ruleType ) ;
     public final void rule__MCCollectionType__InnerTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5927:1: ( ( ruleType ) )
-            // InternalMontiArcAndCore.g:5928:2: ( ruleType )
+            // InternalMontiArcAndCore.g:5954:1: ( ( ruleType ) )
+            // InternalMontiArcAndCore.g:5955:2: ( ruleType )
             {
-            // InternalMontiArcAndCore.g:5928:2: ( ruleType )
-            // InternalMontiArcAndCore.g:5929:3: ruleType
+            // InternalMontiArcAndCore.g:5955:2: ( ruleType )
+            // InternalMontiArcAndCore.g:5956:3: ruleType
             {
              before(grammarAccess.getMCCollectionTypeAccess().getInnerTypeTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -18591,17 +18688,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NumberLiteral__LiteralAssignment"
-    // InternalMontiArcAndCore.g:5938:1: rule__NumberLiteral__LiteralAssignment : ( RULE_INT ) ;
+    // InternalMontiArcAndCore.g:5965:1: rule__NumberLiteral__LiteralAssignment : ( RULE_INT ) ;
     public final void rule__NumberLiteral__LiteralAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5942:1: ( ( RULE_INT ) )
-            // InternalMontiArcAndCore.g:5943:2: ( RULE_INT )
+            // InternalMontiArcAndCore.g:5969:1: ( ( RULE_INT ) )
+            // InternalMontiArcAndCore.g:5970:2: ( RULE_INT )
             {
-            // InternalMontiArcAndCore.g:5943:2: ( RULE_INT )
-            // InternalMontiArcAndCore.g:5944:3: RULE_INT
+            // InternalMontiArcAndCore.g:5970:2: ( RULE_INT )
+            // InternalMontiArcAndCore.g:5971:3: RULE_INT
             {
              before(grammarAccess.getNumberLiteralAccess().getLiteralINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18628,17 +18725,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__StringLiteral__LiteralAssignment"
-    // InternalMontiArcAndCore.g:5953:1: rule__StringLiteral__LiteralAssignment : ( RULE_STRING ) ;
+    // InternalMontiArcAndCore.g:5980:1: rule__StringLiteral__LiteralAssignment : ( RULE_STRING ) ;
     public final void rule__StringLiteral__LiteralAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5957:1: ( ( RULE_STRING ) )
-            // InternalMontiArcAndCore.g:5958:2: ( RULE_STRING )
+            // InternalMontiArcAndCore.g:5984:1: ( ( RULE_STRING ) )
+            // InternalMontiArcAndCore.g:5985:2: ( RULE_STRING )
             {
-            // InternalMontiArcAndCore.g:5958:2: ( RULE_STRING )
-            // InternalMontiArcAndCore.g:5959:3: RULE_STRING
+            // InternalMontiArcAndCore.g:5985:2: ( RULE_STRING )
+            // InternalMontiArcAndCore.g:5986:3: RULE_STRING
             {
              before(grammarAccess.getStringLiteralAccess().getLiteralSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18665,17 +18762,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExpression__NameAssignment_0"
-    // InternalMontiArcAndCore.g:5968:1: rule__NameExpression__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:5995:1: rule__NameExpression__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__NameExpression__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5972:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:5973:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:5999:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6000:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:5973:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:5974:3: RULE_ID
+            // InternalMontiArcAndCore.g:6000:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6001:3: RULE_ID
             {
              before(grammarAccess.getNameExpressionAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18702,17 +18799,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExpression__QualifiednameAssignment_1"
-    // InternalMontiArcAndCore.g:5983:1: rule__NameExpression__QualifiednameAssignment_1 : ( RULE_MCQUALIFIEDNAME ) ;
+    // InternalMontiArcAndCore.g:6010:1: rule__NameExpression__QualifiednameAssignment_1 : ( RULE_MCQUALIFIEDNAME ) ;
     public final void rule__NameExpression__QualifiednameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:5987:1: ( ( RULE_MCQUALIFIEDNAME ) )
-            // InternalMontiArcAndCore.g:5988:2: ( RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcAndCore.g:6014:1: ( ( RULE_MCQUALIFIEDNAME ) )
+            // InternalMontiArcAndCore.g:6015:2: ( RULE_MCQUALIFIEDNAME )
             {
-            // InternalMontiArcAndCore.g:5988:2: ( RULE_MCQUALIFIEDNAME )
-            // InternalMontiArcAndCore.g:5989:3: RULE_MCQUALIFIEDNAME
+            // InternalMontiArcAndCore.g:6015:2: ( RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcAndCore.g:6016:3: RULE_MCQUALIFIEDNAME
             {
              before(grammarAccess.getNameExpressionAccess().getQualifiednameMCQUALIFIEDNAMETerminalRuleCall_1_0()); 
             match(input,RULE_MCQUALIFIEDNAME,FOLLOW_2); 
@@ -18739,21 +18836,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__BinaryExpression__Literal1Assignment_0"
-    // InternalMontiArcAndCore.g:5998:1: rule__BinaryExpression__Literal1Assignment_0 : ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) ) ;
+    // InternalMontiArcAndCore.g:6025:1: rule__BinaryExpression__Literal1Assignment_0 : ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) ) ;
     public final void rule__BinaryExpression__Literal1Assignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6002:1: ( ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) ) )
-            // InternalMontiArcAndCore.g:6003:2: ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6029:1: ( ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) ) )
+            // InternalMontiArcAndCore.g:6030:2: ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) )
             {
-            // InternalMontiArcAndCore.g:6003:2: ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) )
-            // InternalMontiArcAndCore.g:6004:3: ( rule__BinaryExpression__Literal1Alternatives_0_0 )
+            // InternalMontiArcAndCore.g:6030:2: ( ( rule__BinaryExpression__Literal1Alternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6031:3: ( rule__BinaryExpression__Literal1Alternatives_0_0 )
             {
              before(grammarAccess.getBinaryExpressionAccess().getLiteral1Alternatives_0_0()); 
-            // InternalMontiArcAndCore.g:6005:3: ( rule__BinaryExpression__Literal1Alternatives_0_0 )
-            // InternalMontiArcAndCore.g:6005:4: rule__BinaryExpression__Literal1Alternatives_0_0
+            // InternalMontiArcAndCore.g:6032:3: ( rule__BinaryExpression__Literal1Alternatives_0_0 )
+            // InternalMontiArcAndCore.g:6032:4: rule__BinaryExpression__Literal1Alternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__BinaryExpression__Literal1Alternatives_0_0();
@@ -18786,17 +18883,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__BinaryExpression__OpAssignment_1"
-    // InternalMontiArcAndCore.g:6013:1: rule__BinaryExpression__OpAssignment_1 : ( ruleOperator ) ;
+    // InternalMontiArcAndCore.g:6040:1: rule__BinaryExpression__OpAssignment_1 : ( ruleOperator ) ;
     public final void rule__BinaryExpression__OpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6017:1: ( ( ruleOperator ) )
-            // InternalMontiArcAndCore.g:6018:2: ( ruleOperator )
+            // InternalMontiArcAndCore.g:6044:1: ( ( ruleOperator ) )
+            // InternalMontiArcAndCore.g:6045:2: ( ruleOperator )
             {
-            // InternalMontiArcAndCore.g:6018:2: ( ruleOperator )
-            // InternalMontiArcAndCore.g:6019:3: ruleOperator
+            // InternalMontiArcAndCore.g:6045:2: ( ruleOperator )
+            // InternalMontiArcAndCore.g:6046:3: ruleOperator
             {
              before(grammarAccess.getBinaryExpressionAccess().getOpOperatorEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18827,21 +18924,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__BinaryExpression__Literal2Assignment_2"
-    // InternalMontiArcAndCore.g:6028:1: rule__BinaryExpression__Literal2Assignment_2 : ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) ) ;
+    // InternalMontiArcAndCore.g:6055:1: rule__BinaryExpression__Literal2Assignment_2 : ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) ) ;
     public final void rule__BinaryExpression__Literal2Assignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6032:1: ( ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) ) )
-            // InternalMontiArcAndCore.g:6033:2: ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) )
+            // InternalMontiArcAndCore.g:6059:1: ( ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) ) )
+            // InternalMontiArcAndCore.g:6060:2: ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) )
             {
-            // InternalMontiArcAndCore.g:6033:2: ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) )
-            // InternalMontiArcAndCore.g:6034:3: ( rule__BinaryExpression__Literal2Alternatives_2_0 )
+            // InternalMontiArcAndCore.g:6060:2: ( ( rule__BinaryExpression__Literal2Alternatives_2_0 ) )
+            // InternalMontiArcAndCore.g:6061:3: ( rule__BinaryExpression__Literal2Alternatives_2_0 )
             {
              before(grammarAccess.getBinaryExpressionAccess().getLiteral2Alternatives_2_0()); 
-            // InternalMontiArcAndCore.g:6035:3: ( rule__BinaryExpression__Literal2Alternatives_2_0 )
-            // InternalMontiArcAndCore.g:6035:4: rule__BinaryExpression__Literal2Alternatives_2_0
+            // InternalMontiArcAndCore.g:6062:3: ( rule__BinaryExpression__Literal2Alternatives_2_0 )
+            // InternalMontiArcAndCore.g:6062:4: rule__BinaryExpression__Literal2Alternatives_2_0
             {
             pushFollow(FOLLOW_2);
             rule__BinaryExpression__Literal2Alternatives_2_0();
@@ -18874,17 +18971,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Arguments__ArgumentsAssignment_1"
-    // InternalMontiArcAndCore.g:6043:1: rule__Arguments__ArgumentsAssignment_1 : ( ruleArgument ) ;
+    // InternalMontiArcAndCore.g:6070:1: rule__Arguments__ArgumentsAssignment_1 : ( ruleArgument ) ;
     public final void rule__Arguments__ArgumentsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6047:1: ( ( ruleArgument ) )
-            // InternalMontiArcAndCore.g:6048:2: ( ruleArgument )
+            // InternalMontiArcAndCore.g:6074:1: ( ( ruleArgument ) )
+            // InternalMontiArcAndCore.g:6075:2: ( ruleArgument )
             {
-            // InternalMontiArcAndCore.g:6048:2: ( ruleArgument )
-            // InternalMontiArcAndCore.g:6049:3: ruleArgument
+            // InternalMontiArcAndCore.g:6075:2: ( ruleArgument )
+            // InternalMontiArcAndCore.g:6076:3: ruleArgument
             {
              before(grammarAccess.getArgumentsAccess().getArgumentsArgumentParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18915,17 +19012,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Arguments__ArgumentsAssignment_2_1"
-    // InternalMontiArcAndCore.g:6058:1: rule__Arguments__ArgumentsAssignment_2_1 : ( ruleArgument ) ;
+    // InternalMontiArcAndCore.g:6085:1: rule__Arguments__ArgumentsAssignment_2_1 : ( ruleArgument ) ;
     public final void rule__Arguments__ArgumentsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6062:1: ( ( ruleArgument ) )
-            // InternalMontiArcAndCore.g:6063:2: ( ruleArgument )
+            // InternalMontiArcAndCore.g:6089:1: ( ( ruleArgument ) )
+            // InternalMontiArcAndCore.g:6090:2: ( ruleArgument )
             {
-            // InternalMontiArcAndCore.g:6063:2: ( ruleArgument )
-            // InternalMontiArcAndCore.g:6064:3: ruleArgument
+            // InternalMontiArcAndCore.g:6090:2: ( ruleArgument )
+            // InternalMontiArcAndCore.g:6091:3: ruleArgument
             {
              before(grammarAccess.getArgumentsAccess().getArgumentsArgumentParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18956,17 +19053,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Argument__NameAssignment_0"
-    // InternalMontiArcAndCore.g:6073:1: rule__Argument__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6100:1: rule__Argument__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Argument__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6077:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6078:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6104:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6105:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6078:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6079:3: RULE_ID
+            // InternalMontiArcAndCore.g:6105:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6106:3: RULE_ID
             {
              before(grammarAccess.getArgumentAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18993,17 +19090,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Argument__ExpressionAssignment_1"
-    // InternalMontiArcAndCore.g:6088:1: rule__Argument__ExpressionAssignment_1 : ( ruleExpression ) ;
+    // InternalMontiArcAndCore.g:6115:1: rule__Argument__ExpressionAssignment_1 : ( ruleExpression ) ;
     public final void rule__Argument__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6092:1: ( ( ruleExpression ) )
-            // InternalMontiArcAndCore.g:6093:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:6119:1: ( ( ruleExpression ) )
+            // InternalMontiArcAndCore.g:6120:2: ( ruleExpression )
             {
-            // InternalMontiArcAndCore.g:6093:2: ( ruleExpression )
-            // InternalMontiArcAndCore.g:6094:3: ruleExpression
+            // InternalMontiArcAndCore.g:6120:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:6121:3: ruleExpression
             {
              before(grammarAccess.getArgumentAccess().getExpressionExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19034,17 +19131,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ClassDiagramCompilationUnit__PackageAssignment_0"
-    // InternalMontiArcAndCore.g:6103:1: rule__ClassDiagramCompilationUnit__PackageAssignment_0 : ( rulePackage ) ;
+    // InternalMontiArcAndCore.g:6130:1: rule__ClassDiagramCompilationUnit__PackageAssignment_0 : ( rulePackage ) ;
     public final void rule__ClassDiagramCompilationUnit__PackageAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6107:1: ( ( rulePackage ) )
-            // InternalMontiArcAndCore.g:6108:2: ( rulePackage )
+            // InternalMontiArcAndCore.g:6134:1: ( ( rulePackage ) )
+            // InternalMontiArcAndCore.g:6135:2: ( rulePackage )
             {
-            // InternalMontiArcAndCore.g:6108:2: ( rulePackage )
-            // InternalMontiArcAndCore.g:6109:3: rulePackage
+            // InternalMontiArcAndCore.g:6135:2: ( rulePackage )
+            // InternalMontiArcAndCore.g:6136:3: rulePackage
             {
              before(grammarAccess.getClassDiagramCompilationUnitAccess().getPackagePackageParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19075,17 +19172,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ClassDiagramCompilationUnit__ImportStatementsAssignment_1"
-    // InternalMontiArcAndCore.g:6118:1: rule__ClassDiagramCompilationUnit__ImportStatementsAssignment_1 : ( ruleImportStatements ) ;
+    // InternalMontiArcAndCore.g:6145:1: rule__ClassDiagramCompilationUnit__ImportStatementsAssignment_1 : ( ruleImportStatements ) ;
     public final void rule__ClassDiagramCompilationUnit__ImportStatementsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6122:1: ( ( ruleImportStatements ) )
-            // InternalMontiArcAndCore.g:6123:2: ( ruleImportStatements )
+            // InternalMontiArcAndCore.g:6149:1: ( ( ruleImportStatements ) )
+            // InternalMontiArcAndCore.g:6150:2: ( ruleImportStatements )
             {
-            // InternalMontiArcAndCore.g:6123:2: ( ruleImportStatements )
-            // InternalMontiArcAndCore.g:6124:3: ruleImportStatements
+            // InternalMontiArcAndCore.g:6150:2: ( ruleImportStatements )
+            // InternalMontiArcAndCore.g:6151:3: ruleImportStatements
             {
              before(grammarAccess.getClassDiagramCompilationUnitAccess().getImportStatementsImportStatementsParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19116,17 +19213,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ClassDiagramCompilationUnit__DiagramAssignment_2"
-    // InternalMontiArcAndCore.g:6133:1: rule__ClassDiagramCompilationUnit__DiagramAssignment_2 : ( ruleClassDiagram ) ;
+    // InternalMontiArcAndCore.g:6160:1: rule__ClassDiagramCompilationUnit__DiagramAssignment_2 : ( ruleClassDiagram ) ;
     public final void rule__ClassDiagramCompilationUnit__DiagramAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6137:1: ( ( ruleClassDiagram ) )
-            // InternalMontiArcAndCore.g:6138:2: ( ruleClassDiagram )
+            // InternalMontiArcAndCore.g:6164:1: ( ( ruleClassDiagram ) )
+            // InternalMontiArcAndCore.g:6165:2: ( ruleClassDiagram )
             {
-            // InternalMontiArcAndCore.g:6138:2: ( ruleClassDiagram )
-            // InternalMontiArcAndCore.g:6139:3: ruleClassDiagram
+            // InternalMontiArcAndCore.g:6165:2: ( ruleClassDiagram )
+            // InternalMontiArcAndCore.g:6166:3: ruleClassDiagram
             {
              before(grammarAccess.getClassDiagramCompilationUnitAccess().getDiagramClassDiagramParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -19157,17 +19254,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ClassDiagram__NameAssignment_1"
-    // InternalMontiArcAndCore.g:6148:1: rule__ClassDiagram__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6175:1: rule__ClassDiagram__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__ClassDiagram__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6152:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6153:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6179:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6180:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6153:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6154:3: RULE_ID
+            // InternalMontiArcAndCore.g:6180:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6181:3: RULE_ID
             {
              before(grammarAccess.getClassDiagramAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19194,17 +19291,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ClassDiagram__CdElementsAssignment_3"
-    // InternalMontiArcAndCore.g:6163:1: rule__ClassDiagram__CdElementsAssignment_3 : ( ruleCDDefinition ) ;
+    // InternalMontiArcAndCore.g:6190:1: rule__ClassDiagram__CdElementsAssignment_3 : ( ruleCDDefinition ) ;
     public final void rule__ClassDiagram__CdElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6167:1: ( ( ruleCDDefinition ) )
-            // InternalMontiArcAndCore.g:6168:2: ( ruleCDDefinition )
+            // InternalMontiArcAndCore.g:6194:1: ( ( ruleCDDefinition ) )
+            // InternalMontiArcAndCore.g:6195:2: ( ruleCDDefinition )
             {
-            // InternalMontiArcAndCore.g:6168:2: ( ruleCDDefinition )
-            // InternalMontiArcAndCore.g:6169:3: ruleCDDefinition
+            // InternalMontiArcAndCore.g:6195:2: ( ruleCDDefinition )
+            // InternalMontiArcAndCore.g:6196:3: ruleCDDefinition
             {
              before(grammarAccess.getClassDiagramAccess().getCdElementsCDDefinitionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -19235,21 +19332,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__PublicAssignment_0"
-    // InternalMontiArcAndCore.g:6178:1: rule__CDClass__PublicAssignment_0 : ( ( 'public' ) ) ;
+    // InternalMontiArcAndCore.g:6205:1: rule__CDClass__PublicAssignment_0 : ( ( 'public' ) ) ;
     public final void rule__CDClass__PublicAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6182:1: ( ( ( 'public' ) ) )
-            // InternalMontiArcAndCore.g:6183:2: ( ( 'public' ) )
+            // InternalMontiArcAndCore.g:6209:1: ( ( ( 'public' ) ) )
+            // InternalMontiArcAndCore.g:6210:2: ( ( 'public' ) )
             {
-            // InternalMontiArcAndCore.g:6183:2: ( ( 'public' ) )
-            // InternalMontiArcAndCore.g:6184:3: ( 'public' )
+            // InternalMontiArcAndCore.g:6210:2: ( ( 'public' ) )
+            // InternalMontiArcAndCore.g:6211:3: ( 'public' )
             {
              before(grammarAccess.getCDClassAccess().getPublicPublicKeyword_0_0()); 
-            // InternalMontiArcAndCore.g:6185:3: ( 'public' )
-            // InternalMontiArcAndCore.g:6186:4: 'public'
+            // InternalMontiArcAndCore.g:6212:3: ( 'public' )
+            // InternalMontiArcAndCore.g:6213:4: 'public'
             {
              before(grammarAccess.getCDClassAccess().getPublicPublicKeyword_0_0()); 
             match(input,67,FOLLOW_2); 
@@ -19280,17 +19377,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__NameAssignment_2"
-    // InternalMontiArcAndCore.g:6197:1: rule__CDClass__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6224:1: rule__CDClass__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__CDClass__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6201:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6202:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6228:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6229:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6202:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6203:3: RULE_ID
+            // InternalMontiArcAndCore.g:6229:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6230:3: RULE_ID
             {
              before(grammarAccess.getCDClassAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19317,17 +19414,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__ExtendsAssignment_3_1"
-    // InternalMontiArcAndCore.g:6212:1: rule__CDClass__ExtendsAssignment_3_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6239:1: rule__CDClass__ExtendsAssignment_3_1 : ( RULE_ID ) ;
     public final void rule__CDClass__ExtendsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6216:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6217:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6243:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6244:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6217:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6218:3: RULE_ID
+            // InternalMontiArcAndCore.g:6244:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6245:3: RULE_ID
             {
              before(grammarAccess.getCDClassAccess().getExtendsIDTerminalRuleCall_3_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19354,17 +19451,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__ImplementsAssignment_4_1"
-    // InternalMontiArcAndCore.g:6227:1: rule__CDClass__ImplementsAssignment_4_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6254:1: rule__CDClass__ImplementsAssignment_4_1 : ( RULE_ID ) ;
     public final void rule__CDClass__ImplementsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6231:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6232:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6258:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6259:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6232:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6233:3: RULE_ID
+            // InternalMontiArcAndCore.g:6259:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6260:3: RULE_ID
             {
              before(grammarAccess.getCDClassAccess().getImplementsIDTerminalRuleCall_4_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19391,17 +19488,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__ImplementsAssignment_4_2_1"
-    // InternalMontiArcAndCore.g:6242:1: rule__CDClass__ImplementsAssignment_4_2_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6269:1: rule__CDClass__ImplementsAssignment_4_2_1 : ( RULE_ID ) ;
     public final void rule__CDClass__ImplementsAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6246:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6247:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6273:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6274:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6247:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6248:3: RULE_ID
+            // InternalMontiArcAndCore.g:6274:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6275:3: RULE_ID
             {
              before(grammarAccess.getCDClassAccess().getImplementsIDTerminalRuleCall_4_2_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19428,17 +19525,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDClass__MembersAssignment_6"
-    // InternalMontiArcAndCore.g:6257:1: rule__CDClass__MembersAssignment_6 : ( ruleMember ) ;
+    // InternalMontiArcAndCore.g:6284:1: rule__CDClass__MembersAssignment_6 : ( ruleMember ) ;
     public final void rule__CDClass__MembersAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6261:1: ( ( ruleMember ) )
-            // InternalMontiArcAndCore.g:6262:2: ( ruleMember )
+            // InternalMontiArcAndCore.g:6288:1: ( ( ruleMember ) )
+            // InternalMontiArcAndCore.g:6289:2: ( ruleMember )
             {
-            // InternalMontiArcAndCore.g:6262:2: ( ruleMember )
-            // InternalMontiArcAndCore.g:6263:3: ruleMember
+            // InternalMontiArcAndCore.g:6289:2: ( ruleMember )
+            // InternalMontiArcAndCore.g:6290:3: ruleMember
             {
              before(grammarAccess.getCDClassAccess().getMembersMemberParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -19469,21 +19566,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDEnum__PublicAssignment_0"
-    // InternalMontiArcAndCore.g:6272:1: rule__CDEnum__PublicAssignment_0 : ( ( 'public' ) ) ;
+    // InternalMontiArcAndCore.g:6299:1: rule__CDEnum__PublicAssignment_0 : ( ( 'public' ) ) ;
     public final void rule__CDEnum__PublicAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6276:1: ( ( ( 'public' ) ) )
-            // InternalMontiArcAndCore.g:6277:2: ( ( 'public' ) )
+            // InternalMontiArcAndCore.g:6303:1: ( ( ( 'public' ) ) )
+            // InternalMontiArcAndCore.g:6304:2: ( ( 'public' ) )
             {
-            // InternalMontiArcAndCore.g:6277:2: ( ( 'public' ) )
-            // InternalMontiArcAndCore.g:6278:3: ( 'public' )
+            // InternalMontiArcAndCore.g:6304:2: ( ( 'public' ) )
+            // InternalMontiArcAndCore.g:6305:3: ( 'public' )
             {
              before(grammarAccess.getCDEnumAccess().getPublicPublicKeyword_0_0()); 
-            // InternalMontiArcAndCore.g:6279:3: ( 'public' )
-            // InternalMontiArcAndCore.g:6280:4: 'public'
+            // InternalMontiArcAndCore.g:6306:3: ( 'public' )
+            // InternalMontiArcAndCore.g:6307:4: 'public'
             {
              before(grammarAccess.getCDEnumAccess().getPublicPublicKeyword_0_0()); 
             match(input,67,FOLLOW_2); 
@@ -19514,17 +19611,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDEnum__NameAssignment_2"
-    // InternalMontiArcAndCore.g:6291:1: rule__CDEnum__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6318:1: rule__CDEnum__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__CDEnum__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6295:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6296:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6322:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6323:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6296:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6297:3: RULE_ID
+            // InternalMontiArcAndCore.g:6323:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6324:3: RULE_ID
             {
              before(grammarAccess.getCDEnumAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19551,17 +19648,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__CDEnum__ValuesAssignment_4"
-    // InternalMontiArcAndCore.g:6306:1: rule__CDEnum__ValuesAssignment_4 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6333:1: rule__CDEnum__ValuesAssignment_4 : ( RULE_ID ) ;
     public final void rule__CDEnum__ValuesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6310:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6311:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6337:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6338:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6311:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6312:3: RULE_ID
+            // InternalMontiArcAndCore.g:6338:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6339:3: RULE_ID
             {
              before(grammarAccess.getCDEnumAccess().getValuesIDTerminalRuleCall_4_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19588,21 +19685,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Member__TypeAssignment_0"
-    // InternalMontiArcAndCore.g:6321:1: rule__Member__TypeAssignment_0 : ( ( rule__Member__TypeAlternatives_0_0 ) ) ;
+    // InternalMontiArcAndCore.g:6348:1: rule__Member__TypeAssignment_0 : ( ( rule__Member__TypeAlternatives_0_0 ) ) ;
     public final void rule__Member__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6325:1: ( ( ( rule__Member__TypeAlternatives_0_0 ) ) )
-            // InternalMontiArcAndCore.g:6326:2: ( ( rule__Member__TypeAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6352:1: ( ( ( rule__Member__TypeAlternatives_0_0 ) ) )
+            // InternalMontiArcAndCore.g:6353:2: ( ( rule__Member__TypeAlternatives_0_0 ) )
             {
-            // InternalMontiArcAndCore.g:6326:2: ( ( rule__Member__TypeAlternatives_0_0 ) )
-            // InternalMontiArcAndCore.g:6327:3: ( rule__Member__TypeAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:6353:2: ( ( rule__Member__TypeAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6354:3: ( rule__Member__TypeAlternatives_0_0 )
             {
              before(grammarAccess.getMemberAccess().getTypeAlternatives_0_0()); 
-            // InternalMontiArcAndCore.g:6328:3: ( rule__Member__TypeAlternatives_0_0 )
-            // InternalMontiArcAndCore.g:6328:4: rule__Member__TypeAlternatives_0_0
+            // InternalMontiArcAndCore.g:6355:3: ( rule__Member__TypeAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:6355:4: rule__Member__TypeAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__Member__TypeAlternatives_0_0();
@@ -19635,17 +19732,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Member__NameAssignment_1"
-    // InternalMontiArcAndCore.g:6336:1: rule__Member__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6363:1: rule__Member__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Member__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6340:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6341:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6367:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6368:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6341:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6342:3: RULE_ID
+            // InternalMontiArcAndCore.g:6368:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6369:3: RULE_ID
             {
              before(grammarAccess.getMemberAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19672,17 +19769,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MACompilationUnit__PackageAssignment_0"
-    // InternalMontiArcAndCore.g:6351:1: rule__MACompilationUnit__PackageAssignment_0 : ( rulePackage ) ;
+    // InternalMontiArcAndCore.g:6378:1: rule__MACompilationUnit__PackageAssignment_0 : ( rulePackage ) ;
     public final void rule__MACompilationUnit__PackageAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6355:1: ( ( rulePackage ) )
-            // InternalMontiArcAndCore.g:6356:2: ( rulePackage )
+            // InternalMontiArcAndCore.g:6382:1: ( ( rulePackage ) )
+            // InternalMontiArcAndCore.g:6383:2: ( rulePackage )
             {
-            // InternalMontiArcAndCore.g:6356:2: ( rulePackage )
-            // InternalMontiArcAndCore.g:6357:3: rulePackage
+            // InternalMontiArcAndCore.g:6383:2: ( rulePackage )
+            // InternalMontiArcAndCore.g:6384:3: rulePackage
             {
              before(grammarAccess.getMACompilationUnitAccess().getPackagePackageParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19713,17 +19810,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MACompilationUnit__ImportStatementsAssignment_1"
-    // InternalMontiArcAndCore.g:6366:1: rule__MACompilationUnit__ImportStatementsAssignment_1 : ( ruleImportStatements ) ;
+    // InternalMontiArcAndCore.g:6393:1: rule__MACompilationUnit__ImportStatementsAssignment_1 : ( ruleImportStatements ) ;
     public final void rule__MACompilationUnit__ImportStatementsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6370:1: ( ( ruleImportStatements ) )
-            // InternalMontiArcAndCore.g:6371:2: ( ruleImportStatements )
+            // InternalMontiArcAndCore.g:6397:1: ( ( ruleImportStatements ) )
+            // InternalMontiArcAndCore.g:6398:2: ( ruleImportStatements )
             {
-            // InternalMontiArcAndCore.g:6371:2: ( ruleImportStatements )
-            // InternalMontiArcAndCore.g:6372:3: ruleImportStatements
+            // InternalMontiArcAndCore.g:6398:2: ( ruleImportStatements )
+            // InternalMontiArcAndCore.g:6399:3: ruleImportStatements
             {
              before(grammarAccess.getMACompilationUnitAccess().getImportStatementsImportStatementsParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19754,17 +19851,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MACompilationUnit__ComponentAssignment_2"
-    // InternalMontiArcAndCore.g:6381:1: rule__MACompilationUnit__ComponentAssignment_2 : ( ruleComponent ) ;
+    // InternalMontiArcAndCore.g:6408:1: rule__MACompilationUnit__ComponentAssignment_2 : ( ruleComponent ) ;
     public final void rule__MACompilationUnit__ComponentAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6385:1: ( ( ruleComponent ) )
-            // InternalMontiArcAndCore.g:6386:2: ( ruleComponent )
+            // InternalMontiArcAndCore.g:6412:1: ( ( ruleComponent ) )
+            // InternalMontiArcAndCore.g:6413:2: ( ruleComponent )
             {
-            // InternalMontiArcAndCore.g:6386:2: ( ruleComponent )
-            // InternalMontiArcAndCore.g:6387:3: ruleComponent
+            // InternalMontiArcAndCore.g:6413:2: ( ruleComponent )
+            // InternalMontiArcAndCore.g:6414:3: ruleComponent
             {
              before(grammarAccess.getMACompilationUnitAccess().getComponentComponentParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -19795,17 +19892,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Component__NameAssignment_1"
-    // InternalMontiArcAndCore.g:6396:1: rule__Component__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6423:1: rule__Component__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Component__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6400:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6401:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6427:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6428:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6401:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6402:3: RULE_ID
+            // InternalMontiArcAndCore.g:6428:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6429:3: RULE_ID
             {
              before(grammarAccess.getComponentAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19832,17 +19929,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Component__ArcElementsAssignment_3"
-    // InternalMontiArcAndCore.g:6411:1: rule__Component__ArcElementsAssignment_3 : ( ruleArcElement ) ;
+    // InternalMontiArcAndCore.g:6438:1: rule__Component__ArcElementsAssignment_3 : ( ruleArcElement ) ;
     public final void rule__Component__ArcElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6415:1: ( ( ruleArcElement ) )
-            // InternalMontiArcAndCore.g:6416:2: ( ruleArcElement )
+            // InternalMontiArcAndCore.g:6442:1: ( ( ruleArcElement ) )
+            // InternalMontiArcAndCore.g:6443:2: ( ruleArcElement )
             {
-            // InternalMontiArcAndCore.g:6416:2: ( ruleArcElement )
-            // InternalMontiArcAndCore.g:6417:3: ruleArcElement
+            // InternalMontiArcAndCore.g:6443:2: ( ruleArcElement )
+            // InternalMontiArcAndCore.g:6444:3: ruleArcElement
             {
              before(grammarAccess.getComponentAccess().getArcElementsArcElementParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -19873,17 +19970,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Parameters__ParametersAssignment_0"
-    // InternalMontiArcAndCore.g:6426:1: rule__Parameters__ParametersAssignment_0 : ( ruleParameter ) ;
+    // InternalMontiArcAndCore.g:6453:1: rule__Parameters__ParametersAssignment_0 : ( ruleParameter ) ;
     public final void rule__Parameters__ParametersAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6430:1: ( ( ruleParameter ) )
-            // InternalMontiArcAndCore.g:6431:2: ( ruleParameter )
+            // InternalMontiArcAndCore.g:6457:1: ( ( ruleParameter ) )
+            // InternalMontiArcAndCore.g:6458:2: ( ruleParameter )
             {
-            // InternalMontiArcAndCore.g:6431:2: ( ruleParameter )
-            // InternalMontiArcAndCore.g:6432:3: ruleParameter
+            // InternalMontiArcAndCore.g:6458:2: ( ruleParameter )
+            // InternalMontiArcAndCore.g:6459:3: ruleParameter
             {
              before(grammarAccess.getParametersAccess().getParametersParameterParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19914,17 +20011,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Parameters__ParametersAssignment_1_1"
-    // InternalMontiArcAndCore.g:6441:1: rule__Parameters__ParametersAssignment_1_1 : ( ruleParameter ) ;
+    // InternalMontiArcAndCore.g:6468:1: rule__Parameters__ParametersAssignment_1_1 : ( ruleParameter ) ;
     public final void rule__Parameters__ParametersAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6445:1: ( ( ruleParameter ) )
-            // InternalMontiArcAndCore.g:6446:2: ( ruleParameter )
+            // InternalMontiArcAndCore.g:6472:1: ( ( ruleParameter ) )
+            // InternalMontiArcAndCore.g:6473:2: ( ruleParameter )
             {
-            // InternalMontiArcAndCore.g:6446:2: ( ruleParameter )
-            // InternalMontiArcAndCore.g:6447:3: ruleParameter
+            // InternalMontiArcAndCore.g:6473:2: ( ruleParameter )
+            // InternalMontiArcAndCore.g:6474:3: ruleParameter
             {
              before(grammarAccess.getParametersAccess().getParametersParameterParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19955,17 +20052,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Parameter__TypeAssignment_0"
-    // InternalMontiArcAndCore.g:6456:1: rule__Parameter__TypeAssignment_0 : ( ruleType ) ;
+    // InternalMontiArcAndCore.g:6483:1: rule__Parameter__TypeAssignment_0 : ( ruleType ) ;
     public final void rule__Parameter__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6460:1: ( ( ruleType ) )
-            // InternalMontiArcAndCore.g:6461:2: ( ruleType )
+            // InternalMontiArcAndCore.g:6487:1: ( ( ruleType ) )
+            // InternalMontiArcAndCore.g:6488:2: ( ruleType )
             {
-            // InternalMontiArcAndCore.g:6461:2: ( ruleType )
-            // InternalMontiArcAndCore.g:6462:3: ruleType
+            // InternalMontiArcAndCore.g:6488:2: ( ruleType )
+            // InternalMontiArcAndCore.g:6489:3: ruleType
             {
              before(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -19996,17 +20093,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Parameter__NameAssignment_1"
-    // InternalMontiArcAndCore.g:6471:1: rule__Parameter__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6498:1: rule__Parameter__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Parameter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6475:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6476:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6502:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6503:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6476:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6477:3: RULE_ID
+            // InternalMontiArcAndCore.g:6503:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6504:3: RULE_ID
             {
              before(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20033,17 +20130,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Parameter__ExpressionAssignment_2_1"
-    // InternalMontiArcAndCore.g:6486:1: rule__Parameter__ExpressionAssignment_2_1 : ( ruleExpression ) ;
+    // InternalMontiArcAndCore.g:6513:1: rule__Parameter__ExpressionAssignment_2_1 : ( ruleExpression ) ;
     public final void rule__Parameter__ExpressionAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6490:1: ( ( ruleExpression ) )
-            // InternalMontiArcAndCore.g:6491:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:6517:1: ( ( ruleExpression ) )
+            // InternalMontiArcAndCore.g:6518:2: ( ruleExpression )
             {
-            // InternalMontiArcAndCore.g:6491:2: ( ruleExpression )
-            // InternalMontiArcAndCore.g:6492:3: ruleExpression
+            // InternalMontiArcAndCore.g:6518:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:6519:3: ruleExpression
             {
              before(grammarAccess.getParameterAccess().getExpressionExpressionParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20074,17 +20171,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubComponent__TypeAssignment_1"
-    // InternalMontiArcAndCore.g:6501:1: rule__SubComponent__TypeAssignment_1 : ( ruleType ) ;
+    // InternalMontiArcAndCore.g:6528:1: rule__SubComponent__TypeAssignment_1 : ( ruleType ) ;
     public final void rule__SubComponent__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6505:1: ( ( ruleType ) )
-            // InternalMontiArcAndCore.g:6506:2: ( ruleType )
+            // InternalMontiArcAndCore.g:6532:1: ( ( ruleType ) )
+            // InternalMontiArcAndCore.g:6533:2: ( ruleType )
             {
-            // InternalMontiArcAndCore.g:6506:2: ( ruleType )
-            // InternalMontiArcAndCore.g:6507:3: ruleType
+            // InternalMontiArcAndCore.g:6533:2: ( ruleType )
+            // InternalMontiArcAndCore.g:6534:3: ruleType
             {
              before(grammarAccess.getSubComponentAccess().getTypeTypeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20115,17 +20212,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubComponent__ArgumentsAssignment_2"
-    // InternalMontiArcAndCore.g:6516:1: rule__SubComponent__ArgumentsAssignment_2 : ( ruleArguments ) ;
+    // InternalMontiArcAndCore.g:6543:1: rule__SubComponent__ArgumentsAssignment_2 : ( ruleArguments ) ;
     public final void rule__SubComponent__ArgumentsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6520:1: ( ( ruleArguments ) )
-            // InternalMontiArcAndCore.g:6521:2: ( ruleArguments )
+            // InternalMontiArcAndCore.g:6547:1: ( ( ruleArguments ) )
+            // InternalMontiArcAndCore.g:6548:2: ( ruleArguments )
             {
-            // InternalMontiArcAndCore.g:6521:2: ( ruleArguments )
-            // InternalMontiArcAndCore.g:6522:3: ruleArguments
+            // InternalMontiArcAndCore.g:6548:2: ( ruleArguments )
+            // InternalMontiArcAndCore.g:6549:3: ruleArguments
             {
              before(grammarAccess.getSubComponentAccess().getArgumentsArgumentsParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -20156,17 +20253,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubComponent__InstancesAssignment_3"
-    // InternalMontiArcAndCore.g:6531:1: rule__SubComponent__InstancesAssignment_3 : ( ruleNames ) ;
+    // InternalMontiArcAndCore.g:6558:1: rule__SubComponent__InstancesAssignment_3 : ( ruleNames ) ;
     public final void rule__SubComponent__InstancesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6535:1: ( ( ruleNames ) )
-            // InternalMontiArcAndCore.g:6536:2: ( ruleNames )
+            // InternalMontiArcAndCore.g:6562:1: ( ( ruleNames ) )
+            // InternalMontiArcAndCore.g:6563:2: ( ruleNames )
             {
-            // InternalMontiArcAndCore.g:6536:2: ( ruleNames )
-            // InternalMontiArcAndCore.g:6537:3: ruleNames
+            // InternalMontiArcAndCore.g:6563:2: ( ruleNames )
+            // InternalMontiArcAndCore.g:6564:3: ruleNames
             {
              before(grammarAccess.getSubComponentAccess().getInstancesNamesParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -20197,21 +20294,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Connector__SourceAssignment_0"
-    // InternalMontiArcAndCore.g:6546:1: rule__Connector__SourceAssignment_0 : ( ( rule__Connector__SourceAlternatives_0_0 ) ) ;
+    // InternalMontiArcAndCore.g:6573:1: rule__Connector__SourceAssignment_0 : ( ( rule__Connector__SourceAlternatives_0_0 ) ) ;
     public final void rule__Connector__SourceAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6550:1: ( ( ( rule__Connector__SourceAlternatives_0_0 ) ) )
-            // InternalMontiArcAndCore.g:6551:2: ( ( rule__Connector__SourceAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6577:1: ( ( ( rule__Connector__SourceAlternatives_0_0 ) ) )
+            // InternalMontiArcAndCore.g:6578:2: ( ( rule__Connector__SourceAlternatives_0_0 ) )
             {
-            // InternalMontiArcAndCore.g:6551:2: ( ( rule__Connector__SourceAlternatives_0_0 ) )
-            // InternalMontiArcAndCore.g:6552:3: ( rule__Connector__SourceAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:6578:2: ( ( rule__Connector__SourceAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6579:3: ( rule__Connector__SourceAlternatives_0_0 )
             {
              before(grammarAccess.getConnectorAccess().getSourceAlternatives_0_0()); 
-            // InternalMontiArcAndCore.g:6553:3: ( rule__Connector__SourceAlternatives_0_0 )
-            // InternalMontiArcAndCore.g:6553:4: rule__Connector__SourceAlternatives_0_0
+            // InternalMontiArcAndCore.g:6580:3: ( rule__Connector__SourceAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:6580:4: rule__Connector__SourceAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__Connector__SourceAlternatives_0_0();
@@ -20244,21 +20341,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Connector__TargetAssignment_2"
-    // InternalMontiArcAndCore.g:6561:1: rule__Connector__TargetAssignment_2 : ( ( rule__Connector__TargetAlternatives_2_0 ) ) ;
+    // InternalMontiArcAndCore.g:6588:1: rule__Connector__TargetAssignment_2 : ( ( rule__Connector__TargetAlternatives_2_0 ) ) ;
     public final void rule__Connector__TargetAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6565:1: ( ( ( rule__Connector__TargetAlternatives_2_0 ) ) )
-            // InternalMontiArcAndCore.g:6566:2: ( ( rule__Connector__TargetAlternatives_2_0 ) )
+            // InternalMontiArcAndCore.g:6592:1: ( ( ( rule__Connector__TargetAlternatives_2_0 ) ) )
+            // InternalMontiArcAndCore.g:6593:2: ( ( rule__Connector__TargetAlternatives_2_0 ) )
             {
-            // InternalMontiArcAndCore.g:6566:2: ( ( rule__Connector__TargetAlternatives_2_0 ) )
-            // InternalMontiArcAndCore.g:6567:3: ( rule__Connector__TargetAlternatives_2_0 )
+            // InternalMontiArcAndCore.g:6593:2: ( ( rule__Connector__TargetAlternatives_2_0 ) )
+            // InternalMontiArcAndCore.g:6594:3: ( rule__Connector__TargetAlternatives_2_0 )
             {
              before(grammarAccess.getConnectorAccess().getTargetAlternatives_2_0()); 
-            // InternalMontiArcAndCore.g:6568:3: ( rule__Connector__TargetAlternatives_2_0 )
-            // InternalMontiArcAndCore.g:6568:4: rule__Connector__TargetAlternatives_2_0
+            // InternalMontiArcAndCore.g:6595:3: ( rule__Connector__TargetAlternatives_2_0 )
+            // InternalMontiArcAndCore.g:6595:4: rule__Connector__TargetAlternatives_2_0
             {
             pushFollow(FOLLOW_2);
             rule__Connector__TargetAlternatives_2_0();
@@ -20291,17 +20388,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Port__ConditionAssignment_1"
-    // InternalMontiArcAndCore.g:6576:1: rule__Port__ConditionAssignment_1 : ( ruleCondition ) ;
+    // InternalMontiArcAndCore.g:6603:1: rule__Port__ConditionAssignment_1 : ( ruleCondition ) ;
     public final void rule__Port__ConditionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6580:1: ( ( ruleCondition ) )
-            // InternalMontiArcAndCore.g:6581:2: ( ruleCondition )
+            // InternalMontiArcAndCore.g:6607:1: ( ( ruleCondition ) )
+            // InternalMontiArcAndCore.g:6608:2: ( ruleCondition )
             {
-            // InternalMontiArcAndCore.g:6581:2: ( ruleCondition )
-            // InternalMontiArcAndCore.g:6582:3: ruleCondition
+            // InternalMontiArcAndCore.g:6608:2: ( ruleCondition )
+            // InternalMontiArcAndCore.g:6609:3: ruleCondition
             {
              before(grammarAccess.getPortAccess().getConditionConditionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20332,21 +20429,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Port__InAssignment_2_0"
-    // InternalMontiArcAndCore.g:6591:1: rule__Port__InAssignment_2_0 : ( ( 'in' ) ) ;
+    // InternalMontiArcAndCore.g:6618:1: rule__Port__InAssignment_2_0 : ( ( 'in' ) ) ;
     public final void rule__Port__InAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6595:1: ( ( ( 'in' ) ) )
-            // InternalMontiArcAndCore.g:6596:2: ( ( 'in' ) )
+            // InternalMontiArcAndCore.g:6622:1: ( ( ( 'in' ) ) )
+            // InternalMontiArcAndCore.g:6623:2: ( ( 'in' ) )
             {
-            // InternalMontiArcAndCore.g:6596:2: ( ( 'in' ) )
-            // InternalMontiArcAndCore.g:6597:3: ( 'in' )
+            // InternalMontiArcAndCore.g:6623:2: ( ( 'in' ) )
+            // InternalMontiArcAndCore.g:6624:3: ( 'in' )
             {
              before(grammarAccess.getPortAccess().getInInKeyword_2_0_0()); 
-            // InternalMontiArcAndCore.g:6598:3: ( 'in' )
-            // InternalMontiArcAndCore.g:6599:4: 'in'
+            // InternalMontiArcAndCore.g:6625:3: ( 'in' )
+            // InternalMontiArcAndCore.g:6626:4: 'in'
             {
              before(grammarAccess.getPortAccess().getInInKeyword_2_0_0()); 
             match(input,68,FOLLOW_2); 
@@ -20377,21 +20474,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Port__OutAssignment_2_1"
-    // InternalMontiArcAndCore.g:6610:1: rule__Port__OutAssignment_2_1 : ( ( 'out' ) ) ;
+    // InternalMontiArcAndCore.g:6637:1: rule__Port__OutAssignment_2_1 : ( ( 'out' ) ) ;
     public final void rule__Port__OutAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6614:1: ( ( ( 'out' ) ) )
-            // InternalMontiArcAndCore.g:6615:2: ( ( 'out' ) )
+            // InternalMontiArcAndCore.g:6641:1: ( ( ( 'out' ) ) )
+            // InternalMontiArcAndCore.g:6642:2: ( ( 'out' ) )
             {
-            // InternalMontiArcAndCore.g:6615:2: ( ( 'out' ) )
-            // InternalMontiArcAndCore.g:6616:3: ( 'out' )
+            // InternalMontiArcAndCore.g:6642:2: ( ( 'out' ) )
+            // InternalMontiArcAndCore.g:6643:3: ( 'out' )
             {
              before(grammarAccess.getPortAccess().getOutOutKeyword_2_1_0()); 
-            // InternalMontiArcAndCore.g:6617:3: ( 'out' )
-            // InternalMontiArcAndCore.g:6618:4: 'out'
+            // InternalMontiArcAndCore.g:6644:3: ( 'out' )
+            // InternalMontiArcAndCore.g:6645:4: 'out'
             {
              before(grammarAccess.getPortAccess().getOutOutKeyword_2_1_0()); 
             match(input,69,FOLLOW_2); 
@@ -20422,17 +20519,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Port__TypeAssignment_3_0"
-    // InternalMontiArcAndCore.g:6629:1: rule__Port__TypeAssignment_3_0 : ( ruleType ) ;
+    // InternalMontiArcAndCore.g:6656:1: rule__Port__TypeAssignment_3_0 : ( ruleType ) ;
     public final void rule__Port__TypeAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6633:1: ( ( ruleType ) )
-            // InternalMontiArcAndCore.g:6634:2: ( ruleType )
+            // InternalMontiArcAndCore.g:6660:1: ( ( ruleType ) )
+            // InternalMontiArcAndCore.g:6661:2: ( ruleType )
             {
-            // InternalMontiArcAndCore.g:6634:2: ( ruleType )
-            // InternalMontiArcAndCore.g:6635:3: ruleType
+            // InternalMontiArcAndCore.g:6661:2: ( ruleType )
+            // InternalMontiArcAndCore.g:6662:3: ruleType
             {
              before(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_3_0_0()); 
             pushFollow(FOLLOW_2);
@@ -20463,21 +20560,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Port__DataTypeAssignment_3_1"
-    // InternalMontiArcAndCore.g:6644:1: rule__Port__DataTypeAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // InternalMontiArcAndCore.g:6671:1: rule__Port__DataTypeAssignment_3_1 : ( ( RULE_ID ) ) ;
     public final void rule__Port__DataTypeAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6648:1: ( ( ( RULE_ID ) ) )
-            // InternalMontiArcAndCore.g:6649:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6675:1: ( ( ( RULE_ID ) ) )
+            // InternalMontiArcAndCore.g:6676:2: ( ( RULE_ID ) )
             {
-            // InternalMontiArcAndCore.g:6649:2: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6650:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6676:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6677:3: ( RULE_ID )
             {
              before(grammarAccess.getPortAccess().getDataTypeCDDefinitionCrossReference_3_1_0()); 
-            // InternalMontiArcAndCore.g:6651:3: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6652:4: RULE_ID
+            // InternalMontiArcAndCore.g:6678:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6679:4: RULE_ID
             {
              before(grammarAccess.getPortAccess().getDataTypeCDDefinitionIDTerminalRuleCall_3_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20508,21 +20605,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Port__NameAssignment_4"
-    // InternalMontiArcAndCore.g:6663:1: rule__Port__NameAssignment_4 : ( ( rule__Port__NameAlternatives_4_0 ) ) ;
+    // InternalMontiArcAndCore.g:6690:1: rule__Port__NameAssignment_4 : ( ( rule__Port__NameAlternatives_4_0 ) ) ;
     public final void rule__Port__NameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6667:1: ( ( ( rule__Port__NameAlternatives_4_0 ) ) )
-            // InternalMontiArcAndCore.g:6668:2: ( ( rule__Port__NameAlternatives_4_0 ) )
+            // InternalMontiArcAndCore.g:6694:1: ( ( ( rule__Port__NameAlternatives_4_0 ) ) )
+            // InternalMontiArcAndCore.g:6695:2: ( ( rule__Port__NameAlternatives_4_0 ) )
             {
-            // InternalMontiArcAndCore.g:6668:2: ( ( rule__Port__NameAlternatives_4_0 ) )
-            // InternalMontiArcAndCore.g:6669:3: ( rule__Port__NameAlternatives_4_0 )
+            // InternalMontiArcAndCore.g:6695:2: ( ( rule__Port__NameAlternatives_4_0 ) )
+            // InternalMontiArcAndCore.g:6696:3: ( rule__Port__NameAlternatives_4_0 )
             {
              before(grammarAccess.getPortAccess().getNameAlternatives_4_0()); 
-            // InternalMontiArcAndCore.g:6670:3: ( rule__Port__NameAlternatives_4_0 )
-            // InternalMontiArcAndCore.g:6670:4: rule__Port__NameAlternatives_4_0
+            // InternalMontiArcAndCore.g:6697:3: ( rule__Port__NameAlternatives_4_0 )
+            // InternalMontiArcAndCore.g:6697:4: rule__Port__NameAlternatives_4_0
             {
             pushFollow(FOLLOW_2);
             rule__Port__NameAlternatives_4_0();
@@ -20554,22 +20651,30 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__Port__NameAssignment_4"
 
 
-    // $ANTLR start "rule__Condition__ConditionAssignment_3"
-    // InternalMontiArcAndCore.g:6678:1: rule__Condition__ConditionAssignment_3 : ( RULE_STRING ) ;
-    public final void rule__Condition__ConditionAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Condition__DelayedAssignment_1"
+    // InternalMontiArcAndCore.g:6705:1: rule__Condition__DelayedAssignment_1 : ( ( 'delayed, ' ) ) ;
+    public final void rule__Condition__DelayedAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6682:1: ( ( RULE_STRING ) )
-            // InternalMontiArcAndCore.g:6683:2: ( RULE_STRING )
+            // InternalMontiArcAndCore.g:6709:1: ( ( ( 'delayed, ' ) ) )
+            // InternalMontiArcAndCore.g:6710:2: ( ( 'delayed, ' ) )
             {
-            // InternalMontiArcAndCore.g:6683:2: ( RULE_STRING )
-            // InternalMontiArcAndCore.g:6684:3: RULE_STRING
+            // InternalMontiArcAndCore.g:6710:2: ( ( 'delayed, ' ) )
+            // InternalMontiArcAndCore.g:6711:3: ( 'delayed, ' )
             {
-             before(grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_3_0()); 
+             before(grammarAccess.getConditionAccess().getDelayedDelayedKeyword_1_0()); 
+            // InternalMontiArcAndCore.g:6712:3: ( 'delayed, ' )
+            // InternalMontiArcAndCore.g:6713:4: 'delayed, '
+            {
+             before(grammarAccess.getConditionAccess().getDelayedDelayedKeyword_1_0()); 
+            match(input,70,FOLLOW_2); 
+             after(grammarAccess.getConditionAccess().getDelayedDelayedKeyword_1_0()); 
+
+            }
+
+             after(grammarAccess.getConditionAccess().getDelayedDelayedKeyword_1_0()); 
 
             }
 
@@ -20588,25 +20693,62 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__Condition__ConditionAssignment_3"
+    // $ANTLR end "rule__Condition__DelayedAssignment_1"
+
+
+    // $ANTLR start "rule__Condition__ConditionAssignment_4"
+    // InternalMontiArcAndCore.g:6724:1: rule__Condition__ConditionAssignment_4 : ( RULE_STRING ) ;
+    public final void rule__Condition__ConditionAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMontiArcAndCore.g:6728:1: ( ( RULE_STRING ) )
+            // InternalMontiArcAndCore.g:6729:2: ( RULE_STRING )
+            {
+            // InternalMontiArcAndCore.g:6729:2: ( RULE_STRING )
+            // InternalMontiArcAndCore.g:6730:3: RULE_STRING
+            {
+             before(grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_4_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condition__ConditionAssignment_4"
 
 
     // $ANTLR start "rule__Names__NamesAssignment_0"
-    // InternalMontiArcAndCore.g:6693:1: rule__Names__NamesAssignment_0 : ( ( rule__Names__NamesAlternatives_0_0 ) ) ;
+    // InternalMontiArcAndCore.g:6739:1: rule__Names__NamesAssignment_0 : ( ( rule__Names__NamesAlternatives_0_0 ) ) ;
     public final void rule__Names__NamesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6697:1: ( ( ( rule__Names__NamesAlternatives_0_0 ) ) )
-            // InternalMontiArcAndCore.g:6698:2: ( ( rule__Names__NamesAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6743:1: ( ( ( rule__Names__NamesAlternatives_0_0 ) ) )
+            // InternalMontiArcAndCore.g:6744:2: ( ( rule__Names__NamesAlternatives_0_0 ) )
             {
-            // InternalMontiArcAndCore.g:6698:2: ( ( rule__Names__NamesAlternatives_0_0 ) )
-            // InternalMontiArcAndCore.g:6699:3: ( rule__Names__NamesAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:6744:2: ( ( rule__Names__NamesAlternatives_0_0 ) )
+            // InternalMontiArcAndCore.g:6745:3: ( rule__Names__NamesAlternatives_0_0 )
             {
              before(grammarAccess.getNamesAccess().getNamesAlternatives_0_0()); 
-            // InternalMontiArcAndCore.g:6700:3: ( rule__Names__NamesAlternatives_0_0 )
-            // InternalMontiArcAndCore.g:6700:4: rule__Names__NamesAlternatives_0_0
+            // InternalMontiArcAndCore.g:6746:3: ( rule__Names__NamesAlternatives_0_0 )
+            // InternalMontiArcAndCore.g:6746:4: rule__Names__NamesAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__Names__NamesAlternatives_0_0();
@@ -20639,21 +20781,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Names__NamesAssignment_1_1"
-    // InternalMontiArcAndCore.g:6708:1: rule__Names__NamesAssignment_1_1 : ( ( rule__Names__NamesAlternatives_1_1_0 ) ) ;
+    // InternalMontiArcAndCore.g:6754:1: rule__Names__NamesAssignment_1_1 : ( ( rule__Names__NamesAlternatives_1_1_0 ) ) ;
     public final void rule__Names__NamesAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6712:1: ( ( ( rule__Names__NamesAlternatives_1_1_0 ) ) )
-            // InternalMontiArcAndCore.g:6713:2: ( ( rule__Names__NamesAlternatives_1_1_0 ) )
+            // InternalMontiArcAndCore.g:6758:1: ( ( ( rule__Names__NamesAlternatives_1_1_0 ) ) )
+            // InternalMontiArcAndCore.g:6759:2: ( ( rule__Names__NamesAlternatives_1_1_0 ) )
             {
-            // InternalMontiArcAndCore.g:6713:2: ( ( rule__Names__NamesAlternatives_1_1_0 ) )
-            // InternalMontiArcAndCore.g:6714:3: ( rule__Names__NamesAlternatives_1_1_0 )
+            // InternalMontiArcAndCore.g:6759:2: ( ( rule__Names__NamesAlternatives_1_1_0 ) )
+            // InternalMontiArcAndCore.g:6760:3: ( rule__Names__NamesAlternatives_1_1_0 )
             {
              before(grammarAccess.getNamesAccess().getNamesAlternatives_1_1_0()); 
-            // InternalMontiArcAndCore.g:6715:3: ( rule__Names__NamesAlternatives_1_1_0 )
-            // InternalMontiArcAndCore.g:6715:4: rule__Names__NamesAlternatives_1_1_0
+            // InternalMontiArcAndCore.g:6761:3: ( rule__Names__NamesAlternatives_1_1_0 )
+            // InternalMontiArcAndCore.g:6761:4: rule__Names__NamesAlternatives_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Names__NamesAlternatives_1_1_0();
@@ -20686,21 +20828,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__TypeAssignment_0"
-    // InternalMontiArcAndCore.g:6723:1: rule__Variable__TypeAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalMontiArcAndCore.g:6769:1: rule__Variable__TypeAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__Variable__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6727:1: ( ( ( RULE_ID ) ) )
-            // InternalMontiArcAndCore.g:6728:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6773:1: ( ( ( RULE_ID ) ) )
+            // InternalMontiArcAndCore.g:6774:2: ( ( RULE_ID ) )
             {
-            // InternalMontiArcAndCore.g:6728:2: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6729:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6774:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6775:3: ( RULE_ID )
             {
              before(grammarAccess.getVariableAccess().getTypeComponentCrossReference_0_0()); 
-            // InternalMontiArcAndCore.g:6730:3: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6731:4: RULE_ID
+            // InternalMontiArcAndCore.g:6776:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6777:4: RULE_ID
             {
              before(grammarAccess.getVariableAccess().getTypeComponentIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20731,21 +20873,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Variable__NameAssignment_1"
-    // InternalMontiArcAndCore.g:6742:1: rule__Variable__NameAssignment_1 : ( ( rule__Variable__NameAlternatives_1_0 ) ) ;
+    // InternalMontiArcAndCore.g:6788:1: rule__Variable__NameAssignment_1 : ( ( rule__Variable__NameAlternatives_1_0 ) ) ;
     public final void rule__Variable__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6746:1: ( ( ( rule__Variable__NameAlternatives_1_0 ) ) )
-            // InternalMontiArcAndCore.g:6747:2: ( ( rule__Variable__NameAlternatives_1_0 ) )
+            // InternalMontiArcAndCore.g:6792:1: ( ( ( rule__Variable__NameAlternatives_1_0 ) ) )
+            // InternalMontiArcAndCore.g:6793:2: ( ( rule__Variable__NameAlternatives_1_0 ) )
             {
-            // InternalMontiArcAndCore.g:6747:2: ( ( rule__Variable__NameAlternatives_1_0 ) )
-            // InternalMontiArcAndCore.g:6748:3: ( rule__Variable__NameAlternatives_1_0 )
+            // InternalMontiArcAndCore.g:6793:2: ( ( rule__Variable__NameAlternatives_1_0 ) )
+            // InternalMontiArcAndCore.g:6794:3: ( rule__Variable__NameAlternatives_1_0 )
             {
              before(grammarAccess.getVariableAccess().getNameAlternatives_1_0()); 
-            // InternalMontiArcAndCore.g:6749:3: ( rule__Variable__NameAlternatives_1_0 )
-            // InternalMontiArcAndCore.g:6749:4: rule__Variable__NameAlternatives_1_0
+            // InternalMontiArcAndCore.g:6795:3: ( rule__Variable__NameAlternatives_1_0 )
+            // InternalMontiArcAndCore.g:6795:4: rule__Variable__NameAlternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Variable__NameAlternatives_1_0();
@@ -20778,17 +20920,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__SyncAssignment_1"
-    // InternalMontiArcAndCore.g:6757:1: rule__Automaton__SyncAssignment_1 : ( RULE_SYNC ) ;
+    // InternalMontiArcAndCore.g:6803:1: rule__Automaton__SyncAssignment_1 : ( RULE_SYNC ) ;
     public final void rule__Automaton__SyncAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6761:1: ( ( RULE_SYNC ) )
-            // InternalMontiArcAndCore.g:6762:2: ( RULE_SYNC )
+            // InternalMontiArcAndCore.g:6807:1: ( ( RULE_SYNC ) )
+            // InternalMontiArcAndCore.g:6808:2: ( RULE_SYNC )
             {
-            // InternalMontiArcAndCore.g:6762:2: ( RULE_SYNC )
-            // InternalMontiArcAndCore.g:6763:3: RULE_SYNC
+            // InternalMontiArcAndCore.g:6808:2: ( RULE_SYNC )
+            // InternalMontiArcAndCore.g:6809:3: RULE_SYNC
             {
              before(grammarAccess.getAutomatonAccess().getSyncSYNCTerminalRuleCall_1_0()); 
             match(input,RULE_SYNC,FOLLOW_2); 
@@ -20815,17 +20957,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__NameAssignment_3"
-    // InternalMontiArcAndCore.g:6772:1: rule__Automaton__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6818:1: rule__Automaton__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__Automaton__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6776:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6777:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6822:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6823:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6777:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6778:3: RULE_ID
+            // InternalMontiArcAndCore.g:6823:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6824:3: RULE_ID
             {
              before(grammarAccess.getAutomatonAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20852,17 +20994,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__StatesAssignment_5_0"
-    // InternalMontiArcAndCore.g:6787:1: rule__Automaton__StatesAssignment_5_0 : ( ruleState ) ;
+    // InternalMontiArcAndCore.g:6833:1: rule__Automaton__StatesAssignment_5_0 : ( ruleState ) ;
     public final void rule__Automaton__StatesAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6791:1: ( ( ruleState ) )
-            // InternalMontiArcAndCore.g:6792:2: ( ruleState )
+            // InternalMontiArcAndCore.g:6837:1: ( ( ruleState ) )
+            // InternalMontiArcAndCore.g:6838:2: ( ruleState )
             {
-            // InternalMontiArcAndCore.g:6792:2: ( ruleState )
-            // InternalMontiArcAndCore.g:6793:3: ruleState
+            // InternalMontiArcAndCore.g:6838:2: ( ruleState )
+            // InternalMontiArcAndCore.g:6839:3: ruleState
             {
              before(grammarAccess.getAutomatonAccess().getStatesStateParserRuleCall_5_0_0()); 
             pushFollow(FOLLOW_2);
@@ -20893,17 +21035,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Automaton__TransitionsAssignment_5_1"
-    // InternalMontiArcAndCore.g:6802:1: rule__Automaton__TransitionsAssignment_5_1 : ( ruleTransition ) ;
+    // InternalMontiArcAndCore.g:6848:1: rule__Automaton__TransitionsAssignment_5_1 : ( ruleTransition ) ;
     public final void rule__Automaton__TransitionsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6806:1: ( ( ruleTransition ) )
-            // InternalMontiArcAndCore.g:6807:2: ( ruleTransition )
+            // InternalMontiArcAndCore.g:6852:1: ( ( ruleTransition ) )
+            // InternalMontiArcAndCore.g:6853:2: ( ruleTransition )
             {
-            // InternalMontiArcAndCore.g:6807:2: ( ruleTransition )
-            // InternalMontiArcAndCore.g:6808:3: ruleTransition
+            // InternalMontiArcAndCore.g:6853:2: ( ruleTransition )
+            // InternalMontiArcAndCore.g:6854:3: ruleTransition
             {
              before(grammarAccess.getAutomatonAccess().getTransitionsTransitionParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20934,17 +21076,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__ModifierAssignment_0"
-    // InternalMontiArcAndCore.g:6817:1: rule__SCState__ModifierAssignment_0 : ( ruleSCModifier ) ;
+    // InternalMontiArcAndCore.g:6863:1: rule__SCState__ModifierAssignment_0 : ( ruleSCModifier ) ;
     public final void rule__SCState__ModifierAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6821:1: ( ( ruleSCModifier ) )
-            // InternalMontiArcAndCore.g:6822:2: ( ruleSCModifier )
+            // InternalMontiArcAndCore.g:6867:1: ( ( ruleSCModifier ) )
+            // InternalMontiArcAndCore.g:6868:2: ( ruleSCModifier )
             {
-            // InternalMontiArcAndCore.g:6822:2: ( ruleSCModifier )
-            // InternalMontiArcAndCore.g:6823:3: ruleSCModifier
+            // InternalMontiArcAndCore.g:6868:2: ( ruleSCModifier )
+            // InternalMontiArcAndCore.g:6869:3: ruleSCModifier
             {
              before(grammarAccess.getSCStateAccess().getModifierSCModifierEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -20975,17 +21117,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__AnteAssignment_1"
-    // InternalMontiArcAndCore.g:6832:1: rule__SCState__AnteAssignment_1 : ( ruleSCSAnte ) ;
+    // InternalMontiArcAndCore.g:6878:1: rule__SCState__AnteAssignment_1 : ( ruleSCSAnte ) ;
     public final void rule__SCState__AnteAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6836:1: ( ( ruleSCSAnte ) )
-            // InternalMontiArcAndCore.g:6837:2: ( ruleSCSAnte )
+            // InternalMontiArcAndCore.g:6882:1: ( ( ruleSCSAnte ) )
+            // InternalMontiArcAndCore.g:6883:2: ( ruleSCSAnte )
             {
-            // InternalMontiArcAndCore.g:6837:2: ( ruleSCSAnte )
-            // InternalMontiArcAndCore.g:6838:3: ruleSCSAnte
+            // InternalMontiArcAndCore.g:6883:2: ( ruleSCSAnte )
+            // InternalMontiArcAndCore.g:6884:3: ruleSCSAnte
             {
              before(grammarAccess.getSCStateAccess().getAnteSCSAnteParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21016,17 +21158,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCState__NameAssignment_3"
-    // InternalMontiArcAndCore.g:6847:1: rule__SCState__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6893:1: rule__SCState__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__SCState__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6851:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6852:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6897:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6898:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6852:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6853:3: RULE_ID
+            // InternalMontiArcAndCore.g:6898:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6899:3: RULE_ID
             {
              before(grammarAccess.getSCStateAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21053,17 +21195,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__ModifierAssignment_0"
-    // InternalMontiArcAndCore.g:6862:1: rule__InvState__ModifierAssignment_0 : ( ruleSCModifier ) ;
+    // InternalMontiArcAndCore.g:6908:1: rule__InvState__ModifierAssignment_0 : ( ruleSCModifier ) ;
     public final void rule__InvState__ModifierAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6866:1: ( ( ruleSCModifier ) )
-            // InternalMontiArcAndCore.g:6867:2: ( ruleSCModifier )
+            // InternalMontiArcAndCore.g:6912:1: ( ( ruleSCModifier ) )
+            // InternalMontiArcAndCore.g:6913:2: ( ruleSCModifier )
             {
-            // InternalMontiArcAndCore.g:6867:2: ( ruleSCModifier )
-            // InternalMontiArcAndCore.g:6868:3: ruleSCModifier
+            // InternalMontiArcAndCore.g:6913:2: ( ruleSCModifier )
+            // InternalMontiArcAndCore.g:6914:3: ruleSCModifier
             {
              before(grammarAccess.getInvStateAccess().getModifierSCModifierEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21094,17 +21236,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__NameAssignment_2"
-    // InternalMontiArcAndCore.g:6877:1: rule__InvState__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:6923:1: rule__InvState__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__InvState__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6881:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6882:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6927:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6928:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:6882:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6883:3: RULE_ID
+            // InternalMontiArcAndCore.g:6928:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6929:3: RULE_ID
             {
              before(grammarAccess.getInvStateAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21131,17 +21273,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InvState__ExpressionAssignment_4"
-    // InternalMontiArcAndCore.g:6892:1: rule__InvState__ExpressionAssignment_4 : ( ruleExpression ) ;
+    // InternalMontiArcAndCore.g:6938:1: rule__InvState__ExpressionAssignment_4 : ( ruleExpression ) ;
     public final void rule__InvState__ExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6896:1: ( ( ruleExpression ) )
-            // InternalMontiArcAndCore.g:6897:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:6942:1: ( ( ruleExpression ) )
+            // InternalMontiArcAndCore.g:6943:2: ( ruleExpression )
             {
-            // InternalMontiArcAndCore.g:6897:2: ( ruleExpression )
-            // InternalMontiArcAndCore.g:6898:3: ruleExpression
+            // InternalMontiArcAndCore.g:6943:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:6944:3: ruleExpression
             {
              before(grammarAccess.getInvStateAccess().getExpressionExpressionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -21172,17 +21314,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SCSAnte__BlockAssignment_1"
-    // InternalMontiArcAndCore.g:6907:1: rule__SCSAnte__BlockAssignment_1 : ( ruleBlock ) ;
+    // InternalMontiArcAndCore.g:6953:1: rule__SCSAnte__BlockAssignment_1 : ( ruleBlock ) ;
     public final void rule__SCSAnte__BlockAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6911:1: ( ( ruleBlock ) )
-            // InternalMontiArcAndCore.g:6912:2: ( ruleBlock )
+            // InternalMontiArcAndCore.g:6957:1: ( ( ruleBlock ) )
+            // InternalMontiArcAndCore.g:6958:2: ( ruleBlock )
             {
-            // InternalMontiArcAndCore.g:6912:2: ( ruleBlock )
-            // InternalMontiArcAndCore.g:6913:3: ruleBlock
+            // InternalMontiArcAndCore.g:6958:2: ( ruleBlock )
+            // InternalMontiArcAndCore.g:6959:3: ruleBlock
             {
              before(grammarAccess.getSCSAnteAccess().getBlockBlockParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21213,21 +21355,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__SourceAssignment_0"
-    // InternalMontiArcAndCore.g:6922:1: rule__Transition__SourceAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalMontiArcAndCore.g:6968:1: rule__Transition__SourceAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__Transition__SourceAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6926:1: ( ( ( RULE_ID ) ) )
-            // InternalMontiArcAndCore.g:6927:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6972:1: ( ( ( RULE_ID ) ) )
+            // InternalMontiArcAndCore.g:6973:2: ( ( RULE_ID ) )
             {
-            // InternalMontiArcAndCore.g:6927:2: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6928:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6973:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6974:3: ( RULE_ID )
             {
              before(grammarAccess.getTransitionAccess().getSourceStateCrossReference_0_0()); 
-            // InternalMontiArcAndCore.g:6929:3: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6930:4: RULE_ID
+            // InternalMontiArcAndCore.g:6975:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6976:4: RULE_ID
             {
              before(grammarAccess.getTransitionAccess().getSourceStateIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21258,21 +21400,21 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__TargetAssignment_1_1"
-    // InternalMontiArcAndCore.g:6941:1: rule__Transition__TargetAssignment_1_1 : ( ( RULE_ID ) ) ;
+    // InternalMontiArcAndCore.g:6987:1: rule__Transition__TargetAssignment_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__Transition__TargetAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6945:1: ( ( ( RULE_ID ) ) )
-            // InternalMontiArcAndCore.g:6946:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6991:1: ( ( ( RULE_ID ) ) )
+            // InternalMontiArcAndCore.g:6992:2: ( ( RULE_ID ) )
             {
-            // InternalMontiArcAndCore.g:6946:2: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:6947:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6992:2: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:6993:3: ( RULE_ID )
             {
              before(grammarAccess.getTransitionAccess().getTargetStateCrossReference_1_1_0()); 
-            // InternalMontiArcAndCore.g:6948:3: ( RULE_ID )
-            // InternalMontiArcAndCore.g:6949:4: RULE_ID
+            // InternalMontiArcAndCore.g:6994:3: ( RULE_ID )
+            // InternalMontiArcAndCore.g:6995:4: RULE_ID
             {
              before(grammarAccess.getTransitionAccess().getTargetStateIDTerminalRuleCall_1_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21303,17 +21445,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__ExpressionAssignment_2_1"
-    // InternalMontiArcAndCore.g:6960:1: rule__Transition__ExpressionAssignment_2_1 : ( ruleExpression ) ;
+    // InternalMontiArcAndCore.g:7006:1: rule__Transition__ExpressionAssignment_2_1 : ( ruleExpression ) ;
     public final void rule__Transition__ExpressionAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6964:1: ( ( ruleExpression ) )
-            // InternalMontiArcAndCore.g:6965:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:7010:1: ( ( ruleExpression ) )
+            // InternalMontiArcAndCore.g:7011:2: ( ruleExpression )
             {
-            // InternalMontiArcAndCore.g:6965:2: ( ruleExpression )
-            // InternalMontiArcAndCore.g:6966:3: ruleExpression
+            // InternalMontiArcAndCore.g:7011:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:7012:3: ruleExpression
             {
              before(grammarAccess.getTransitionAccess().getExpressionExpressionParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21344,17 +21486,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Transition__ReactionAssignment_3_1"
-    // InternalMontiArcAndCore.g:6975:1: rule__Transition__ReactionAssignment_3_1 : ( ruleBlock ) ;
+    // InternalMontiArcAndCore.g:7021:1: rule__Transition__ReactionAssignment_3_1 : ( ruleBlock ) ;
     public final void rule__Transition__ReactionAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6979:1: ( ( ruleBlock ) )
-            // InternalMontiArcAndCore.g:6980:2: ( ruleBlock )
+            // InternalMontiArcAndCore.g:7025:1: ( ( ruleBlock ) )
+            // InternalMontiArcAndCore.g:7026:2: ( ruleBlock )
             {
-            // InternalMontiArcAndCore.g:6980:2: ( ruleBlock )
-            // InternalMontiArcAndCore.g:6981:3: ruleBlock
+            // InternalMontiArcAndCore.g:7026:2: ( ruleBlock )
+            // InternalMontiArcAndCore.g:7027:3: ruleBlock
             {
              before(grammarAccess.getTransitionAccess().getReactionBlockParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21385,17 +21527,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Block__BlocksAssignment_2"
-    // InternalMontiArcAndCore.g:6990:1: rule__Block__BlocksAssignment_2 : ( ruleBlockStatement ) ;
+    // InternalMontiArcAndCore.g:7036:1: rule__Block__BlocksAssignment_2 : ( ruleBlockStatement ) ;
     public final void rule__Block__BlocksAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:6994:1: ( ( ruleBlockStatement ) )
-            // InternalMontiArcAndCore.g:6995:2: ( ruleBlockStatement )
+            // InternalMontiArcAndCore.g:7040:1: ( ( ruleBlockStatement ) )
+            // InternalMontiArcAndCore.g:7041:2: ( ruleBlockStatement )
             {
-            // InternalMontiArcAndCore.g:6995:2: ( ruleBlockStatement )
-            // InternalMontiArcAndCore.g:6996:3: ruleBlockStatement
+            // InternalMontiArcAndCore.g:7041:2: ( ruleBlockStatement )
+            // InternalMontiArcAndCore.g:7042:3: ruleBlockStatement
             {
              before(grammarAccess.getBlockAccess().getBlocksBlockStatementParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -21426,17 +21568,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleExpression__ExpressionAssignment_0"
-    // InternalMontiArcAndCore.g:7005:1: rule__SimpleExpression__ExpressionAssignment_0 : ( ruleExpression ) ;
+    // InternalMontiArcAndCore.g:7051:1: rule__SimpleExpression__ExpressionAssignment_0 : ( ruleExpression ) ;
     public final void rule__SimpleExpression__ExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:7009:1: ( ( ruleExpression ) )
-            // InternalMontiArcAndCore.g:7010:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:7055:1: ( ( ruleExpression ) )
+            // InternalMontiArcAndCore.g:7056:2: ( ruleExpression )
             {
-            // InternalMontiArcAndCore.g:7010:2: ( ruleExpression )
-            // InternalMontiArcAndCore.g:7011:3: ruleExpression
+            // InternalMontiArcAndCore.g:7056:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:7057:3: ruleExpression
             {
              before(grammarAccess.getSimpleExpressionAccess().getExpressionExpressionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21467,17 +21609,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__NameAssignment_0"
-    // InternalMontiArcAndCore.g:7020:1: rule__SimpleInit__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalMontiArcAndCore.g:7066:1: rule__SimpleInit__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__SimpleInit__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:7024:1: ( ( RULE_ID ) )
-            // InternalMontiArcAndCore.g:7025:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:7070:1: ( ( RULE_ID ) )
+            // InternalMontiArcAndCore.g:7071:2: ( RULE_ID )
             {
-            // InternalMontiArcAndCore.g:7025:2: ( RULE_ID )
-            // InternalMontiArcAndCore.g:7026:3: RULE_ID
+            // InternalMontiArcAndCore.g:7071:2: ( RULE_ID )
+            // InternalMontiArcAndCore.g:7072:3: RULE_ID
             {
              before(grammarAccess.getSimpleInitAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21504,17 +21646,17 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SimpleInit__ExpressionsAssignment_2"
-    // InternalMontiArcAndCore.g:7035:1: rule__SimpleInit__ExpressionsAssignment_2 : ( ruleExpression ) ;
+    // InternalMontiArcAndCore.g:7081:1: rule__SimpleInit__ExpressionsAssignment_2 : ( ruleExpression ) ;
     public final void rule__SimpleInit__ExpressionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMontiArcAndCore.g:7039:1: ( ( ruleExpression ) )
-            // InternalMontiArcAndCore.g:7040:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:7085:1: ( ( ruleExpression ) )
+            // InternalMontiArcAndCore.g:7086:2: ( ruleExpression )
             {
-            // InternalMontiArcAndCore.g:7040:2: ( ruleExpression )
-            // InternalMontiArcAndCore.g:7041:3: ruleExpression
+            // InternalMontiArcAndCore.g:7086:2: ( ruleExpression )
+            // InternalMontiArcAndCore.g:7087:3: ruleExpression
             {
              before(grammarAccess.getSimpleInitAccess().getExpressionsExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -21673,7 +21815,7 @@ public class InternalMontiArcAndCoreParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000030L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x00000001FFFFC020L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x2400080000000230L,0x0000000000000002L});

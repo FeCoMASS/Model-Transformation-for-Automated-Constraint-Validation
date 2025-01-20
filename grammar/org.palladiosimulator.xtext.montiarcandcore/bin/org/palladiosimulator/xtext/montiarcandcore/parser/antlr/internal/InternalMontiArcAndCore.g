@@ -2283,19 +2283,33 @@ ruleCondition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getConditionAccess().getLessThanSignLessThanSignKeyword_0());
 		}
-		otherlv_1='condition'
+		(
+			(
+				lv_delayed_1_0='delayed, '
+				{
+					newLeafNode(lv_delayed_1_0, grammarAccess.getConditionAccess().getDelayedDelayedKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConditionRule());
+					}
+					setWithLastConsumed($current, "delayed", lv_delayed_1_0 != null, "delayed, ");
+				}
+			)
+		)?
+		otherlv_2='condition'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getConditionAccess().getConditionKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getConditionKeyword_2());
 		}
-		otherlv_2='='
+		otherlv_3='='
 		{
-			newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getEqualsSignKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getConditionAccess().getEqualsSignKeyword_3());
 		}
 		(
 			(
-				lv_condition_3_0=RULE_STRING
+				lv_condition_4_0=RULE_STRING
 				{
-					newLeafNode(lv_condition_3_0, grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_3_0());
+					newLeafNode(lv_condition_4_0, grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -2304,14 +2318,14 @@ ruleCondition returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"condition",
-						lv_condition_3_0,
+						lv_condition_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_4='>>'
+		otherlv_5='>>'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getConditionAccess().getGreaterThanSignGreaterThanSignKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getConditionAccess().getGreaterThanSignGreaterThanSignKeyword_5());
 		}
 	)
 ;
