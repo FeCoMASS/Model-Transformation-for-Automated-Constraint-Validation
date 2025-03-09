@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="generateMontiArcAndCore" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context/>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MontiArcAndCore">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="repositoryToClassDiagramCompilationUnit" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="Repository">
+        <value>
+          <modelElement href="Slingshot.repository#_pqWIkBWoEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="ClassDiagramCompilationUnit">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="packageNameToPackage" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="cd2pojo.slingshot" collectionType="String"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Package">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@package"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="diagramNameToDiagram" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="Slingshot" collectionType="String"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="ClassDiagram">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="compositeDataTypeToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="CompositeDataType">
+        <value>
+          <modelElement href="Slingshot.repository#_I2RZEBWpEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="CDClass">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="innerDeclarationToMember" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="InnerDeclaration">
+        <value>
+          <modelElement href="Slingshot.repository#//@dataTypes__Repository.0/@innerDeclaration_CompositeDataType.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Member">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.1/@members.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="compositeDataTypeToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="CompositeDataType">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="CDClass">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.5"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="innerDeclarationToMember" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="InnerDeclaration">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Member">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.5/@members.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="compositeDataTypeToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="CompositeDataType">
+        <value>
+          <modelElement href="Slingshot.repository#_K_WlcBWpEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="CDClass">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="innerDeclarationToMember" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="InnerDeclaration">
+        <value>
+          <modelElement href="Slingshot.repository#//@dataTypes__Repository.2/@innerDeclaration_CompositeDataType.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Member">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.3/@members.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="stringToString" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="PrimitiveDataType">
+        <value>
+          <modelElement href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MCObjectType">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.3/@members.0/@type"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="compositeDataTypeToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="CompositeDataType">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="CDClass">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.4"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="innerDeclarationToMember" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="InnerDeclaration">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Member">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.4/@members.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="compositeDataTypeToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="CompositeDataType">
+        <value>
+          <modelElement href="Slingshot.repository#_dMs9TdKDEe-FZs42ElTBhQ"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="CDClass">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="innerDeclarationToMember" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="InnerDeclaration">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Member">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.0/@members.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="compositeDataTypeToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="CompositeDataType">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="CDClass">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="innerDeclarationToMember" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="InnerDeclaration">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Member">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.2/@members.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="interfacesToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationInterface">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result/>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="interfacesToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationInterface">
+        <value>
+          <modelElement href="Slingshot.repository#_E95ZUBWpEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result/>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="interfacesToCDClass" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationInterface">
+        <value>
+          <modelElement href="Slingshot.repository#_5uF5ABWoEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result/>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="sytemToMACompilationUnit" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="System">
+        <value>
+          <modelElement href="Slingshot.system#_tR6sMBWoEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MACompilationUnit">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="packageNameToPackage" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="slingshot" collectionType="String"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Package">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@package"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="systemToComponent" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="System">
+        <value>
+          <modelElement href="Slingshot.system#_tR6sMBWoEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="operationProvidedRoleToPort" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationProvidedRole">
+        <value>
+          <modelElement href="Slingshot.system#_LavEcBWqEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Set(Port)">
+        <value collectionType="Set">
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.0"/>
+          </collection>
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.1"/>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="assemblyContextToComponent" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="AssemblyContext">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="operationProvidedRoleToPort" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationProvidedRole">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Set(Port)">
+        <value collectionType="Set">
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4/@arcElements.0"/>
+          </collection>
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4/@arcElements.1"/>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="assemblyContextToComponent" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="AssemblyContext">
+        <value>
+          <modelElement href="Slingshot.system#_GF3RgBWqEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="operationProvidedRoleToPort" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationProvidedRole">
+        <value>
+          <modelElement href="Slingshot.repository#__gT50BWpEe-DGZvw9jQajw"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Set(Port)">
+        <value collectionType="Set">
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2/@arcElements.0"/>
+          </collection>
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2/@arcElements.1"/>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="operationRequiredRoleToPort" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationRequiredRole">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Set(Port)">
+        <value collectionType="Set">
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2/@arcElements.2"/>
+          </collection>
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2/@arcElements.3"/>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="assemblyContextToComponent" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="AssemblyContext">
+        <value>
+          <modelElement href="Slingshot.system#_yaC6QClJEe-lBN28kF6cQQ"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="operationProvidedRoleToPort" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationProvidedRole">
+        <value>
+          <modelElement href="Slingshot.repository#_hGyfMClIEe-fT_GEyVXRKA"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Set(Port)">
+        <value collectionType="Set">
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.0"/>
+          </collection>
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.1"/>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="operationRequiredRoleToPort" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="OperationRequiredRole">
+        <value>
+          <modelElement href="Slingshot.repository#_gZyPQClIEe-fT_GEyVXRKA"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Set(Port)">
+        <value collectionType="Set">
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.2"/>
+          </collection>
+          <collection>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.3"/>
+          </collection>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="componentToVariable" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.5"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="componentToVariable" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.6"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="componentToVariable" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="Component">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.7"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="assemblyConnectorToConnector" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="AssemblyConnector">
+        <value/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Connector">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.8"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="assemblyConnectorToConnector" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="AssemblyConnector">
+        <value>
+          <modelElement href="Slingshot.system#_0s6UwClJEe-lBN28kF6cQQ"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Connector">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.9"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="providedDelegationConnectorToConnector" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="ProvidedDelegationConnector">
+        <value>
+          <modelElement href="Slingshot.system#_1YAgMClJEe-lBN28kF6cQP"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="directionIn" type="Boolean">
+        <value primitiveValue="true" collectionType="Boolean"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Connector">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.10"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="providedDelegationConnectorToConnector" package="PCMToMontiArc" module="PCMToMontiArc"/>
+    <context>
+      <context name="self" type="ProvidedDelegationConnector">
+        <value>
+          <modelElement href="Slingshot.system#_1YAgMClJEe-lBN28kF6cQP"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="directionIn" type="Boolean">
+        <value primitiveValue="false" collectionType="Boolean"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Connector">
+        <value>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.11"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

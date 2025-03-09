@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="Constraints" nsURI="Constraints" nsPrefix="constraints">
+  <eAnnotations references="Slingshot.repository#_Gan2ABWpEe-DGZvw9jQajw">
+    <details key="return" value="userPerService"/>
+  </eAnnotations>
+  <eAnnotations references="Slingshot.system#_1YAgMClJEe-lBN28kF6cQP">
+    <details key="Source:In" value="x.numberOfUsers > 10 &amp;&amp; x.numberOfUsers &lt; 2147483647"/>
+    <details key="Target:In" value="x.numberOfUsers > 0"/>
+    <details key="Source:Out" value="x.usersPerService > 1"/>
+    <details key="Target:Out" value="x.usersPerService > 0"/>
+  </eAnnotations>
+  <eAnnotations references="Slingshot.system#_0s6UwClJEe-lBN28kF6cQQ">
+    <details key="Source:Out" value="x.method == &quot;asdf&quot;"/>
+    <details key="Target:In" value="x.method == &quot;executeOperation&quot;"/>
+    <details key="Source:Out:Delayed"/>
+  </eAnnotations>
+</ecore:EPackage>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_pqWIkBWoEe-DGZvw9jQajw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_6xnykBWoEe-DGZvw9jQajw" entityName="SystemSimulation">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="__gT50BWpEe-DGZvw9jQajw" entityName="" providedInterface__OperationProvidedRole="_5uF5ABWoEe-DGZvw9jQajw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="__gdDwBWpEe-DGZvw9jQajw" describedService__SEFF="_jZpKEBWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="__gdDwRWpEe-DGZvw9jQajw" successor_AbstractAction="__gdDwhWpEe-DGZvw9jQajw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="__gdDwhWpEe-DGZvw9jQajw" predecessor_AbstractAction="__gdDwRWpEe-DGZvw9jQajw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ZKn54ClIEe-fT_GEyVXRKA" entityName="UsageSimulation">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hGyfMClIEe-fT_GEyVXRKA" entityName="" providedInterface__OperationProvidedRole="_E95ZUBWpEe-DGZvw9jQajw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_gZyPQClIEe-fT_GEyVXRKA" entityName="" requiredInterface__OperationRequiredRole="_5uF5ABWoEe-DGZvw9jQajw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_hG-FYClIEe-fT_GEyVXRKA" describedService__SEFF="_Gan2ABWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_hG-FYSlIEe-fT_GEyVXRKA" successor_AbstractAction="_hG-FYilIEe-fT_GEyVXRKA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_hG-FYilIEe-fT_GEyVXRKA" predecessor_AbstractAction="_hG-FYSlIEe-fT_GEyVXRKA"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_5uF5ABWoEe-DGZvw9jQajw" entityName="SystemSimulation">
+    <signatures__OperationInterface id="_jZpKEBWpEe-DGZvw9jQajw" entityName="simulateSystemCall">
+      <parameters__OperationSignature dataType__Parameter="_K_WlcBWpEe-DGZvw9jQajw" parameterName="systemCall"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_E95ZUBWpEe-DGZvw9jQajw" entityName="UsageSimulation">
+    <signatures__OperationInterface id="_Gan2ABWpEe-DGZvw9jQajw" entityName="simulateUsageScenario" returnType__OperationSignature="_J6tQfdM5Ee-o-JNvJrKOug">
+      <parameters__OperationSignature dataType__Parameter="_I2RZEBWpEe-DGZvw9jQajw" parameterName="usageScenario"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_I2RZEBWpEe-DGZvw9jQajw" entityName="UsageScenario">
+    <innerDeclaration_CompositeDataType entityName="numberOfUsers">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_J6tQfdM5Ee-o-JNvJrKOug" entityName="UsageSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="usersPerService">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_K_WlcBWpEe-DGZvw9jQajw" entityName="SystemCall">
+    <innerDeclaration_CompositeDataType entityName="method">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+</repository:Repository>

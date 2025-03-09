@@ -1,0 +1,27 @@
+package cd2pojo.slingshot;
+classdiagram Slingshot {
+	public class SystemSimulationReturn {
+		double utilization;
+	}
+	public class Latency {
+		double latency;
+	}
+	public class ResourceDemand {
+		double resourceDemand;
+	}
+	public class ResourceSimulationReturn {
+		double utilization;
+	}
+	public class UsageSimulationReturn {
+		double responseTime; double utilization;
+	}
+	public class ServerLoad {
+		double serverLoad;
+	}
+	public class UsageScenario {
+		int numberOfUsers;
+	}
+	public class SystemCall {
+		String method;
+	}
+}

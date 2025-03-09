@@ -20,7 +20,6 @@ modeltype MontiArcAndCore uses "http://www.palladiosimulator.org/xtext/montiarca
 transformation PCMToMontiArc(in system : PCM_SYS, in repository : PCM_REP, in constraints : CONSTRAINTS, out montiArcAndCore : MontiArcAndCore);
 
 main() {
-	log("asdf");
 	map generateMontiArcAndCore();
 }
 
@@ -73,19 +72,15 @@ query EAnnotation::applyAssemblyConnectorConstraints() {
 	var portSourceIn := assemblyConnector.requiredRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
 	var portSourceOut := assemblyConnector.requiredRole_AssemblyConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
 	if (sourceInCondition <> null) {
-		log("Applying source constraint " + sourceInCondition + " to " + source.entityName + "." + portSourceIn.name + "(" + portSourceIn.repr() + ")");
 		portSourceIn.condition := sourceInCondition.stringToCondition();
 	};
 	if (sourceOutCondition <> null) {
-		log("Applying source constraint " + sourceOutCondition + " to " + source.entityName + "." + portSourceOut.name + "(" + portSourceOut.repr() + ")");
 		portSourceOut.condition := sourceOutCondition.stringToCondition();
 	};
 	if (targetInCondition <> null) {
-		log("Applying target constraint " + targetInCondition + " to " + target.entityName + "." + portTargetIn.name + "(" + portTargetIn.repr() + ")");
 		portTargetIn.condition := targetInCondition.stringToCondition();
 	};
 	if (targetOutCondition <> null) {
-		log("Applying target constraint " + targetOutCondition + " to " + target.entityName + "." + portTargetOut.name + "(" + portTargetOut.repr() + ")");
 		portTargetOut.condition := targetOutCondition.stringToCondition();
 	};
 	
@@ -117,19 +112,15 @@ query EAnnotation::applyProvidedDelegationConnectorConstraints() {
 	var portSourceIn := providedDelegationConnector.outerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._in);
 	var portSourceOut := providedDelegationConnector.outerProvidedRole_ProvidedDelegationConnector.resolve(Set(Port)) -> first() -> any(x | x._out);
 	if (sourceInCondition <> null) {
-		log("Applying source constraint " + sourceInCondition + " to " + source.entityName + "." + portSourceIn.name);
 		portSourceIn.condition := sourceInCondition.stringToCondition();
 	};
 	if (sourceOutCondition <> null) {
-		log("Applying source constraint " + sourceOutCondition + " to " + source.entityName + "." + portSourceOut.name);
 		portSourceOut.condition := sourceOutCondition.stringToCondition();
 	};
 	if (targetInCondition <> null) {
-		log("Applying target constraint " + targetInCondition + " to " + target.entityName + "." + portTargetIn.name);
 		portTargetIn.condition := targetInCondition.stringToCondition();
 	};
 	if (targetOutCondition <> null) {
-		log("Applying target constraint " + targetOutCondition + " to " + target.entityName + "." + portTargetOut.name);
 		portTargetOut.condition := targetOutCondition.stringToCondition();
 	};
 	
@@ -156,9 +147,12 @@ mapping System::systemToComponent() : Component {
 	self.providedRoles_InterfaceProvidingEntity[OperationProvidedRole] -> map operationProvidedRoleToPort() -> forEach(port) {
 		arcElements += port;
 	};
-	self.requiredRoles_InterfaceRequiringEntity[OperationRequiredRole] -> map operationRequiredRoleToPort() -> forEach(port) {
-		arcElements += port;
-	};
+	// Process ALL Required Roles (Fix)
+    self.requiredRoles_InterfaceRequiringEntity->select(oclIsTypeOf(OperationRequiredRole))
+        ->forEach(role) {
+            role.oclAsType(OperationRequiredRole) -> map operationRequiredRoleToPort()
+                -> forEach(port) { arcElements += port; };
+                };
 }
 
 
@@ -173,27 +167,28 @@ mapping AssemblyConnector::assemblyConnectorToConnector() : List(MontiArcAndCore
 	var requiringComponent := self.requiringAssemblyContext_AssemblyConnector.resolve(Component) -> first().resolve(Variable) -> first();
 	var providedPorts : List(Port);
 	self.providedRole_AssemblyConnector.resolve(Set(Port)) -> forEach(ports) {
-		log("ProvidedPorts: " + self.providedRole_AssemblyConnector.entityName);
 		ports -> forEach(port) {
-			log(port.oclAsType(Port).name);
 			providedPorts += port;
 		}
 	};
 	var requiredPorts : List(Port);
 	self.requiredRole_AssemblyConnector.resolve(Set(Port)) -> forEach(ports) {
-		log("RequiredPorts: " + self.requiredRole_AssemblyConnector.entityName);
 		ports -> forEach(port) {
-			log(port.oclAsType(Port).name);
 			requiredPorts += port;
+		
 		}
 	};	
 	providedPorts -> forEach(providedPort) {
 		var port1 : String;
 		var port2 : String;
 		port1 := providingComponent.name + "." + providedPort.name;
+
 		requiredPorts -> forEach(requiredPort) {
 			if (providedPort.name = requiredPort.name) {
+
 				port2 := requiringComponent.name + "." + requiredPort.name;
+				
+
 			};
 		};
 		if (providedPort.oclAsType(Port)._out) {
@@ -238,11 +233,18 @@ mapping RequiredDelegationConnector::requiredDelegationConnectorToConnector() : 
 
 mapping AssemblyContext::assemblyContextToComponent() : Component {
 	name := self.entityName;
-	self.encapsulatedComponent__AssemblyContext.providedRoles_InterfaceProvidingEntity[OperationProvidedRole] -> any(true) -> map operationProvidedRoleToPort() -> forEach(port) {
-		arcElements += port;
-	};
-	self.encapsulatedComponent__AssemblyContext.requiredRoles_InterfaceRequiringEntity[OperationRequiredRole] -> any(true) -> map operationRequiredRoleToPort() -> forEach(port) {
-		arcElements += port;
+	self.encapsulatedComponent__AssemblyContext.providedRoles_InterfaceProvidingEntity
+    -> select(oclIsTypeOf(OperationProvidedRole))
+    -> forEach(role) {
+        role.oclAsType(OperationProvidedRole) -> map operationProvidedRoleToPort()
+            -> forEach(port) { arcElements += port; };
+    };
+	  // Process ALL Required Roles
+    self.encapsulatedComponent__AssemblyContext.requiredRoles_InterfaceRequiringEntity
+        -> select(oclIsTypeOf(OperationRequiredRole))
+        -> forEach(role) {
+            role.oclAsType(OperationRequiredRole) -> map operationRequiredRoleToPort()
+                -> forEach(port) { arcElements += port; };
 	};
 }
 
@@ -284,7 +286,6 @@ mapping OperationRequiredRole::operationRequiredRoleToPort() : Set(Port) {
 		var ports : Set(Port);
 		
 		signatures->forEach(signature) {
-			log(signature.parameters__OperationSignature -> size().toString());
 			// TODO Assumption: only one parameter
 			ports += signature.generateOutPortFromParameter();
 			// TODO only PrimitiveDataTypes supported for now as return type
@@ -301,6 +302,9 @@ constructor Port::Port(directionIn : Boolean, primitiveType : Type, operationSig
 	_out := not directionIn;
 	type := primitiveType;
 	name := operationSignature.getReturnName(type);
+	
+
+	
 }
 
 constructor Port::Port(directionIn : Boolean, dataTypeCDClass : CDClass, operationSignature : OperationSignature) {
@@ -308,6 +312,26 @@ constructor Port::Port(directionIn : Boolean, dataTypeCDClass : CDClass, operati
 	_out := not directionIn;
 	dataType := dataTypeCDClass;
 	name := operationSignature.getReturnName(dataTypeCDClass);
+
+}
+
+query OperationSignature::getParameterName() : String {
+	return self.parameters__OperationSignature -> first().oclAsType(Parameter).parameterName;
+}
+ 
+constructor Port::Port(directionIn : Boolean, primitiveType : Type, portName : String) {
+	_in := directionIn;
+	_out := not directionIn;
+	type := primitiveType;
+	name := portName;
+	
+}
+ 
+constructor Port::Port(directionIn : Boolean, dataTypeCDClass : CDClass, portName : String) {
+	_in := directionIn;
+	_out := not directionIn;
+	dataType := dataTypeCDClass;
+	name := portName;
 }
 
 constructor Condition::Condition(_condition : String) {
@@ -339,6 +363,7 @@ query OperationSignature::getReturnName(primitiveType : Type) : String {
 	} else {
 		return primitiveType.oclAsType(MCObjectType).type.firstToLower();
 	}
+	
 }
 
 query String::firstToLower() : String {
@@ -347,13 +372,13 @@ query String::firstToLower() : String {
 
 query OperationSignature::generateInPortFromParameter() : Port {
 	if (self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass)->exists(true)) {
-		return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass) -> first(), self);
-	} 
+		return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass) -> first(), self.getParameterName());
+	}
 	else {
 		if (self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).type.toString().equalsIgnoreCase("STRING")) {
-			return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToObjectType(), self);
+			return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToObjectType(), self.getParameterName());
 		} else {
-			return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+			return new Port(true, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self.getParameterName());
 		}
 	};
 }
@@ -364,26 +389,29 @@ query OperationSignature::generateInPortFromParameters() : Port {
 
 query OperationSignature::generateInPortFromReturn() : Port {
 	if (self.returnType__OperationSignature.resolve(CDClass)->exists(true)) {
-		return new Port(true, self.returnType__OperationSignature.resolve(CDClass) -> first(), self);
-	} 
+		var returnType := self.returnType__OperationSignature.resolve(CDClass) -> first();
+		return new Port(true, returnType, self.getReturnName(returnType));
+	}
 	else {
 		if (self.returnType__OperationSignature.oclAsType(PrimitiveDataType).type.toString().equalsIgnoreCase("STRING")) {
-			return new Port(true, self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToObjectType(), self);
+			var returnType := self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToObjectType();
+			return new Port(true, returnType, self.getReturnName(returnType));
 		} else {
-			return new Port(true, self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+			var returnType := self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToPrimitveType();
+			return new Port(true, returnType, self.getReturnName(returnType));
 		}
 	};
 }
-
+ 
 query OperationSignature::generateOutPortFromParameter() : Port {
 	if (self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass)->exists(true)) {
-		return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass) -> first(), self);
-	} 
+		return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.resolve(CDClass) -> first(), self.getParameterName());
+	}
 	else {
 		if (self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).type.toString().equalsIgnoreCase("STRING")) {
-			return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToObjectType(), self);
+			return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToObjectType(), self.getParameterName());
 		} else {
-			return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+			return new Port(false, self.parameters__OperationSignature -> first().dataType__Parameter.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self.getParameterName());
 		}
 	};
 }
@@ -394,13 +422,16 @@ query OperationSignature::generateOutPortFromParameters() : Port {
 
 query OperationSignature::generateOutPortFromReturn() : Port {
 	if (self.returnType__OperationSignature.resolve(CDClass)->exists(true)) {
-		return new Port(false, self.returnType__OperationSignature.resolve(CDClass) -> first(), self);
-	} 
+		var returnType := self.returnType__OperationSignature.resolve(CDClass) -> first();
+		return new Port(false, returnType, self.getReturnName(returnType));
+	}
 	else {
 		if (self.returnType__OperationSignature.oclAsType(PrimitiveDataType).type.toString().equalsIgnoreCase("STRING")) {
-			return new Port(false, self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToObjectType(), self);
+			var returnType := self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToObjectType();
+			return new Port(false, returnType, self.getReturnName(returnType));
 		} else {
-			return new Port(false, self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToPrimitveType(), self);
+			var returnType := self.returnType__OperationSignature.oclAsType(PrimitiveDataType).dataTypeToPrimitveType();
+			return new Port(false, returnType, self.getReturnName(returnType));
 		}
 	};
 }
@@ -579,6 +610,7 @@ mapping OperationInterface::interfacesToCDClass() {
 }
 
 mapping OperationSignature::operationSignatureToCDCLass(interface : OperationInterface) : CDClass when {
+
 	self.parameters__OperationSignature->size() <> 1 and self.parameters__OperationSignature->reject(p : Parameter | p.dataType__Parameter.resolve(Type)->exists(true))->exists(true)
 } {
 	members += self.parameters__OperationSignature->map parameterToMember();
@@ -600,14 +632,18 @@ mapping CompositeDataType::compositeDataTypeToCDClass() : CDClass {
 	name := self.entityName;
 	public := true;
 	members += self.innerDeclaration_CompositeDataType->map innerDeclarationToMember();
+
+	
 }
 
 mapping InnerDeclaration::innerDeclarationToMember() : Member {
 	name := self.entityName;
 	if (self.datatype_InnerDeclaration.oclIsTypeOf(PrimitiveDataType)) {
 		var dataType : PrimitiveDataType := self.datatype_InnerDeclaration.oclAsType(PrimitiveDataType);
+		
 		if (dataType.type = PrimitiveTypeEnum::STRING) {
-			type := dataType.map stringToString().oclAsType(EObject);
+			 type := dataType.map stringToString().oclAsType(EObject);
+			 type := dataType.dataTypeToObjectType().oclAsType(EObject);
 		} else {
 			type := dataType.dataTypeToPrimitveType().oclAsType(EObject);
 		};
@@ -615,6 +651,7 @@ mapping InnerDeclaration::innerDeclarationToMember() : Member {
 	if (self.datatype_InnerDeclaration.oclIsTypeOf(CompositeDataType)) {
 		// TODO
 	};
+
 }
 
 mapping DataType::innerTypeToMember(n : String) : Member {
@@ -623,8 +660,11 @@ mapping DataType::innerTypeToMember(n : String) : Member {
 }
 
 mapping PrimitiveDataType::stringToString() : MCObjectType {
-	type := "String";
+	 type := "String";
 }
+
+
+
 
 helper String::oppositeDirection() : String {
 	if (self = "in") {

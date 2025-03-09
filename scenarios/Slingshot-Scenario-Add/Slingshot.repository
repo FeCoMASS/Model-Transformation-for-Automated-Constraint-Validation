@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_pqWIkBWoEe-DGZvw9jQajw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_6xnykBWoEe-DGZvw9jQajw" entityName="SystemSimulation">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="__gT50BWpEe-DGZvw9jQajw" entityName="" providedInterface__OperationProvidedRole="_5uF5ABWoEe-DGZvw9jQajw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_-3_8oBWpEe-DGZvw9jQajw" entityName="" requiredInterface__OperationRequiredRole="_6D_QgBWoEe-DGZvw9jQajw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="__gdDwBWpEe-DGZvw9jQajw" describedService__SEFF="_jZpKEBWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="__gdDwRWpEe-DGZvw9jQajw" successor_AbstractAction="__gdDwhWpEe-DGZvw9jQajw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="__gdDwhWpEe-DGZvw9jQajw" predecessor_AbstractAction="__gdDwRWpEe-DGZvw9jQajw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_6-hmIBWoEe-DGZvw9jQajw" entityName="ResourceSimulation">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_AXag8BWqEe-DGZvw9jQajw" entityName="" providedInterface__OperationProvidedRole="_6D_QgBWoEe-DGZvw9jQajw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_3Z3NoOlAEe-YvM3YpQ3veQ" entityName="" providedInterface__OperationProvidedRole="_Oi_-UOk_Ee-YvM3YpQ3veQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_czXe4Ok6Ee-YvM3YpQ3veQ" entityName="" requiredInterface__OperationRequiredRole="_KuCtsOk5Ee-YvM3YpQ3veQ"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_AXbIABWqEe-DGZvw9jQajw" describedService__SEFF="_nLH3oBWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_AXbIARWqEe-DGZvw9jQajw" successor_AbstractAction="_AXbIAhWqEe-DGZvw9jQajw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_AXbIAhWqEe-DGZvw9jQajw" predecessor_AbstractAction="_AXbIARWqEe-DGZvw9jQajw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_3Z30sOlAEe-YvM3YpQ3veQ" describedService__SEFF="_rUZQoOlAEe-YvM3YpQ3veQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_3Z4bwOlAEe-YvM3YpQ3veQ" successor_AbstractAction="_3Z4bwelAEe-YvM3YpQ3veQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_3Z4bwelAEe-YvM3YpQ3veQ" predecessor_AbstractAction="_3Z4bwOlAEe-YvM3YpQ3veQ"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ZKn54ClIEe-fT_GEyVXRKA" entityName="UsageSimulation">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hGyfMClIEe-fT_GEyVXRKA" entityName="" providedInterface__OperationProvidedRole="_E95ZUBWpEe-DGZvw9jQajw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_gZyPQClIEe-fT_GEyVXRKA" entityName="" requiredInterface__OperationRequiredRole="_5uF5ABWoEe-DGZvw9jQajw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_hG-FYClIEe-fT_GEyVXRKA" describedService__SEFF="_Gan2ABWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_hG-FYSlIEe-fT_GEyVXRKA" successor_AbstractAction="_hG-FYilIEe-fT_GEyVXRKA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_hG-FYilIEe-fT_GEyVXRKA" predecessor_AbstractAction="_hG-FYSlIEe-fT_GEyVXRKA"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_GpNmUOk5Ee-YvM3YpQ3veQ" entityName="NetworkSimulation">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_p1ZN8Ok-Ee-YvM3YpQ3veQ" entityName="" providedInterface__OperationProvidedRole="_KuCtsOk5Ee-YvM3YpQ3veQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_2tnysOlAEe-YvM3YpQ3veQ" entityName="" requiredInterface__OperationRequiredRole="_Oi_-UOk_Ee-YvM3YpQ3veQ"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_p17ZcOk-Ee-YvM3YpQ3veQ" describedService__SEFF="_e_Dv0Ok5Ee-YvM3YpQ3veQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_p17Zcek-Ee-YvM3YpQ3veQ" successor_AbstractAction="_p17Zcuk-Ee-YvM3YpQ3veQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_p17Zcuk-Ee-YvM3YpQ3veQ" predecessor_AbstractAction="_p17Zcek-Ee-YvM3YpQ3veQ"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_5uF5ABWoEe-DGZvw9jQajw" entityName="SystemSimulation">
+    <signatures__OperationInterface id="_jZpKEBWpEe-DGZvw9jQajw" entityName="simulateSystemCall" returnType__OperationSignature="_HPpQHdKDEe-FZs42ElTBhQ">
+      <parameters__OperationSignature dataType__Parameter="_K_WlcBWpEe-DGZvw9jQajw" parameterName="systemCall"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_6D_QgBWoEe-DGZvw9jQajw" entityName="ResourceSimulation">
+    <signatures__OperationInterface id="_nLH3oBWpEe-DGZvw9jQajw" entityName="simulateResourceDemand" returnType__OperationSignature="_8UHWrdKCEe-FZs42ElTBhQ">
+      <parameters__OperationSignature dataType__Parameter="_LJbHcBWpEe-DGZvw9jQajw" parameterName="resourceDemand"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_E95ZUBWpEe-DGZvw9jQajw" entityName="UsageSimulation">
+    <signatures__OperationInterface id="_Gan2ABWpEe-DGZvw9jQajw" entityName="simulateUsageScenario" returnType__OperationSignature="_J6tQfdM5Ee-o-JNvJrKOug">
+      <parameters__OperationSignature dataType__Parameter="_I2RZEBWpEe-DGZvw9jQajw" parameterName="usageScenario"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_KuCtsOk5Ee-YvM3YpQ3veQ" entityName="ServerLoad">
+    <signatures__OperationInterface id="_e_Dv0Ok5Ee-YvM3YpQ3veQ" entityName="simulateServerLoad">
+      <parameters__OperationSignature dataType__Parameter="_ZP7p0Ok5Ee-YvM3YpQ3veQ" parameterName="serverLoad"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Oi_-UOk_Ee-YvM3YpQ3veQ" entityName="Latency">
+    <signatures__OperationInterface id="_rUZQoOlAEe-YvM3YpQ3veQ" entityName="simulateLatency">
+      <parameters__OperationSignature dataType__Parameter="_RgC-QOk_Ee-YvM3YpQ3veQ" parameterName="latency"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_I2RZEBWpEe-DGZvw9jQajw" entityName="UsageScenario">
+    <innerDeclaration_CompositeDataType entityName="numberOfUsers">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_HPpQHdKDEe-FZs42ElTBhQ" entityName="SystemSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_J6tQfdM5Ee-o-JNvJrKOug" entityName="UsageSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="responseTime">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_8UHWrdKCEe-FZs42ElTBhQ" entityName="ResourceSimulationReturn">
+    <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_K_WlcBWpEe-DGZvw9jQajw" entityName="SystemCall">
+    <innerDeclaration_CompositeDataType entityName="method">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_LJbHcBWpEe-DGZvw9jQajw" entityName="ResourceDemand">
+    <innerDeclaration_CompositeDataType entityName="resourceDemand">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_ZP7p0Ok5Ee-YvM3YpQ3veQ" entityName="ServerLoad">
+    <innerDeclaration_CompositeDataType entityName="serverLoad">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_RgC-QOk_Ee-YvM3YpQ3veQ" entityName="Latency">
+    <innerDeclaration_CompositeDataType entityName="latency">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+</repository:Repository>

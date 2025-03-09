@@ -1,0 +1,14 @@
+package cd2pojo.artifact;
+classdiagram Artifact {
+	public class ArtifactSimulationReturn {
+	}
+	public class Artifact {
+		String id;
+	}
+	public class CompositeDataType4 {
+		String innerDeclaration1;
+	}
+	public class ArtData {
+		String id; String simpleName; String nameExtension;
+	}
+}

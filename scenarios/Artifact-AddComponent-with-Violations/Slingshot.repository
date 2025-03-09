@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" id="_pqWIkBWoEe-DGZvw9jQajw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_6xnykBWoEe-DGZvw9jQajw" entityName="ArtifactValidator">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="__gT50BWpEe-DGZvw9jQajw" entityName="" providedInterface__OperationProvidedRole="_5uF5ABWoEe-DGZvw9jQajw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_JytmQPYQEe-KVu6uAheL9w" entityName="" providedInterface__OperationProvidedRole="_u6CToPYPEe-KVu6uAheL9w"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="___qoYPXOEe-KVu6uAheL9w" entityName="" requiredInterface__OperationRequiredRole="_7_msQPXOEe-KVu6uAheL9w"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="__gdDwBWpEe-DGZvw9jQajw" describedService__SEFF="_jZpKEBWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="__gdDwRWpEe-DGZvw9jQajw" successor_AbstractAction="__gdDwhWpEe-DGZvw9jQajw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="__gdDwhWpEe-DGZvw9jQajw" predecessor_AbstractAction="__gdDwRWpEe-DGZvw9jQajw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_Jy9d4PYQEe-KVu6uAheL9w" describedService__SEFF="_xOlJIPYPEe-KVu6uAheL9w">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_Jy9d4fYQEe-KVu6uAheL9w" successor_AbstractAction="_Jy9d4vYQEe-KVu6uAheL9w"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_Jy9d4vYQEe-KVu6uAheL9w" predecessor_AbstractAction="_Jy9d4fYQEe-KVu6uAheL9w"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ZKn54ClIEe-fT_GEyVXRKA" entityName="GPLExtractor">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_hGyfMClIEe-fT_GEyVXRKA" entityName="" providedInterface__OperationProvidedRole="_E95ZUBWpEe-DGZvw9jQajw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_gZyPQClIEe-fT_GEyVXRKA" entityName="" requiredInterface__OperationRequiredRole="_5uF5ABWoEe-DGZvw9jQajw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_hG-FYClIEe-fT_GEyVXRKA" describedService__SEFF="_Gan2ABWpEe-DGZvw9jQajw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_hG-FYSlIEe-fT_GEyVXRKA" successor_AbstractAction="_hG-FYilIEe-fT_GEyVXRKA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_hG-FYilIEe-fT_GEyVXRKA" predecessor_AbstractAction="_hG-FYSlIEe-fT_GEyVXRKA"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_yjxrAPXOEe-KVu6uAheL9w" entityName="Merger">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_DJccwPXPEe-KVu6uAheL9w" entityName="" providedInterface__OperationProvidedRole="_7_msQPXOEe-KVu6uAheL9w"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_D2rrkPejEe-jpoXkVsqTIQ" entityName="" requiredInterface__OperationRequiredRole="_2iFB8PeiEe-jpoXkVsqTIQ"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_nrUqMPYPEe-KVu6uAheL9w" entityName="TemplateExtractor">
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_LD9LsPYQEe-KVu6uAheL9w" entityName="" requiredInterface__OperationRequiredRole="_u6CToPYPEe-KVu6uAheL9w"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_-1pskPegEe-jpoXkVsqTIQ" entityName="ChangeImpact">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_EffYAPejEe-jpoXkVsqTIQ" entityName="" providedInterface__OperationProvidedRole="_2iFB8PeiEe-jpoXkVsqTIQ"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_EfuBgPejEe-jpoXkVsqTIQ" describedService__SEFF="_6Ql7EPeiEe-jpoXkVsqTIQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_EfuokPejEe-jpoXkVsqTIQ" successor_AbstractAction="_EfuokfejEe-jpoXkVsqTIQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_EfuokfejEe-jpoXkVsqTIQ" predecessor_AbstractAction="_EfuokPejEe-jpoXkVsqTIQ"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_5uF5ABWoEe-DGZvw9jQajw" entityName="ArtDataSimulation">
+    <signatures__OperationInterface id="_jZpKEBWpEe-DGZvw9jQajw" entityName="simulateArtData">
+      <parameters__OperationSignature dataType__Parameter="_K_WlcBWpEe-DGZvw9jQajw" parameterName="artData"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_E95ZUBWpEe-DGZvw9jQajw" entityName="ArtifactSimulation">
+    <signatures__OperationInterface id="_Gan2ABWpEe-DGZvw9jQajw" entityName="simulateArtifact" returnType__OperationSignature="_J6tQfdM5Ee-o-JNvJrKOug">
+      <parameters__OperationSignature dataType__Parameter="_I2RZEBWpEe-DGZvw9jQajw" parameterName="artifact_id"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_7_msQPXOEe-KVu6uAheL9w" entityName="ArtData3Simulation">
+    <signatures__OperationInterface id="_UXqcQPXPEe-KVu6uAheL9w" entityName="simulateArtData3">
+      <parameters__OperationSignature dataType__Parameter="_K_WlcBWpEe-DGZvw9jQajw" parameterName="artData3"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_u6CToPYPEe-KVu6uAheL9w" entityName="ArtData2Simulation">
+    <signatures__OperationInterface id="_xOlJIPYPEe-KVu6uAheL9w" entityName="simulateArtData2">
+      <parameters__OperationSignature dataType__Parameter="_K_WlcBWpEe-DGZvw9jQajw" parameterName="artData2"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_2iFB8PeiEe-jpoXkVsqTIQ" entityName="ObjectDiagramSimulation">
+    <signatures__OperationInterface id="_6Ql7EPeiEe-jpoXkVsqTIQ" entityName="simulateObjDiagram">
+      <parameters__OperationSignature dataType__Parameter="_oPdwUPXTEe-KVu6uAheL9w" parameterName="objDiagram"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_I2RZEBWpEe-DGZvw9jQajw" entityName="Artifact">
+    <innerDeclaration_CompositeDataType entityName="id">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_J6tQfdM5Ee-o-JNvJrKOug" entityName="ArtifactSimulationReturn"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_K_WlcBWpEe-DGZvw9jQajw" entityName="ArtData">
+    <innerDeclaration_CompositeDataType entityName="nameExtension">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="simpleName">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="id">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oPdwUPXTEe-KVu6uAheL9w" entityName="ObjectDiagram">
+    <innerDeclaration_CompositeDataType entityName="objectDiagram">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+    </innerDeclaration_CompositeDataType>
+  </dataTypes__Repository>
+</repository:Repository>

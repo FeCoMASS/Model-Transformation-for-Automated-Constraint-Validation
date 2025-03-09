@@ -9,6 +9,8 @@ This folder contains a preconfigured eclipse. Please refer to the [Video Tutoria
 Please unzip the Eclipse.zip, start the eclipse.exe and select the workspace folder as workspace. Afterwards you can execute the two steps of our tool by selecting the run configurations at the play symbol in the menu. The first step is "1 PCMToMontiArc", which generates the enriched MontiArc model. The second stepo is "2 CheckConstraints", which formats the output of the first step and checks the validity of the constraints. The output of the tool is in the eclipse console.
 ### example
 The example we use is in this folder. It contains the three input files Slingshot.repository, Slingshot.system and Constraints.ecore. In addition, the output PCMToMontiArc.montiarcandcore is also included and the representations.aird file, which is responsible for the graphical representation of the repository and system.
+### scenarios
+The scenarios we used for the evaluation of the approach can be found in this folder.
 ### grammar
 The grammar consists of three mostly generated projects and a zip-file containing these projects packaged as eclipse plugins. Therefor, the content of the zip-file can be pasted into the dropins folder of an eclipse to add support for montiarcandcore models. The XText grammar itself can be found at org.palladiosimulator.xtext.montiarcandcore\src\org\palladiosimulator\xtext\montiarcandcore\MontiArcAndCore.xtext.
 ### transformation

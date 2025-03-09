@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="Constraints" nsURI="Constraints" nsPrefix="constraints">
+  <eAnnotations references="Slingshot.system#_0s6UwClJEe-lBN28kF6cQQ">
+    <details key="Source:Out" value="x.simpleName isin R&quot;[a-zA-Z0-9]{1,20}&quot; &amp;&amp; x.nameExtension isin R&quot;[a-zA-Z]{1,20}&quot; &amp;&amp; x.id ==  &quot;@&quot;+ x.simpleName + &quot;!&quot; + x.nameExtension"/>
+    <details key="Target:In" value="x.id isin R&quot;@.{1,20}!.{1,20}&quot;"/>
+  </eAnnotations>
+  <eAnnotations references="Slingshot.system#_O4xhIPYQEe-KVu6uAheL9w">
+    <details key="Source:Out" value="x.id ==  &quot;@&quot;+ x.simpleName + &quot;!&quot; + x.nameExtension &amp;&amp; x.simpleName isin R&quot;[a-zA-Z][a-zA-Z_0-9]+&quot; &amp;&amp; x.nameExtension isin R&quot;[a-zA-Z][a-zA-Z_0-9]+&quot;"/>
+    <details key="Target:In" value="x.id isin R&quot;@[a-zA-Z_0-9]{1,20}![a-zA-Z]{1,20}&quot;"/>
+  </eAnnotations>
+</ecore:EPackage>

@@ -1,0 +1,14 @@
+package cd2pojo.slingshot;
+classdiagram Slingshot {
+	public class CompositeDataType4 {
+		String innerDeclaration1;
+	}
+	public class ArtifactSimulationReturn {
+	}
+	public class Artifact {
+		String id;
+	}
+	public class ArtData {
+		String id; String simpleName; String nameExtension;
+	}
+}

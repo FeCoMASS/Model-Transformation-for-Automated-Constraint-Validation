@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" id="_tR6sMBWoEe-DGZvw9jQajw" entityName="Slingshot">
+  <assemblyContexts__ComposedStructure id="_GF3RgBWqEe-DGZvw9jQajw" entityName="Artifact">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="Slingshot.repository#_6xnykBWoEe-DGZvw9jQajw"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_yaC6QClJEe-lBN28kF6cQQ" entityName="GPLExtractor">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="Slingshot.repository#_ZKn54ClIEe-fT_GEyVXRKA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_5WtXYPXOEe-KVu6uAheL9w" entityName="ChangeImpact">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="Slingshot.repository#_yjxrAPXOEe-KVu6uAheL9w"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_MegeIPYQEe-KVu6uAheL9w" entityName="Assembly_TemplateExtractor">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="Slingshot.repository#_nrUqMPYPEe-KVu6uAheL9w"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_0s6UwClJEe-lBN28kF6cQQ" entityName="GPLToArtifact" requiringAssemblyContext_AssemblyConnector="_yaC6QClJEe-lBN28kF6cQQ" providingAssemblyContext_AssemblyConnector="_GF3RgBWqEe-DGZvw9jQajw">
+    <providedRole_AssemblyConnector href="Slingshot.repository#__gT50BWpEe-DGZvw9jQajw"/>
+    <requiredRole_AssemblyConnector href="Slingshot.repository#_gZyPQClIEe-fT_GEyVXRKA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1YAgMClJEe-lBN28kF6cQP" entityName="ArtifactDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_LavEcBWqEe-DGZvw9jQajw" assemblyContext_ProvidedDelegationConnector="_yaC6QClJEe-lBN28kF6cQQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="Slingshot.repository#_hGyfMClIEe-fT_GEyVXRKA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_EHq_kPXPEe-KVu6uAheL9w" entityName="ArtifactToChange" requiringAssemblyContext_AssemblyConnector="_GF3RgBWqEe-DGZvw9jQajw" providingAssemblyContext_AssemblyConnector="_5WtXYPXOEe-KVu6uAheL9w">
+    <providedRole_AssemblyConnector href="Slingshot.repository#_DJccwPXPEe-KVu6uAheL9w"/>
+    <requiredRole_AssemblyConnector href="Slingshot.repository#___qoYPXOEe-KVu6uAheL9w"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_O4xhIPYQEe-KVu6uAheL9w" entityName="TemplateToArtifact" requiringAssemblyContext_AssemblyConnector="_MegeIPYQEe-KVu6uAheL9w" providingAssemblyContext_AssemblyConnector="_GF3RgBWqEe-DGZvw9jQajw">
+    <providedRole_AssemblyConnector href="Slingshot.repository#_JytmQPYQEe-KVu6uAheL9w"/>
+    <requiredRole_AssemblyConnector href="Slingshot.repository#_LD9LsPYQEe-KVu6uAheL9w"/>
+  </connectors__ComposedStructure>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_LavEcBWqEe-DGZvw9jQajw" entityName="">
+    <providedInterface__OperationProvidedRole href="Slingshot.repository#_E95ZUBWpEe-DGZvw9jQajw"/>
+  </providedRoles_InterfaceProvidingEntity>
+</system:System>
