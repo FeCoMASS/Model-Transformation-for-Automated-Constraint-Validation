@@ -1,21 +1,21 @@
 package cd2pojo.slingshot;
 classdiagram Slingshot {
-	public class UsageScenario {
-		int numberOfUsers;
-	}
 	public class ResourceSimulationReturn {
-		double utilization;
-	}
-	public class SystemSimulationReturn {
-		double utilization;
-	}
-	public class SystemCall {
-		String method;
+		double utilization; double busyTime; double totalTime;
 	}
 	public class ResourceDemand {
 		double resourceDemand;
 	}
+	public class UsageScenario {
+		double interval; boolean closedWorkload; int numberOfUsers;
+	}
+	public class SystemCall {
+		String method;
+	}
 	public class UsageSimulationReturn {
 		double responseTime; double utilization;
+	}
+	public class SystemSimulationReturn {
+		double utilization;
 	}
 }

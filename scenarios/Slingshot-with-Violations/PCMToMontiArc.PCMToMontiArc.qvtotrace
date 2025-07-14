@@ -7,7 +7,7 @@
     <result>
       <result kind="OUT" name="result" type="MontiArcAndCore">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#/"/>
         </value>
       </result>
     </result>
@@ -25,7 +25,7 @@
     <result>
       <result kind="OUT" name="result" type="ClassDiagramCompilationUnit">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram"/>
         </value>
       </result>
     </result>
@@ -41,7 +41,7 @@
     <result>
       <result kind="OUT" name="result" type="Package">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@package"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@package"/>
         </value>
       </result>
     </result>
@@ -57,7 +57,7 @@
     <result>
       <result kind="OUT" name="result" type="ClassDiagram">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram"/>
         </value>
       </result>
     </result>
@@ -75,7 +75,7 @@
     <result>
       <result kind="OUT" name="result" type="CDClass">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.1"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.1"/>
         </value>
       </result>
     </result>
@@ -93,7 +93,7 @@
     <result>
       <result kind="OUT" name="result" type="Member">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.1/@members.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.1/@members.0"/>
         </value>
       </result>
     </result>
@@ -111,7 +111,7 @@
     <result>
       <result kind="OUT" name="result" type="CDClass">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.5"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.5"/>
         </value>
       </result>
     </result>
@@ -129,7 +129,7 @@
     <result>
       <result kind="OUT" name="result" type="Member">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.5/@members.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.5/@members.0"/>
         </value>
       </result>
     </result>
@@ -147,7 +147,7 @@
     <result>
       <result kind="OUT" name="result" type="CDClass">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.3"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.3"/>
         </value>
       </result>
     </result>
@@ -165,7 +165,7 @@
     <result>
       <result kind="OUT" name="result" type="Member">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.3/@members.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.3/@members.0"/>
         </value>
       </result>
     </result>
@@ -183,7 +183,7 @@
     <result>
       <result kind="OUT" name="result" type="MCObjectType">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.3/@members.0/@type"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.3/@members.0/@type"/>
         </value>
       </result>
     </result>
@@ -201,7 +201,7 @@
     <result>
       <result kind="OUT" name="result" type="CDClass">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.4"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.4"/>
         </value>
       </result>
     </result>
@@ -219,7 +219,7 @@
     <result>
       <result kind="OUT" name="result" type="Member">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.4/@members.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.4/@members.0"/>
         </value>
       </result>
     </result>
@@ -237,7 +237,7 @@
     <result>
       <result kind="OUT" name="result" type="CDClass">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.0"/>
         </value>
       </result>
     </result>
@@ -255,7 +255,7 @@
     <result>
       <result kind="OUT" name="result" type="Member">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.0/@members.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.0/@members.0"/>
         </value>
       </result>
     </result>
@@ -273,7 +273,7 @@
     <result>
       <result kind="OUT" name="result" type="CDClass">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.2"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.2"/>
         </value>
       </result>
     </result>
@@ -291,7 +291,7 @@
     <result>
       <result kind="OUT" name="result" type="Member">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@classdiagram/@diagram/@cdElements.2/@members.0"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@classdiagram/@diagram/@cdElements.2/@members.0"/>
         </value>
       </result>
     </result>
@@ -345,7 +345,7 @@
     <result>
       <result kind="OUT" name="result" type="MACompilationUnit">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl"/>
         </value>
       </result>
     </result>
@@ -361,7 +361,7 @@
     <result>
       <result kind="OUT" name="result" type="Package">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@package"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@package"/>
         </value>
       </result>
     </result>
@@ -379,7 +379,7 @@
     <result>
       <result kind="OUT" name="result" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component"/>
         </value>
       </result>
     </result>
@@ -398,10 +398,10 @@
       <result kind="OUT" name="result" type="Set(Port)">
         <value collectionType="Set">
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.0"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.0"/>
           </collection>
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.1"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.1"/>
           </collection>
         </value>
       </result>
@@ -420,7 +420,7 @@
     <result>
       <result kind="OUT" name="result" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.4"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4"/>
         </value>
       </result>
     </result>
@@ -439,10 +439,10 @@
       <result kind="OUT" name="result" type="Set(Port)">
         <value collectionType="Set">
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.4/@arcElements.0"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4/@arcElements.0"/>
           </collection>
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.4/@arcElements.1"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4/@arcElements.1"/>
           </collection>
         </value>
       </result>
@@ -461,7 +461,7 @@
     <result>
       <result kind="OUT" name="result" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.2"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2"/>
         </value>
       </result>
     </result>
@@ -480,10 +480,10 @@
       <result kind="OUT" name="result" type="Set(Port)">
         <value collectionType="Set">
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.2/@arcElements.0"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2/@arcElements.0"/>
           </collection>
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.2/@arcElements.1"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2/@arcElements.1"/>
           </collection>
         </value>
       </result>
@@ -525,7 +525,7 @@
     <result>
       <result kind="OUT" name="result" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.3"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3"/>
         </value>
       </result>
     </result>
@@ -544,10 +544,10 @@
       <result kind="OUT" name="result" type="Set(Port)">
         <value collectionType="Set">
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.3/@arcElements.0"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.0"/>
           </collection>
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.3/@arcElements.1"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.1"/>
           </collection>
         </value>
       </result>
@@ -567,10 +567,10 @@
       <result kind="OUT" name="result" type="Set(Port)">
         <value collectionType="Set">
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.3/@arcElements.2"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.2"/>
           </collection>
           <collection>
-            <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.3/@arcElements.3"/>
+            <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3/@arcElements.3"/>
           </collection>
         </value>
       </result>
@@ -581,7 +581,7 @@
     <context>
       <context name="self" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.2"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.2"/>
         </value>
       </context>
     </context>
@@ -589,7 +589,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.5"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.5"/>
         </value>
       </result>
     </result>
@@ -599,7 +599,7 @@
     <context>
       <context name="self" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.3"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.3"/>
         </value>
       </context>
     </context>
@@ -607,7 +607,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.6"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.6"/>
         </value>
       </result>
     </result>
@@ -617,7 +617,7 @@
     <context>
       <context name="self" type="Component">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.4"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.4"/>
         </value>
       </context>
     </context>
@@ -625,7 +625,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.7"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.7"/>
         </value>
       </result>
     </result>
@@ -643,7 +643,7 @@
     <result>
       <result kind="OUT" name="result" type="Connector">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.8"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.8"/>
         </value>
       </result>
     </result>
@@ -661,7 +661,7 @@
     <result>
       <result kind="OUT" name="result" type="Connector">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.9"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.9"/>
         </value>
       </result>
     </result>
@@ -683,7 +683,7 @@
     <result>
       <result kind="OUT" name="result" type="Connector">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.10"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.10"/>
         </value>
       </result>
     </result>
@@ -705,7 +705,7 @@
     <result>
       <result kind="OUT" name="result" type="Connector">
         <value>
-          <modelElement href="PCMToMontiArc.montiarcandcore#/0/@montiarcdsl/@component/@arcElements.11"/>
+          <modelElement href="PCMToMontiArc.montiarcandcore#//@montiarcdsl/@component/@arcElements.11"/>
         </value>
       </result>
     </result>

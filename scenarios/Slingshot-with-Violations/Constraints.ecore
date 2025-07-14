@@ -5,7 +5,7 @@
     <details key="return" value="responseTime"/>
   </eAnnotations>
   <eAnnotations references="Slingshot.system#_1YAgMClJEe-lBN28kF6cQP">
-    <details key="Source:In" value="x.numberOfUsers &lt; 100 &amp;&amp; x.numberOfUsers &lt; 2147483647"/>
+    <details key="Source:In" value="if x.closedWorkload == true then ( x.numberOfUsers > 0 &amp;&amp; x.numberOfUsers &lt;2147483647) else x.interval > 0.0"/>
     <details key="Target:In" value="x.numberOfUsers > 0"/>
     <details key="Source:Out" value="x.responseTime > 1.0"/>
     <details key="Target:Out" value="x.responseTime &lt; 0.0"/>
@@ -18,7 +18,7 @@
   <eAnnotations references="Slingshot.system#_Ph2DwBWqEe-DGZvw9jQajw">
     <details key="Source:Out" value="x.resourceDemand > 10.0"/>
     <details key="Target:In" value="x.resourceDemand &lt; 1.0"/>
-    <details key="Target:Out" value="x.utilization > 10.0"/>
+    <details key="Target:Out" value="( x.totalTime > 0.0 &amp;&amp; x.busyTime > 0.0) implies ( x.utilization == x.busyTime / x.totalTime &amp;&amp; x.utilization > 0.0)"/>
     <details key="Source:In" value="x.utilization > 1.0"/>
     <details key="Target:Out:Delayed"/>
   </eAnnotations>

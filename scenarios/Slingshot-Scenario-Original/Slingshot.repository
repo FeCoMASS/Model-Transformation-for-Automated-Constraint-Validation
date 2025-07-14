@@ -42,6 +42,12 @@
     <innerDeclaration_CompositeDataType entityName="numberOfUsers">
       <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
     </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="closedWorkload">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.2"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="interval">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
   </dataTypes__Repository>
   <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_HPpQHdKDEe-FZs42ElTBhQ" entityName="SystemSimulationReturn">
     <innerDeclaration_CompositeDataType entityName="utilization">
@@ -58,6 +64,12 @@
   </dataTypes__Repository>
   <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_8UHWrdKCEe-FZs42ElTBhQ" entityName="ResourceSimulationReturn">
     <innerDeclaration_CompositeDataType entityName="utilization">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="busyTime">
+      <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
+    </innerDeclaration_CompositeDataType>
+    <innerDeclaration_CompositeDataType entityName="totalTime">
       <datatype_InnerDeclaration xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.3"/>
     </innerDeclaration_CompositeDataType>
   </dataTypes__Repository>
